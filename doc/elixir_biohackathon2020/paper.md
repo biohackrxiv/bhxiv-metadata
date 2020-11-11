@@ -82,7 +82,24 @@ schema.org [cite].
 
 In the first version we opted to generate RDF with Ruby erb templates
 which means that validation happens in the source code. Some semantic
-enrichment includes URIs for the biohackathons themselves.
+enrichment includes URIs for the biohackathons themselves. An example
+for one paper:
+
+```rdf
+@prefix bhx: <http://biohackerxiv.org/resource> .
+
+<https://github.com/elixir-europe/BioHackathon-projects-2019> rdf:label "Elixir2019" ;
+    a <https://schema.org/Event> .
+<https://github.com/elixir-europe/BioHackathon-projects-2020> rdf:label "Elixir2020" ;
+    a <https://schema.org/Event> .
+<http://2019.biohackathon.org/> rdf:label "Fukuoka2019" ;
+    a <https://schema.org/Event> .
+
+<https://biohackrxiv.org/km9ux/> <http://purl.org/dc/elements/1.1/title> "Logic Programming Working Group" ;
+    <https://schema.org/sameAs> <https://doi.org/10.37044/osf.io/km9ux> ;
+    <https://schema.org/url> <https://raw.githubusercontent.com/journal-of-research-objects/Example-BioHackrXiv-Paper/master/paper.md> ;
+    <bhx:Event> <http://2019.biohackathon.org/> .
+```
 
 In future work we could introduce Shex to validate entries and the
 scholarly annotation can be expanded. For example we could parse the
