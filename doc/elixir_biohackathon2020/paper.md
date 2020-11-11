@@ -80,9 +80,11 @@ language of the semantic web, using a small subset of the scholarly
 publication [ontology](https://schema.org/ScholarlyArticle) from
 schema.org [cite].
 
-In the first virsion we opted to generate RDF with Ruby erb templates.
+In the first version we opted to generate RDF with Ruby erb templates
+which means that validation happens in the source code. Some semantic
+enrichment includes URIs for the biohackathons themselves.
 
-In future work we could introduce Shex to validate entires and the
+In future work we could introduce Shex to validate entries and the
 scholarly annotation can be expanded. For example we could parse the
 number of downloads and other information from the OSF.io website and
 transform that into RDF. We can also add indexing services, such as
@@ -94,6 +96,10 @@ Even though OSF.io does not provide all the functionality we require
 for BioHackrXiv, we are able to work around limitations and our
 functionality may be merged or linked into the main
 https://biohackrxiv.org/ website.
+
+Add notes on:
+
+1. Add metadata to markdown, e.g. for main source code repo
 
 ## Acknowledgements
 
