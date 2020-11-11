@@ -1,0 +1,5 @@
+papers:
+- id: https://biohackrxiv.org/km9ux/
+  doi: https://doi.org/10.37044/osf.io/km9ux
+  url: https://raw.githubusercontent.com/journal-of-research-objects/Example-BioHackrXiv-Paper/master/paper.md
+

@@ -57,9 +57,33 @@ website.
     Write up any future work
 -->
 
-## Linking up
+## Linking metadata up
 
-Future work includes:
+To connect the main publication with its source and related markdown
+we maintain a [list](./etc/papers.yaml) that needs to be updated with
+every publication. This file contains hard links we can not easily
+acquire in other ways. E.g.
+
+```yaml
+papers:
+- id: https://biohackrxiv.org/km9ux/
+  doi: https://doi.org/10.37044/osf.io/km9ux
+  markdown: https://raw.githubusercontent.com/journal-of-research-objects/Example-BioHackrXiv-Paper/master/paper.md
+```
+
+The markdown link should be able to fetch the parseable file.
+
+## Transform metadata to RDF
+
+In the next step we take markdown file and tranform that into RDF
+using a small subset of the scholarly publication
+[ontology](https://schema.org/ScholarlyArticle) from schema.org
+[cite].
+
+In future work the scholarly annotation can be expanded. For example
+we could parse the number of downloads and other information from the
+OSF.io website and transform that into RDF. We can also add indexing
+services, such as PMC and Google Scholar.
 
 # Discussion
 
