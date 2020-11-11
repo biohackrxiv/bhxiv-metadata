@@ -5,3 +5,11 @@ biohackathons and codefests where papers are generated from markdown
 templates (see markdown [[https://raw.githubusercontent.com/biohackrxiv/bhxiv-gen-pdf/master/example/logic/paper.md][example]]).
 
 See the [[./doc/elixir_biohackathon2020/paper.md][mini publication]] for background etc.
+
+* Install
+
+* Run
+
+To parse the input files and generate RDF run
+
+: ./bin/biohackr2rdf.rb

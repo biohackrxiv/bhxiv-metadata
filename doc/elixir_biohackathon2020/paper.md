@@ -75,15 +75,18 @@ The markdown link should be able to fetch the parseable file.
 
 ## Transform metadata to RDF
 
-In the next step we take markdown file and tranform that into RDF
-using a small subset of the scholarly publication
-[ontology](https://schema.org/ScholarlyArticle) from schema.org
-[cite].
+In the next step we take markdown file and tranform that into RDF, the
+language of the semantic web, using a small subset of the scholarly
+publication [ontology](https://schema.org/ScholarlyArticle) from
+schema.org [cite].
 
-In future work the scholarly annotation can be expanded. For example
-we could parse the number of downloads and other information from the
-OSF.io website and transform that into RDF. We can also add indexing
-services, such as PMC and Google Scholar.
+In the first virsion we opted to generate RDF with Ruby erb templates.
+
+In future work we could introduce Shex to validate entires and the
+scholarly annotation can be expanded. For example we could parse the
+number of downloads and other information from the OSF.io website and
+transform that into RDF. We can also add indexing services, such as
+Pubmed Central and Google Scholar.
 
 # Discussion
 
