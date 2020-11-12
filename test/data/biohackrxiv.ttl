@@ -44,3 +44,8 @@
     <https://schema.org/url> <https://raw.githubusercontent.com/thepanacealab/covid19_biohackathon/master/treatments_misinformation/paper.md> ;
     bhx:Event <https://github.com/virtual-biohackathons/covid-19-bh20> .
 
+<https://biohackrxiv.org/8qdse/> <http://purl.org/dc/elements/1.1/title> "Data validation and schema interoperability" ;
+    <https://schema.org/sameAs> <https://doi.org/10.37044/osf.io/8qdse> ;
+    <https://schema.org/url> <https://raw.githubusercontent.com/ljgarcia/Deleteme/master/paper.md> ;
+    bhx:Event <http://2019.biohackathon.org/> .
+
