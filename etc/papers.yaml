@@ -1,5 +1,42 @@
+---
 papers:
-- id: https://biohackrxiv.org/km9ux/
-  doi: https://doi.org/10.37044/osf.io/km9ux
-  url: https://raw.githubusercontent.com/journal-of-research-objects/Example-BioHackrXiv-Paper/master/paper.md
+# Logic Programming Working Group
+- id:    https://biohackrxiv.org/km9ux/
+  doi:   https://doi.org/10.37044/osf.io/km9ux
+  url:   https://raw.githubusercontent.com/journal-of-research-objects/Example-BioHackrXiv-Paper/master/paper.md
   event: Fukuoka2019
+# TogoEx: the integration of gene expression data
+- id:    https://biohackrxiv.org/esrc9/
+  doi:   https://doi.org/10.37044/osf.io/esrc9
+  url:   NULL
+  event: Elixir2019
+# Comparison of SARS-CoV-2 variants with INSaFLU and galaxyproject
+- id:    https://biohackrxiv.org/9d3cz/
+  doi:   https://doi.org/10.37044/osf.io/9d3cz
+  url:   https://raw.githubusercontent.com/rsgturkeygroup3/BioHackathon/master/paper.md
+  event: Covid2020
+# Global analysis of human SARS-CoV-2 infection and host-virus interaction
+- id:    https://biohackrxiv.org/b4zkp/
+  doi:   https://doi.org/10.37044/osf.io/b4zkp
+  url:   https://raw.githubusercontent.com/avantikalal/covid-gene-expression/master/report/paper.md
+# Determining a novel feature-space for SARS-COV2 Sequence data
+  event: Covid2020
+- id:    https://biohackrxiv.org/xt7gw/
+  doi:   https://doi.org/10.37044/osf.io/xt7gw
+  url:   https://raw.githubusercontent.com/covid19-bh-machine-learning/master/master/report/paper.md
+  event: Covid2020
+# Characterization of Potential Drug Treatments for COVID-19 using Twitter
+- id:    https://biohackrxiv.org/cu2s9/
+  doi:   https://doi.org/10.37044/osf.io/cu2s9
+  url:   https://raw.githubusercontent.com/thepanacealab/covid19_biohackathon/master/treatments_misinformation/paper.md
+  event: Covid2020
+# Data validation and schema interoperability
+- id:    https://biohackrxiv.org/8qdse/
+  doi:   https://doi.org/10.37044/osf.io/8qdse
+  url:   NULL
+  event: Covid2020
+
+# - id:
+#   doi:
+#   url:
+#   event: Covid2020

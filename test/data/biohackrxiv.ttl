@@ -1,0 +1,46 @@
+@prefix bhx: <http://biohackerxiv.org/resource> .
+
+<https://github.com/elixir-europe/BioHackathon-projects-2020> rdf:label "BioHackathon Europe 2020 Online" ;
+    rdf:ID "BH20EU"
+    a <https://schema.org/Event> .
+<https://github.com/virtual-biohackathons/covid-19-bh20> rdf:label "Virtual BioHackathon Covid-2020" ;
+    rdf:ID "Covid2020"
+    a <https://schema.org/Event> .
+<https://github.com/elixir-europe/BioHackathon-projects-2019> rdf:label "BioHackathon EUROPE, Paris, France, 2019" ;
+    rdf:ID "Elixir2019"
+    a <https://schema.org/Event> .
+<http://2019.biohackathon.org/> rdf:label "NBDC/DBCLS BioHackathon, Fukuoka, Japan, 2019" ;
+    rdf:ID "Japan2019"
+    a <https://schema.org/Event> .
+<http://2019.biohackathon.org/> rdf:label "NBDC/DBCLS BioHackathon, Fukuoka, Japan, 2019" ;
+    rdf:ID "Fukuoka2019"
+    a <https://schema.org/Event> .
+<http://2018.biohackathon.org/> rdf:label "NBDC/DBCLS BioHackathon, Matsue, Japan, 2018" ;
+    rdf:ID "Japan2018"
+    a <https://schema.org/Event> .
+
+<https://biohackrxiv.org/km9ux/> <http://purl.org/dc/elements/1.1/title> "Logic Programming Working Group" ;
+    <https://schema.org/sameAs> <https://doi.org/10.37044/osf.io/km9ux> ;
+    <https://schema.org/url> <https://raw.githubusercontent.com/journal-of-research-objects/Example-BioHackrXiv-Paper/master/paper.md> ;
+    bhx:Event <http://2019.biohackathon.org/> .
+
+<https://biohackrxiv.org/9d3cz/> <http://purl.org/dc/elements/1.1/title> "Comparison of SARS-CoV-2 variants with INSaFLU and galaxyproject" ;
+    <https://schema.org/sameAs> <https://doi.org/10.37044/osf.io/9d3cz> ;
+    <https://schema.org/url> <https://raw.githubusercontent.com/rsgturkeygroup3/BioHackathon/master/paper.md> ;
+    bhx:Event <https://github.com/virtual-biohackathons/covid-19-bh20> .
+
+<https://biohackrxiv.org/b4zkp/> <http://purl.org/dc/elements/1.1/title> "Global analysis of human SARS-CoV-2 infection and host-virus interaction" ;
+    <https://schema.org/sameAs> <https://doi.org/10.37044/osf.io/b4zkp> ;
+    <https://schema.org/url> <https://raw.githubusercontent.com/avantikalal/covid-gene-expression/master/report/paper.md> ;
+    bhx:Event <https://github.com/virtual-biohackathons/covid-19-bh20> .
+
+<https://biohackrxiv.org/xt7gw/> <http://purl.org/dc/elements/1.1/title> "Determining a novel feature-space for SARS-COV2 Sequence data" ;
+    <https://schema.org/sameAs> <https://doi.org/10.37044/osf.io/xt7gw> ;
+    <https://schema.org/url> <https://raw.githubusercontent.com/covid19-bh-machine-learning/master/master/report/paper.md> ;
+    bhx:Event <https://github.com/virtual-biohackathons/covid-19-bh20> .
+
+<https://biohackrxiv.org/cu2s9/> <http://purl.org/dc/elements/1.1/title> "Characterization of Potential Drug Treatments for COVID-19 using Twitter" ;
+    <https://schema.org/sameAs> <https://doi.org/10.37044/osf.io/cu2s9> ;
+    <https://schema.org/url> <https://raw.githubusercontent.com/thepanacealab/covid19_biohackathon/master/treatments_misinformation/paper.md> ;
+    bhx:Event <https://github.com/virtual-biohackathons/covid-19-bh20> .
+

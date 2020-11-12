@@ -6,7 +6,7 @@ require 'uri'
 require 'net/http'
 require 'erb'
 
-OUTPUT="biohackrxiv.ttl"
+OUTPUT="test/data/biohackrxiv.ttl"
 
 RDF_HEADER = <<HEADER
 @prefix bhx: <http://biohackerxiv.org/resource> .
@@ -48,24 +48,27 @@ File.open(OUTPUT, 'w') do |file|
     url = paper['url']
     id = paper['id']
     doi = paper['doi']
-    print "Fetching '#{url}'...\n"
-    uri = URI.parse(url)
-    # fetch markdown
-    md = ""
-    Net::HTTP.get(uri).split("\n").each { |line|
-      break if line =~ /^$/
-      md += line+"\n" if md != "---"
-    }
-    print md
+    if url
+      print "Fetching '#{url}'...\n"
+      uri = URI.parse(url)
+      # fetch markdown
+      md = ""
+      Net::HTTP.get(uri).split("\n").each { |line|
+        break if line =~ /^$/
+        md += line+"\n" if md != "---"
+      }
+      print md
 
-    info = YAML.load(md).merge(paper)
-    pp info
-    title = info['title']
-    id = info['event']
-    event = events[id]['url']
-    raise "Missing event for #{id}" if !event
-    renderer = ERB.new(rdf_paper_template)
-    file.print(output = renderer.result(binding))
+      info = YAML.load(md).merge(paper)
+      pp info
+      title = info['title']
+      id = info['id']
+      eventid = info['event']
+      event = events[eventid]['url']
+      raise "Missing event for #{id}" if !event
+      renderer = ERB.new(rdf_paper_template)
+      file.print(output = renderer.result(binding))
+    end
   end
 end
 
