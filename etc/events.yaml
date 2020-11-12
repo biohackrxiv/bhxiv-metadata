@@ -1,0 +1,21 @@
+---
+events:
+  BH20EU:
+    url: https://github.com/elixir-europe/BioHackathon-projects-2020
+    txt: BioHackathon Europe 2020 Online
+  Covid2020:
+    url: https://github.com/virtual-biohackathons/covid-19-bh20
+    txt: Virtual BioHackathon Covid-2020
+  Elixir2019:
+    url: https://github.com/elixir-europe/BioHackathon-projects-2019
+    txt: BioHackathon EUROPE, Paris, France, 2019
+  Japan2019:
+    url: http://2019.biohackathon.org/
+    txt: NBDC/DBCLS BioHackathon, Fukuoka, Japan, 2019
+  Fukuoka2019:
+    url: http://2019.biohackathon.org/
+    txt: NBDC/DBCLS BioHackathon, Fukuoka, Japan, 2019
+  Japan2018:
+    url: http://2018.biohackathon.org/
+    txt: NBDC/DBCLS BioHackathon, Matsue, Japan, 2018
+---
