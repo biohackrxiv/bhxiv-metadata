@@ -13,3 +13,21 @@ See the [[./doc/elixir_biohackathon2020/paper.md][mini publication]] for backgro
 To parse the input files and generate RDF run
 
 : ./bin/biohackr2rdf.rb
+
+* SPARQL
+
+A SPARQL endpoint runs at http://sparql.genenetwork.org/sparql/.
+
+This is a query that [[http://sparql.genenetwork.org/sparql/?default-graph-uri=&query=prefix+bhx%3A+%3Chttp%3A%2F%2Fbiohackerxiv.org%2Fresource%3E+%0D%0Aprefix+dc%3A+%3Chttp%3A%2F%2Fpurl.org%2Fdc%2Felements%2F1.1%2F%3E%0D%0A%0D%0ASELECT+DISTINCT+%3Fcontributor%0D%0AFROM++++%3Chttps%3A%2F%2FBioHackrXiv.org%2Fgraph%3E%0D%0AWHERE+++%7B+%0D%0A++%3Fbh+%3Chttp%3A%2F%2Fpurl.org%2Fdc%2Fterms%2Fcontributor%3E+%3Fcontributor%0D%0A%7D%0D%0A%0D%0A&format=text%2Fhtml&timeout=0&debug=on&run=+Run+Query+][lists all contributors]]:
+
+#+begin_src sql
+  prefix bhx: <http://biohackerxiv.org/resource>
+
+  SELECT DISTINCT ?contributor
+  FROM    <https://BioHackrXiv.org/graph>
+  WHERE   {
+    ?bh <http://purl.org/dc/terms/contributor> ?contributor
+  }
+#+end_src
+
+The endpoint can also generate JSON.

@@ -179,6 +179,9 @@ WHERE   {
 73 contributors
 ```
 
+See the README file in the github repo for a SPARQL endpoint that
+supports the queries.
+
 ## Example of using output
 
 WIP
