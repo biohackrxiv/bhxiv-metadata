@@ -5,6 +5,7 @@ require 'pp'
 require 'uri'
 require 'net/http'
 require 'erb'
+require 'fileutils'
 
 OUTPUT="test/data/biohackrxiv.ttl"
 
@@ -53,9 +54,10 @@ File.open(OUTPUT, 'w') do |file|
     if url
       print "Fetching '#{url}'...\n"
       uri = URI.parse(url)
+      data = Net::HTTP.get(uri)
       # fetch markdown
       md = ""
-      Net::HTTP.get(uri).split("\n").each { |line|
+      data.split("\n").each { |line|
         break if line =~ /^$/
         md += line+"\n" if md != "---"
       }
@@ -70,9 +72,15 @@ File.open(OUTPUT, 'w') do |file|
       raise "Missing event for #{id}" if !event
       renderer = ERB.new(rdf_paper_template)
       file.print(output = renderer.result(binding))
+      # cache file
+      dir = "papers/"+eventid
+      FileUtils.mkdir_p dir
+      fn = dir + "/" + title + ".md"
+      File.open(fn, 'w') { |file| file.write(data) }
     end
   end
 end
 
 print "Wrote RDF to #{OUTPUT}\n"
 print "You may want to validate with: rapper -i turtle test/data/biohackrxiv.ttl\n"
+print "Update graph with: curl -X PUT --digest -u dba:dba -H Content-Type:text/turtle -T test/data/biohackrxiv.ttl -G http://localhost:8890/sparql-graph-crud-auth --data-urlencode graph=https://BioHackrXiv.org/graph\n"
