@@ -70,7 +70,7 @@ File.open(OUTPUT, 'w') do |file|
       }
       print("Metadata: ",md)
 
-      info = YAML.load(md).merge(paper)
+      info = YAML.load(md).merge(paper) # note that contents of paper override md
       pp info
       title = info['title']
       id = info['id']

@@ -27,14 +27,14 @@ authors_short: Pjotr Prins & \emph{et al.}
 https://biohackrxiv.org/ is a scholarly publication service for
 biohackathons and codefests where papers are generated from markdown
 templates where the header is a YAML/JSON record that includes the
-title, authors, affiliations and tags. Currently the publications are
-hosted at osf.io, a free, open source web application that connects
-and supports the research workflow, enabling scientists to increase
-the efficiency and effectiveness of their research. OSF is run by the
-non-profit Center for Open Science (COS) and charges for the handing
-out of digital object identifiers (DOIs). The OSF site provides
-support for basic editorial functions and displaying PDFs. More
-importantly it has a basic search infrastructure.
+title, authors, affiliations and tags. Currently the BioHackrXiv
+publications are hosted at osf.io, an open source website that
+connects and supports the research workflow, enabling scientists to
+increase the efficiency and effectiveness of their research. OSF is
+run by the non-profit Center for Open Science (COS) and charges for
+the handing out of digital object identifiers (DOIs). The OSF site
+provides support for basic editorial functions and displaying
+PDFs. More importantly it has a basic search infrastructure.
 
 Many projects in biohackathons are about using FAIR data. The OSF site
 lacks a number of facilities. For example it is not easy to
@@ -43,26 +43,18 @@ e.g. `biohackathon 2019 Japan'. Another problem is that there is no
 clear link between publications and the projects they refer to. It is
 necessary to read the PDF for that. Because the current setup is
 lacking in the findable (F) and accessible (A) of FAIR we decided to
-add a side-service that provides a SPARQL end point for queries and
-some simple HTML output that can be embedded in a BioHackathon
+add an additional service that provides a SPARQL endpoint for queries
+and some simple HTML output that can be embedded in a BioHackathon
 website.
 
 # Results
 
-<!--
-    State the problem you worked on
-    Give the state-of-the art/plan
-    Describe what you have done/results starting with The working group created...
-    Write a conclusion
-    Write up any future work
--->
-
 ## Linking metadata up
 
 To connect the main publication with its source and related markdown
-we maintain a [list](./etc/papers.yaml) that needs to be updated with
-every publication. This file contains hard links we can not easily
-acquire in other ways. E.g.
+we maintain a [list](./etc/papers.yaml) in a git repository that needs
+to be updated with every publication. This file contains hard links we
+can not easily acquire in other ways. E.g.
 
 ```yaml
 papers:
@@ -71,24 +63,24 @@ papers:
   markdown: https://raw.githubusercontent.com/journal-of-research-objects/Example-BioHackrXiv-Paper/master/paper.md
 ```
 
-The markdown link should be able to fetch the parseable file and fetch
-the header metadata. Metadata added in the
+The markdown link should be able to fetch the parsable markdown file and fetch
+the contained header metadata. Any conflicting metadata added by
 [papers.yaml](https://github.com/biohackrxiv/bhxiv-metadata/tree/main/etc)
 file overrides the metadata in the markdown file.
 
 Some metadata, such as the DOI, is presented as HTML on the OSF.io web
-pages. This data can be scraped to add to the metadata stored in
-papers.yaml (NYI).
+pages. In future work this data can be scraped to add to the metadata
+stored in papers.yaml.
 
 ## Transform metadata to RDF
 
-In the next step we take the markdown file and transform that into RDF, the
-language of the semantic web, using a small subset of the scholarly
-publication [ontology](https://schema.org/ScholarlyArticle) from
-schema.org [cite].
+After compiling the metadata we transform that into RDF, the language
+of the semantic web, using a small subset of the dublin core and
+scholarly publication [ontology](https://schema.org/ScholarlyArticle)
+from schema.org [cite].
 
-In the first version we opted to generate RDF with Ruby erb templates
-which means that validation happens in the source code. Some semantic
+In the first version we generate RDF with Ruby ERB templates which
+means that validation happens in the source code. Some semantic
 enrichment includes URIs for the biohackathons themselves. An example
 for one paper:
 
@@ -96,17 +88,25 @@ for one paper:
 <http://2019.biohackathon.org/> rdfs:comment "NBDC/DBCLS BioHackathon, Fukuoka, Japan, 2019" ;
     rdfs:label "Japan2019" ;
     rdf:type <https://schema.org/Event> .
-<http://2018.biohackathon.org/> rdfs:comment "NBDC/DBCLS BioHackathon, Matsue, Japan, 2018" ;
-    rdfs:label "Japan2018" ;
-    rdf:type <https://schema.org/Event> .
 
 <https://biohackrxiv.org/km9ux/> <http://purl.org/dc/elements/1.1/title> "Logic Programming Working Group" ;
     <https://schema.org/sameAs> <https://doi.org/10.37044/osf.io/km9ux> ;
     <https://schema.org/url> <https://raw.githubusercontent.com/journal-of-research-objects/Example-BioHackrXiv-Paper/master/paper.md> ;
     bhx:Event <http://2019.biohackathon.org/> .
+<https://biohackrxiv.org/km9ux/> dc:contributor "Chris Mungall" .
+<https://biohackrxiv.org/km9ux/> dc:contributor "Hirokazu Chiba" .
+<https://biohackrxiv.org/km9ux/> dc:contributor "Shuichi Kawashima" .
+<https://biohackrxiv.org/km9ux/> dc:contributor "Yasunori Yamamoto" .
+<https://biohackrxiv.org/km9ux/> dc:contributor "Pjotr Prins" .
+<https://biohackrxiv.org/km9ux/> dc:contributor "Nada Amin" .
+<https://biohackrxiv.org/km9ux/> dc:contributor "Deepak Unni" .
+<https://biohackrxiv.org/km9ux/> dc:contributor "<nobr>William&nbsp;E.&nbsp;Byrd</nobr>" .
+
+<https://biohackrxiv.org/km9ux/> bhx:Tag "logic programming" .
 ```
 
-The full current RDF can be viewed
+Where the embedded HTML should be filtered out.  The full current RDF
+can be viewed
 [here](https://github.com/biohackrxiv/bhxiv-metadata/tree/main/test/data).
 
 In future work we may introduce Shex to validate entries. Also the
@@ -118,10 +118,10 @@ BioHackrXiv publications/reports.
 
 ## Generate output with SPARQL
 
-Once the RDF is uploaded into a triple store, such as Virtuoso, is is
-possible to write SPARQL queries that return records in JSON that can
-be parsed by a biohackaton website. For example, the following queries
-lists all biohackathons at time of writing:
+Once the RDF is uploaded into a triple store, such as Virtuoso, it is
+possible to write SPARQL queries that return records in a JSON format
+that can be parsed inside a (biohackaton) website. For example, the
+following queries lists all biohackathons at time of writing:
 
 ```sql
 prefix bhx: <http://biohackerxiv.org/resource>
@@ -194,7 +194,7 @@ that it is easy to track updates to upstream repositories.
 # Discussion
 
 We created a metadata resource for BioHackrXiv, a prepublishing site
-hosted on OSF.io, that allows for citeable Biohackathon reports.
+hosted on OSF.io, that allows for citable Biohackathon reports.
 
 We added metadata in RDF with information on the biohackathons,
 papers, repositories, contributors and tags. This metadata can be
@@ -205,7 +205,7 @@ Even though OSF.io does not provide all the functionality we require
 for BioHackrXiv, we are able to work around limitations and our
 functionality may be merged or linked into the main
 https://biohackrxiv.org/ website in the future. For now, we will host
-a separate web server as part of the preview PDF site.
+a separate web server we operate ourselves.
 
 ## Repository
 
