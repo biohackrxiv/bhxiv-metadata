@@ -71,11 +71,18 @@ papers:
   markdown: https://raw.githubusercontent.com/journal-of-research-objects/Example-BioHackrXiv-Paper/master/paper.md
 ```
 
-The markdown link should be able to fetch the parseable file.
+The markdown link should be able to fetch the parseable file and fetch
+the header metadata. Metadata added in the
+[papers.yaml](https://github.com/biohackrxiv/bhxiv-metadata/tree/main/etc)
+file overrides the metadata in the markdown file.
+
+Some metadata, such as the DOI, is presented as HTML on the OSF.io web
+pages. This data can be scraped to add to the metadata stored in
+papers.yaml (NYI).
 
 ## Transform metadata to RDF
 
-In the next step we take markdown file and tranform that into RDF, the
+In the next step we take the markdown file and transform that into RDF, the
 language of the semantic web, using a small subset of the scholarly
 publication [ontology](https://schema.org/ScholarlyArticle) from
 schema.org [cite].
@@ -86,37 +93,100 @@ enrichment includes URIs for the biohackathons themselves. An example
 for one paper:
 
 ```rdf
-@prefix bhx: <http://biohackerxiv.org/resource> .
-
-<https://github.com/elixir-europe/BioHackathon-projects-2019> rdf:label "Elixir2019" ;
-    a <https://schema.org/Event> .
-<https://github.com/elixir-europe/BioHackathon-projects-2020> rdf:label "Elixir2020" ;
-    a <https://schema.org/Event> .
-<http://2019.biohackathon.org/> rdf:label "Fukuoka2019" ;
-    a <https://schema.org/Event> .
+<http://2019.biohackathon.org/> rdfs:comment "NBDC/DBCLS BioHackathon, Fukuoka, Japan, 2019" ;
+    rdfs:label "Japan2019" ;
+    rdf:type <https://schema.org/Event> .
+<http://2018.biohackathon.org/> rdfs:comment "NBDC/DBCLS BioHackathon, Matsue, Japan, 2018" ;
+    rdfs:label "Japan2018" ;
+    rdf:type <https://schema.org/Event> .
 
 <https://biohackrxiv.org/km9ux/> <http://purl.org/dc/elements/1.1/title> "Logic Programming Working Group" ;
     <https://schema.org/sameAs> <https://doi.org/10.37044/osf.io/km9ux> ;
     <https://schema.org/url> <https://raw.githubusercontent.com/journal-of-research-objects/Example-BioHackrXiv-Paper/master/paper.md> ;
-    <bhx:Event> <http://2019.biohackathon.org/> .
+    bhx:Event <http://2019.biohackathon.org/> .
 ```
 
-In future work we could introduce Shex to validate entries and the
-scholarly annotation can be expanded. For example we could parse the
+The full current RDF can be viewed
+[here](https://github.com/biohackrxiv/bhxiv-metadata/tree/main/test/data).
+
+In future work we may introduce Shex to validate entries. Also the
+scholarly annotation can be expanded. For example, we could parse the
 number of downloads and other information from the OSF.io website and
-transform that into RDF. We can also add indexing services, such as
-Pubmed Central and Google Scholar.
+transform that into RDF. We can also add links to indexing services,
+such as Pubmed Central and Google Scholar, when they have added
+BioHackrXiv publications/reports.
+
+## Generate output with SPARQL
+
+Once the RDF is uploaded into a triple store, such as Virtuoso, is is
+possible to write SPARQL queries that return records in JSON that can
+be parsed by a biohackaton website. For example, the following queries
+lists all biohackathons at time of writing:
+
+```sql
+prefix bhx: <http://biohackerxiv.org/resource>
+
+SELECT  ?o
+FROM    <https://BioHackrXiv.org/graph>
+WHERE   {
+  ?bh rdfs:comment ?o
+  ?bh rdf:type <https://schema.org/Event> .
+  }
+
+  BioHackathon EUROPE, Paris, France, 2019
+  BioHackathon Europe 2020 Online
+  NBDC/DBCLS BioHackathon, Fukuoka, Japan, 2019
+  NBDC/DBCLS BioHackathon, Matsue, Japan, 2018
+  Virtual BioHackathon Covid-2020
+```
+
+To list all papers for one Biohackathon (Virtual BioHackathon
+Covid-2020):
+
+```sql
+prefix bhx: <http://biohackerxiv.org/resource>
+prefix dc: <http://purl.org/dc/elements/1.1/>
+
+SELECT  ?title ?paper
+FROM    <https://BioHackrXiv.org/graph>
+WHERE   {
+  ?bh rdfs:label "Covid2020" .
+  ?paper bhx:Event ?bh ;
+    dc:title ?title .
+}
+
+Global analysis of human SARS-CoV-2 infection and host-virus interaction
+	https://biohackrxiv.org/b4zkp/
+Comparison of SARS-CoV-2 variants with INSaFLU and galaxyproject
+	https://biohackrxiv.org/9d3cz/
+Characterization of Potential Drug Treatments for COVID-19 using Twitter
+	https://biohackrxiv.org/cu2s9/
+Determining a novel feature-space for SARS-COV2 Sequence data
+	https://biohackrxiv.org/xt7gw/
+```
+
+## Example of using output
+
+WIP
+
+## Caching results
+
+Websites and git repositories do not live forever. We decided to cache
+the papers and metadata locally in a the repository. For now we can
+fetch files and simply store them. When the fetch stops working we
+fall back on the cached version. One advantage of this approach is
+that it is easy to track updates to upstream repositories.
 
 # Discussion
+
+We created a metadata resource for BioHackrXiv, a prepublishing site
+hosted on OSF.io, that allows for citeable Biohackathon reports.
 
 Even though OSF.io does not provide all the functionality we require
 for BioHackrXiv, we are able to work around limitations and our
 functionality may be merged or linked into the main
-https://biohackrxiv.org/ website.
-
-Add notes on:
-
-1. Add metadata to markdown, e.g. for main source code repo
+https://biohackrxiv.org/ website in the future. For now, we will host
+a separate web server as part of the preview PDF site.
 
 ## Acknowledgements
 
