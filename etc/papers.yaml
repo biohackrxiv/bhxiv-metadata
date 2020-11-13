@@ -35,6 +35,11 @@ papers:
   doi:   https://doi.org/10.37044/osf.io/8qdse
   url:   https://raw.githubusercontent.com/ljgarcia/Deleteme/master/paper.md
   event: Japan2019
+# Disease and pathway maps for Rare Diseases
+- id: https://osf.io/reviews/preprints/biohackrxiv/gmbjv
+  doi: https://doi.org/10.37044/osf.io/gmbjv
+  url: https://raw.githubusercontent.com/elixir-europe/BioHackathon-projects-2019/master/projects/5/report/paper.md
+  event: Elixir2019
 
 # - id:
 #   doi:

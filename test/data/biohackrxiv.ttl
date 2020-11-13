@@ -53,3 +53,8 @@
     <https://schema.org/url> <https://raw.githubusercontent.com/ljgarcia/Deleteme/master/paper.md> ;
     bhx:Event <http://2019.biohackathon.org/> .
 
+<https://osf.io/reviews/preprints/biohackrxiv/gmbjv> <http://purl.org/dc/elements/1.1/title> "Disease and pathway maps for Rare Diseases" ;
+    <https://schema.org/sameAs> <https://doi.org/10.37044/osf.io/gmbjv> ;
+    <https://schema.org/url> <https://raw.githubusercontent.com/elixir-europe/BioHackathon-projects-2019/master/projects/5/report/paper.md> ;
+    bhx:Event <https://github.com/elixir-europe/BioHackathon-projects-2019> .
+
