@@ -1,28 +1,32 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix bhx: <http://biohackerxiv.org/resource> .
 
-<https://github.com/elixir-europe/BioHackathon-projects-2020> rdf:label "BioHackathon Europe 2020 Online" ;
-    rdf:ID "BH20EU"
-    a <https://schema.org/Event> .
-<https://github.com/virtual-biohackathons/covid-19-bh20> rdf:label "Virtual BioHackathon Covid-2020" ;
-    rdf:ID "Covid2020"
-    a <https://schema.org/Event> .
-<https://github.com/elixir-europe/BioHackathon-projects-2019> rdf:label "BioHackathon EUROPE, Paris, France, 2019" ;
-    rdf:ID "Elixir2019"
-    a <https://schema.org/Event> .
-<http://2019.biohackathon.org/> rdf:label "NBDC/DBCLS BioHackathon, Fukuoka, Japan, 2019" ;
-    rdf:ID "Japan2019"
-    a <https://schema.org/Event> .
-<http://2019.biohackathon.org/> rdf:label "NBDC/DBCLS BioHackathon, Fukuoka, Japan, 2019" ;
-    rdf:ID "Fukuoka2019"
-    a <https://schema.org/Event> .
-<http://2018.biohackathon.org/> rdf:label "NBDC/DBCLS BioHackathon, Matsue, Japan, 2018" ;
-    rdf:ID "Japan2018"
-    a <https://schema.org/Event> .
+<https://github.com/elixir-europe/BioHackathon-projects-2020> rdfs:comment "BioHackathon Europe 2020 Online" ;
+    rdfs:label "BH20EU" ;
+    rdf:type <https://schema.org/Event> .
+<https://github.com/virtual-biohackathons/covid-19-bh20> rdfs:comment "Virtual BioHackathon Covid-2020" ;
+    rdfs:label "Covid2020" ;
+    rdf:type <https://schema.org/Event> .
+<https://github.com/elixir-europe/BioHackathon-projects-2019> rdfs:comment "BioHackathon EUROPE, Paris, France, 2019" ;
+    rdfs:label "Elixir2019" ;
+    rdf:type <https://schema.org/Event> .
+<http://2019.biohackathon.org/> rdfs:comment "NBDC/DBCLS BioHackathon, Fukuoka, Japan, 2019" ;
+    rdfs:label "Japan2019" ;
+    rdf:type <https://schema.org/Event> .
+<http://2018.biohackathon.org/> rdfs:comment "NBDC/DBCLS BioHackathon, Matsue, Japan, 2018" ;
+    rdfs:label "Japan2018" ;
+    rdf:type <https://schema.org/Event> .
 
 <https://biohackrxiv.org/km9ux/> <http://purl.org/dc/elements/1.1/title> "Logic Programming Working Group" ;
     <https://schema.org/sameAs> <https://doi.org/10.37044/osf.io/km9ux> ;
     <https://schema.org/url> <https://raw.githubusercontent.com/journal-of-research-objects/Example-BioHackrXiv-Paper/master/paper.md> ;
     bhx:Event <http://2019.biohackathon.org/> .
+
+<https://biohackrxiv.org/esrc9/> <http://purl.org/dc/elements/1.1/title> "TogoEx: the integration of gene expression data" ;
+    <https://schema.org/sameAs> <https://doi.org/10.37044/osf.io/esrc9> ;
+    <https://schema.org/url> <https://raw.githubusercontent.com/bonohu/BHEU2019report/master/paper.md> ;
+    bhx:Event <https://github.com/elixir-europe/BioHackathon-projects-2019> .
 
 <https://biohackrxiv.org/9d3cz/> <http://purl.org/dc/elements/1.1/title> "Comparison of SARS-CoV-2 variants with INSaFLU and galaxyproject" ;
     <https://schema.org/sameAs> <https://doi.org/10.37044/osf.io/9d3cz> ;

@@ -4,11 +4,11 @@ papers:
 - id:    https://biohackrxiv.org/km9ux/
   doi:   https://doi.org/10.37044/osf.io/km9ux
   url:   https://raw.githubusercontent.com/journal-of-research-objects/Example-BioHackrXiv-Paper/master/paper.md
-  event: Fukuoka2019
+  event: Japan2019
 # TogoEx: the integration of gene expression data
 - id:    https://biohackrxiv.org/esrc9/
   doi:   https://doi.org/10.37044/osf.io/esrc9
-  url:   NULL
+  url:   https://raw.githubusercontent.com/bonohu/BHEU2019report/master/paper.md
   event: Elixir2019
 # Comparison of SARS-CoV-2 variants with INSaFLU and galaxyproject
 - id:    https://biohackrxiv.org/9d3cz/

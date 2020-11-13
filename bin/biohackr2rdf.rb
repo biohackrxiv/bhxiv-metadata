@@ -9,14 +9,16 @@ require 'erb'
 OUTPUT="test/data/biohackrxiv.ttl"
 
 RDF_HEADER = <<HEADER
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix bhx: <http://biohackerxiv.org/resource> .
 
 HEADER
 
 rdf_event_template = <<ETEMPLATE
-<<%= url %>> rdf:label "<%= descr %>" ;
-    rdf:ID "<%= name %>"
-    a <https://schema.org/Event> .
+<<%= url %>> rdfs:comment "<%= descr %>" ;
+    rdfs:label "<%= name %>" ;
+    rdf:type <https://schema.org/Event> .
 ETEMPLATE
 
 rdf_paper_template = <<PTEMPLATE
@@ -73,3 +75,4 @@ File.open(OUTPUT, 'w') do |file|
 end
 
 print "Wrote RDF to #{OUTPUT}\n"
+print "You may want to validate with: rapper -i turtle test/data/biohackrxiv.ttl\n"
