@@ -182,11 +182,22 @@ that it is easy to track updates to upstream repositories.
 We created a metadata resource for BioHackrXiv, a prepublishing site
 hosted on OSF.io, that allows for citeable Biohackathon reports.
 
+We added metadata in RDF with information on the biohackathons,
+papers, repositories, contributors and tags. This metadata can be
+expanded and that can easily be done by modifying the source code in
+below repository.
+
 Even though OSF.io does not provide all the functionality we require
 for BioHackrXiv, we are able to work around limitations and our
 functionality may be merged or linked into the main
 https://biohackrxiv.org/ website in the future. For now, we will host
 a separate web server as part of the preview PDF site.
+
+## Repository
+
+We invite contributions to parsing and adding relevant metadata to
+BioHackrXiv RDF. Simply do a pull request on
+https://github.com/biohackrxiv/bhxiv-metadata
 
 ## Acknowledgements
 

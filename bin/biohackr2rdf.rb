@@ -12,7 +12,8 @@ OUTPUT="test/data/biohackrxiv.ttl"
 RDF_HEADER = <<HEADER
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix bhx: <http://biohackerxiv.org/resource> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix bhx: <http://biohackerxiv.org/resource/> .
 
 HEADER
 
@@ -28,6 +29,12 @@ rdf_paper_template = <<PTEMPLATE
     <https://schema.org/url> <<%= url %>> ;
     bhx:Event <<%= event %>> .
 
+<% authors.each do | author | %>
+<<%= id %>> dc:contributor "<%= author['name'] %>" .
+<% end %>
+<% tags.each do | tag | %>
+<<%= id %>> bhx:Tag "<%= tag %>" .
+<% end %>
 PTEMPLATE
 
 print "BioHackrXiv metadata generator...\n"
@@ -61,12 +68,14 @@ File.open(OUTPUT, 'w') do |file|
         break if line =~ /^$/
         md += line+"\n" if md != "---"
       }
-      print md
+      print("Metadata: ",md)
 
       info = YAML.load(md).merge(paper)
       pp info
       title = info['title']
       id = info['id']
+      authors = info['authors']
+      tags = info['tags']
       eventid = info['event']
       event = events[eventid]['url']
       raise "Missing event for #{id}" if !event
