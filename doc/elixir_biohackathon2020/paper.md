@@ -165,6 +165,20 @@ Determining a novel feature-space for SARS-COV2 Sequence data
 	https://biohackrxiv.org/xt7gw/
 ```
 
+After adding contributors to RDF we can count all contributors
+
+```sql
+prefix bhx: <http://biohackerxiv.org/resource>
+
+SELECT DISTINCT COUNT(?contributor)
+FROM    <https://BioHackrXiv.org/graph>
+WHERE   {
+  ?bh <http://purl.org/dc/terms/contributor> ?contributor
+}
+
+73 contributors
+```
+
 ## Example of using output
 
 WIP
