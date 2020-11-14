@@ -27,21 +27,21 @@
     a schema:CreativeWork .
 
 
-<https://biohackrxiv.org/km9ux/> dc:contributor "Chris Mungall"@en .
+<https://biohackrxiv.org/km9ux/> dc:contributor "Chris Mungall" .
 
-<https://biohackrxiv.org/km9ux/> dc:contributor "Hirokazu Chiba"@en .
+<https://biohackrxiv.org/km9ux/> dc:contributor "Hirokazu Chiba" .
 
-<https://biohackrxiv.org/km9ux/> dc:contributor "Shuichi Kawashima"@en .
+<https://biohackrxiv.org/km9ux/> dc:contributor "Shuichi Kawashima" .
 
-<https://biohackrxiv.org/km9ux/> dc:contributor "Yasunori Yamamoto"@en .
+<https://biohackrxiv.org/km9ux/> dc:contributor "Yasunori Yamamoto" .
 
-<https://biohackrxiv.org/km9ux/> dc:contributor "Pjotr Prins"@en .
+<https://biohackrxiv.org/km9ux/> dc:contributor "Pjotr Prins" .
 
-<https://biohackrxiv.org/km9ux/> dc:contributor "Nada Amin"@en .
+<https://biohackrxiv.org/km9ux/> dc:contributor "Nada Amin" .
 
-<https://biohackrxiv.org/km9ux/> dc:contributor "Deepak Unni"@en .
+<https://biohackrxiv.org/km9ux/> dc:contributor "Deepak Unni" .
 
-<https://biohackrxiv.org/km9ux/> dc:contributor "<nobr>William&nbsp;E.&nbsp;Byrd</nobr>"@en .
+<https://biohackrxiv.org/km9ux/> dc:contributor "<nobr>William&nbsp;E.&nbsp;Byrd</nobr>" .
 
 
 <https://biohackrxiv.org/km9ux/> bhx:Tag "logic programming"@en .
@@ -53,9 +53,9 @@
     a schema:CreativeWork .
 
 
-<https://biohackrxiv.org/esrc9/> dc:contributor "Hidemasa Bono"@en .
+<https://biohackrxiv.org/esrc9/> dc:contributor "Hidemasa Bono" .
 
-<https://biohackrxiv.org/esrc9/> dc:contributor "Takeya Kasukawa"@en .
+<https://biohackrxiv.org/esrc9/> dc:contributor "Takeya Kasukawa" .
 
 
 <https://biohackrxiv.org/esrc9/> bhx:Tag "gene expression"@en .
@@ -67,17 +67,17 @@
     a schema:CreativeWork .
 
 
-<https://biohackrxiv.org/9d3cz/> dc:contributor "Nazli Sila Kara"@en .
+<https://biohackrxiv.org/9d3cz/> dc:contributor "Nazli Sila Kara" .
 
-<https://biohackrxiv.org/9d3cz/> dc:contributor "Meltem Kutnu"@en .
+<https://biohackrxiv.org/9d3cz/> dc:contributor "Meltem Kutnu" .
 
-<https://biohackrxiv.org/9d3cz/> dc:contributor "Yasemin Utkueri"@en .
+<https://biohackrxiv.org/9d3cz/> dc:contributor "Yasemin Utkueri" .
 
-<https://biohackrxiv.org/9d3cz/> dc:contributor "Funda Yilmaz"@en .
+<https://biohackrxiv.org/9d3cz/> dc:contributor "Funda Yilmaz" .
 
-<https://biohackrxiv.org/9d3cz/> dc:contributor "Elif Bozlak"@en .
+<https://biohackrxiv.org/9d3cz/> dc:contributor "Elif Bozlak" .
 
-<https://biohackrxiv.org/9d3cz/> dc:contributor "Evrim Fer"@en .
+<https://biohackrxiv.org/9d3cz/> dc:contributor "Evrim Fer" .
 
 
 <https://biohackrxiv.org/9d3cz/> bhx:Tag "COVID-19"@en .
@@ -101,55 +101,55 @@
     a schema:CreativeWork .
 
 
-<https://biohackrxiv.org/b4zkp/> dc:contributor "Mariana G. Ferrarini"@en .
+<https://biohackrxiv.org/b4zkp/> dc:contributor "Mariana G. Ferrarini" .
 
-<https://biohackrxiv.org/b4zkp/> dc:contributor "Vanessa Aguiar-Pulido"@en .
+<https://biohackrxiv.org/b4zkp/> dc:contributor "Vanessa Aguiar-Pulido" .
 
-<https://biohackrxiv.org/b4zkp/> dc:contributor "Eric T. Dawson"@en .
+<https://biohackrxiv.org/b4zkp/> dc:contributor "Eric T. Dawson" .
 
-<https://biohackrxiv.org/b4zkp/> dc:contributor "Andrea Guarracino"@en .
+<https://biohackrxiv.org/b4zkp/> dc:contributor "Andrea Guarracino" .
 
-<https://biohackrxiv.org/b4zkp/> dc:contributor "Andreas Gruber"@en .
+<https://biohackrxiv.org/b4zkp/> dc:contributor "Andreas Gruber" .
 
-<https://biohackrxiv.org/b4zkp/> dc:contributor "Lukas Heumos"@en .
+<https://biohackrxiv.org/b4zkp/> dc:contributor "Lukas Heumos" .
 
-<https://biohackrxiv.org/b4zkp/> dc:contributor "Alexander Kanitz"@en .
+<https://biohackrxiv.org/b4zkp/> dc:contributor "Alexander Kanitz" .
 
-<https://biohackrxiv.org/b4zkp/> dc:contributor "Avantika Lal"@en .
+<https://biohackrxiv.org/b4zkp/> dc:contributor "Avantika Lal" .
 
-<https://biohackrxiv.org/b4zkp/> dc:contributor "Brett E. Pickett"@en .
+<https://biohackrxiv.org/b4zkp/> dc:contributor "Brett E. Pickett" .
 
-<https://biohackrxiv.org/b4zkp/> dc:contributor "Rita Rebollo"@en .
+<https://biohackrxiv.org/b4zkp/> dc:contributor "Rita Rebollo" .
 
-<https://biohackrxiv.org/b4zkp/> dc:contributor "Carlos Ruiz-Arenas"@en .
+<https://biohackrxiv.org/b4zkp/> dc:contributor "Carlos Ruiz-Arenas" .
 
-<https://biohackrxiv.org/b4zkp/> dc:contributor "Olaitan Awe"@en .
+<https://biohackrxiv.org/b4zkp/> dc:contributor "Olaitan Awe" .
 
-<https://biohackrxiv.org/b4zkp/> dc:contributor "Suhana Bedi"@en .
+<https://biohackrxiv.org/b4zkp/> dc:contributor "Suhana Bedi" .
 
-<https://biohackrxiv.org/b4zkp/> dc:contributor "Ben Busby"@en .
+<https://biohackrxiv.org/b4zkp/> dc:contributor "Ben Busby" .
 
-<https://biohackrxiv.org/b4zkp/> dc:contributor "Marielena Georgaki"@en .
+<https://biohackrxiv.org/b4zkp/> dc:contributor "Marielena Georgaki" .
 
-<https://biohackrxiv.org/b4zkp/> dc:contributor "Chela James"@en .
+<https://biohackrxiv.org/b4zkp/> dc:contributor "Chela James" .
 
-<https://biohackrxiv.org/b4zkp/> dc:contributor "Itziar Martinez Gonzalez"@en .
+<https://biohackrxiv.org/b4zkp/> dc:contributor "Itziar Martinez Gonzalez" .
 
-<https://biohackrxiv.org/b4zkp/> dc:contributor "Birgit Meldal"@en .
+<https://biohackrxiv.org/b4zkp/> dc:contributor "Birgit Meldal" .
 
-<https://biohackrxiv.org/b4zkp/> dc:contributor "Scheila G. Mucha"@en .
+<https://biohackrxiv.org/b4zkp/> dc:contributor "Scheila G. Mucha" .
 
-<https://biohackrxiv.org/b4zkp/> dc:contributor "Noushin Nabavi"@en .
+<https://biohackrxiv.org/b4zkp/> dc:contributor "Noushin Nabavi" .
 
-<https://biohackrxiv.org/b4zkp/> dc:contributor "Jakke Neiro"@en .
+<https://biohackrxiv.org/b4zkp/> dc:contributor "Jakke Neiro" .
 
-<https://biohackrxiv.org/b4zkp/> dc:contributor "Nuria Queralt Rosinach"@en .
+<https://biohackrxiv.org/b4zkp/> dc:contributor "Nuria Queralt Rosinach" .
 
-<https://biohackrxiv.org/b4zkp/> dc:contributor "Philippe Rocca-Serra"@en .
+<https://biohackrxiv.org/b4zkp/> dc:contributor "Philippe Rocca-Serra" .
 
-<https://biohackrxiv.org/b4zkp/> dc:contributor "Daniel Siqueira de Oliveira"@en .
+<https://biohackrxiv.org/b4zkp/> dc:contributor "Daniel Siqueira de Oliveira" .
 
-<https://biohackrxiv.org/b4zkp/> dc:contributor "Maria Tsagiopoulou"@en .
+<https://biohackrxiv.org/b4zkp/> dc:contributor "Maria Tsagiopoulou" .
 
 
 <https://biohackrxiv.org/b4zkp/> bhx:Tag "BioHackathon"@en .
@@ -181,27 +181,27 @@
     a schema:CreativeWork .
 
 
-<https://biohackrxiv.org/xt7gw/> dc:contributor "Francesco Ballesio"@en .
+<https://biohackrxiv.org/xt7gw/> dc:contributor "Francesco Ballesio" .
 
-<https://biohackrxiv.org/xt7gw/> dc:contributor "Ali Haider Bangash"@en .
+<https://biohackrxiv.org/xt7gw/> dc:contributor "Ali Haider Bangash" .
 
-<https://biohackrxiv.org/xt7gw/> dc:contributor "Didier Barradas-Bautista"@en .
+<https://biohackrxiv.org/xt7gw/> dc:contributor "Didier Barradas-Bautista" .
 
-<https://biohackrxiv.org/xt7gw/> dc:contributor "Justin Barton"@en .
+<https://biohackrxiv.org/xt7gw/> dc:contributor "Justin Barton" .
 
-<https://biohackrxiv.org/xt7gw/> dc:contributor "Andrea Guarracino"@en .
+<https://biohackrxiv.org/xt7gw/> dc:contributor "Andrea Guarracino" .
 
-<https://biohackrxiv.org/xt7gw/> dc:contributor "Lukas Heumos"@en .
+<https://biohackrxiv.org/xt7gw/> dc:contributor "Lukas Heumos" .
 
-<https://biohackrxiv.org/xt7gw/> dc:contributor "Aneesh Panoli"@en .
+<https://biohackrxiv.org/xt7gw/> dc:contributor "Aneesh Panoli" .
 
-<https://biohackrxiv.org/xt7gw/> dc:contributor "Marco Pietrosanto"@en .
+<https://biohackrxiv.org/xt7gw/> dc:contributor "Marco Pietrosanto" .
 
-<https://biohackrxiv.org/xt7gw/> dc:contributor "Anastasios Togkousidis"@en .
+<https://biohackrxiv.org/xt7gw/> dc:contributor "Anastasios Togkousidis" .
 
-<https://biohackrxiv.org/xt7gw/> dc:contributor "Phillip Davis"@en .
+<https://biohackrxiv.org/xt7gw/> dc:contributor "Phillip Davis" .
 
-<https://biohackrxiv.org/xt7gw/> dc:contributor "Fotis Psomopoulos"@en .
+<https://biohackrxiv.org/xt7gw/> dc:contributor "Fotis Psomopoulos" .
 
 
 <https://biohackrxiv.org/xt7gw/> bhx:Tag "Feature determination"@en .
@@ -225,9 +225,9 @@
     a schema:CreativeWork .
 
 
-<https://biohackrxiv.org/cu2s9/> dc:contributor "Ramya Tekumalla"@en .
+<https://biohackrxiv.org/cu2s9/> dc:contributor "Ramya Tekumalla" .
 
-<https://biohackrxiv.org/cu2s9/> dc:contributor "Juan M Banda"@en .
+<https://biohackrxiv.org/cu2s9/> dc:contributor "Juan M Banda" .
 
 
 <https://biohackrxiv.org/cu2s9/> bhx:Tag "COVID-19"@en .
@@ -243,23 +243,23 @@
     a schema:CreativeWork .
 
 
-<https://biohackrxiv.org/8qdse/> dc:contributor "Leyla Garcia"@en .
+<https://biohackrxiv.org/8qdse/> dc:contributor "Leyla Garcia" .
 
-<https://biohackrxiv.org/8qdse/> dc:contributor "Jerven Bolleman"@en .
+<https://biohackrxiv.org/8qdse/> dc:contributor "Jerven Bolleman" .
 
-<https://biohackrxiv.org/8qdse/> dc:contributor "Michel Dumontier"@en .
+<https://biohackrxiv.org/8qdse/> dc:contributor "Michel Dumontier" .
 
-<https://biohackrxiv.org/8qdse/> dc:contributor "Simon Jupp"@en .
+<https://biohackrxiv.org/8qdse/> dc:contributor "Simon Jupp" .
 
-<https://biohackrxiv.org/8qdse/> dc:contributor "Jose Emilio Labra Gayo"@en .
+<https://biohackrxiv.org/8qdse/> dc:contributor "Jose Emilio Labra Gayo" .
 
-<https://biohackrxiv.org/8qdse/> dc:contributor "Thomas Liener"@en .
+<https://biohackrxiv.org/8qdse/> dc:contributor "Thomas Liener" .
 
-<https://biohackrxiv.org/8qdse/> dc:contributor "Tazro Ohta"@en .
+<https://biohackrxiv.org/8qdse/> dc:contributor "Tazro Ohta" .
 
-<https://biohackrxiv.org/8qdse/> dc:contributor "Núria Queralt-Rosinach"@en .
+<https://biohackrxiv.org/8qdse/> dc:contributor "Núria Queralt-Rosinach" .
 
-<https://biohackrxiv.org/8qdse/> dc:contributor "Chunlei Wu"@en .
+<https://biohackrxiv.org/8qdse/> dc:contributor "Chunlei Wu" .
 
 
 <https://biohackrxiv.org/8qdse/> bhx:Tag "schema"@en .
@@ -277,25 +277,25 @@
     a schema:CreativeWork .
 
 
-<https://biohackrxiv.org/gmbjv> dc:contributor "Marek Ostaszewski"@en .
+<https://biohackrxiv.org/gmbjv> dc:contributor "Marek Ostaszewski" .
 
-<https://biohackrxiv.org/gmbjv> dc:contributor "Piotr Gawron"@en .
+<https://biohackrxiv.org/gmbjv> dc:contributor "Piotr Gawron" .
 
-<https://biohackrxiv.org/gmbjv> dc:contributor "David Hoksza"@en .
+<https://biohackrxiv.org/gmbjv> dc:contributor "David Hoksza" .
 
-<https://biohackrxiv.org/gmbjv> dc:contributor "Laura I. Furlong"@en .
+<https://biohackrxiv.org/gmbjv> dc:contributor "Laura I. Furlong" .
 
-<https://biohackrxiv.org/gmbjv> dc:contributor "Janet Pinero"@en .
+<https://biohackrxiv.org/gmbjv> dc:contributor "Janet Pinero" .
 
-<https://biohackrxiv.org/gmbjv> dc:contributor "Joaquin Dopazo"@en .
+<https://biohackrxiv.org/gmbjv> dc:contributor "Joaquin Dopazo" .
 
-<https://biohackrxiv.org/gmbjv> dc:contributor "Maria Pena Chilet"@en .
+<https://biohackrxiv.org/gmbjv> dc:contributor "Maria Pena Chilet" .
 
-<https://biohackrxiv.org/gmbjv> dc:contributor "Marina Esteban"@en .
+<https://biohackrxiv.org/gmbjv> dc:contributor "Marina Esteban" .
 
-<https://biohackrxiv.org/gmbjv> dc:contributor "Jose Luis Fernandez"@en .
+<https://biohackrxiv.org/gmbjv> dc:contributor "Jose Luis Fernandez" .
 
-<https://biohackrxiv.org/gmbjv> dc:contributor "Vincenza Colonna"@en .
+<https://biohackrxiv.org/gmbjv> dc:contributor "Vincenza Colonna" .
 
 
 <https://biohackrxiv.org/gmbjv> bhx:Tag "rare diseases"@en .
