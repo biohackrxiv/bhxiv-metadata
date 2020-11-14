@@ -114,24 +114,26 @@ enrichment includes URIs for the biohackathons themselves. An example
 for one paper:
 
 ```rdf
-<http://2019.biohackathon.org/> rdfs:comment "NBDC/DBCLS BioHackathon, Fukuoka, Japan, 2019" ;
-    rdfs:label "Japan2019" ;
-    rdf:type <https://schema.org/Event> .
+<http://2019.biohackathon.org/> schema:description "NBDC/DBCLS BioHackathon, Fukuoka, Japan, 2019"@en ;
+    schema:name "Japan2019" ;
+    a schema:Event .
 
-<https://biohackrxiv.org/km9ux/> <http://purl.org/dc/elements/1.1/title> "Logic Programming Working Group" ;
-    <https://schema.org/sameAs> <https://doi.org/10.37044/osf.io/km9ux> ;
-    <https://schema.org/url> <https://raw.githubusercontent.com/journal-of-research-objects/Example-BioHackrXiv-Paper/master/paper.md> ;
-    bhx:Event <http://2019.biohackathon.org/> .
-<https://biohackrxiv.org/km9ux/> dc:contributor "Chris Mungall" .
-<https://biohackrxiv.org/km9ux/> dc:contributor "Hirokazu Chiba" .
-<https://biohackrxiv.org/km9ux/> dc:contributor "Shuichi Kawashima" .
-<https://biohackrxiv.org/km9ux/> dc:contributor "Yasunori Yamamoto" .
-<https://biohackrxiv.org/km9ux/> dc:contributor "Pjotr Prins" .
-<https://biohackrxiv.org/km9ux/> dc:contributor "Nada Amin" .
-<https://biohackrxiv.org/km9ux/> dc:contributor "Deepak Unni" .
-<https://biohackrxiv.org/km9ux/> dc:contributor "<nobr>William&nbsp;E.&nbsp;Byrd</nobr>" .
+<https://biohackrxiv.org/km9ux/> dc:title "Logic Programming Working Group"@en ;
+    schema:sameAs <https://doi.org/10.37044/osf.io/km9ux> ;
+    schema:url <https://raw.githubusercontent.com/journal-of-research-objects/Example-BioHackrXiv-Paper/master/paper.md> ;
+    bhx:Event <http://2019.biohackathon.org/> ;
+    a schema:CreativeWork .
 
-<https://biohackrxiv.org/km9ux/> bhx:Tag "logic programming" .
+<https://biohackrxiv.org/km9ux/> dc:contributor "Chris Mungall"@en .
+<https://biohackrxiv.org/km9ux/> dc:contributor "Hirokazu Chiba"@en .
+<https://biohackrxiv.org/km9ux/> dc:contributor "Shuichi Kawashima"@en .
+<https://biohackrxiv.org/km9ux/> dc:contributor "Yasunori Yamamoto"@en .
+<https://biohackrxiv.org/km9ux/> dc:contributor "Pjotr Prins"@en .
+<https://biohackrxiv.org/km9ux/> dc:contributor "Nada Amin"@en .
+<https://biohackrxiv.org/km9ux/> dc:contributor "Deepak Unni"@en .
+<https://biohackrxiv.org/km9ux/> dc:contributor "<nobr>William&nbsp;E.&nbsp;Byrd</nobr>"@en .
+
+
 ```
 
 Where the embedded HTML should be filtered out.  The full current RDF
