@@ -1,0 +1,21 @@
+<h1>List papers for <%= bh %></h1>
+
+<p>
+
+<% papers.each do |paper| %>
+
+<ul>
+  <li>
+    <%= paper %>
+  </li>
+</ul>
+
+<% end %>
+
+<hr>
+
+<div>
+<% bhs.each_key do |k| %>
+[ <a href="/list?bh=<%= k %>"/a><%= k %></a> ]&nbsp;
+<% end %>
+</div>
