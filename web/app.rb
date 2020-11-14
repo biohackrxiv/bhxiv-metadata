@@ -42,10 +42,11 @@ get '/list' do
   bh = params[:bh]
 
   QUERY = <<QUERY_BODY
-SELECT  ?url ?name
+SELECT  ?url ?name ?descr
 FROM    <https://BioHackrXiv.org/graph>
 WHERE   {
- ?url rdfs:label ?name
+ ?url rdfs:label ?name .
+ ?url rdfs:comment ?descr
 }
 QUERY_BODY
 
@@ -53,8 +54,8 @@ QUERY_BODY
   list = sparql(QUERY)
   p list
   biohackathons = {}
-  list.each { |rec| biohackathons[rec[:name]] = rec[:url] }
+  list.each { |rec| biohackathons[rec[:name]] = {url: rec[:url], descr: rec[:descr]} }
   p biohackathons
   papers = [ "TEST" ]
-  erb :list, :locals => { bh: bh, bhs: biohackathons, papers: papers }
+  erb :list, :locals => { bh: bh, link: biohackathons[bh][:url], descr: biohackathons[bh][:descr], bhs: biohackathons, papers: papers }
 end
