@@ -27,7 +27,9 @@ authors_short: Pjotr Prins, Tazro Otha
 https://biohackrxiv.org/ is a scholarly publication service for
 biohackathons and codefests where papers are generated from markdown
 templates where the header is a YAML/JSON record that includes the
-title, authors, affiliations and tags. Templates are provided as an
+title, authors, affiliations and tags. The idea originated from the
+markdown layout used in the Journal of Open Source Software
+(JOSS)[@JOSS]. Templates are provided as an
 [example](https://github.com/biohackrxiv/submission-templates). A
 minimal metadata header has the following layout
 
@@ -106,7 +108,7 @@ stored in papers.yaml.
 After compiling the metadata we transform that into RDF, the language
 of the semantic web, using a small subset of the dublin core and
 scholarly publication [ontology](https://schema.org/ScholarlyArticle)
-from schema.org [cite].
+from schema.org.
 
 In the first version we generate RDF with Ruby ERB templates which
 means that validation happens in the source code. Some semantic
@@ -140,7 +142,7 @@ Where the embedded HTML should be filtered out.  The full current RDF
 can be viewed
 [here](https://github.com/biohackrxiv/bhxiv-metadata/tree/main/test/data).
 
-In future work we may introduce Shex to validate entries. Also the
+In future work we may introduce Shex to validate entries[@shex]. Also the
 scholarly annotation can be expanded. For example, we could parse the
 number of downloads and other information from the OSF.io website and
 transform that into RDF. We can also add links to indexing services,
@@ -247,8 +249,9 @@ repositories.
 
 # Discussion
 
-We created a metadata resource for BioHackrXiv, a prepublishing site
-hosted on OSF.io, that allows for citable Biohackathon reports.
+As part of the Elixir Biohackathon 2020 we created a metadata resource
+for BioHackrXiv, a prepublishing service hosted on OSF.io that allows
+for citable Biohackathon reports.
 
 We added metadata in RDF with information on the biohackathons,
 papers, repositories, contributors and tags. This metadata can be
@@ -271,7 +274,6 @@ are hosted on https://github.com/biohackrxiv/bhxiv-gen-pdf.
 ## Acknowledgements
 
 We thank the organizers of the Elixir BioHackathon 2020 for the event.
-And we tank DBCLS for sponsoring the COS facilities so BioHackrXiv.org
-can hand out DOIs.
+We also thank DBCLS for sponsoring the OSF.io hosting of BioHackrXiv.
 
 ## References
