@@ -1,16 +1,19 @@
-<h1>List papers for <a href=<%= link %>><%= descr %></a></h1>
+<h2>List papers for <a href=<%= link %>><%= descr %></a></h2>
 
 <p>
 
+<ol>
+
 <% papers.each do |paper| %>
 
-<ul>
   <li>
-    <%= paper %>
+    <a href="<%= paper.url %>"><%= paper.title %></a> by
+    <%= paper.authors.join(", ") %>
   </li>
-</ul>
 
 <% end %>
+
+</ol>
 
 <hr>
 

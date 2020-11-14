@@ -14,26 +14,28 @@ RDF_HEADER = <<HEADER
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix dc: <http://purl.org/dc/terms/> .
 @prefix bhx: <http://biohackerxiv.org/resource/> .
+@prefix schema: <https://schema.org/> .
 
 HEADER
 
 rdf_event_template = <<ETEMPLATE
-<<%= url %>> rdfs:comment "<%= descr %>" ;
-    rdfs:label "<%= name %>" ;
-    rdf:type <https://schema.org/Event> .
+<<%= url %>> schema:description "<%= descr %>"@en ;
+    schema:name "<%= name %>" ;
+    a schema:Event .
 ETEMPLATE
 
 rdf_paper_template = <<PTEMPLATE
-<<%= id %>> <http://purl.org/dc/elements/1.1/title> "<%= title %>" ;
-    <https://schema.org/sameAs> <<%= doi %>> ;
-    <https://schema.org/url> <<%= url %>> ;
-    bhx:Event <<%= event %>> .
+<<%= id %>> dc:title "<%= title %>"@en ;
+    schema:sameAs <<%= doi %>> ;
+    schema:url <<%= url %>> ;
+    bhx:Event <<%= event %>> ;
+    a schema:CreativeWork .
 
 <% authors.each do | author | %>
-<<%= id %>> dc:contributor "<%= author['name'] %>" .
+<<%= id %>> dc:contributor "<%= author['name'] %>"@en .
 <% end %>
 <% tags.each do | tag | %>
-<<%= id %>> bhx:Tag "<%= tag %>" .
+<<%= id %>> bhx:Tag "<%= tag %>"@en .
 <% end %>
 PTEMPLATE
 

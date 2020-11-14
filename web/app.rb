@@ -7,9 +7,11 @@ require 'json'
 require 'ostruct'
 
 SPARQL_HEADER="
-prefix bhx: <http://biohackerxiv.org/resource>
-prefix dc: <http://purl.org/dc/elements/1.1/>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+prefix dc: <http://purl.org/dc/terms/>
+prefix bhx: <http://biohackerxiv.org/resource/>
+prefix schema: <https://schema.org/>
 "
 
 def sparql q, transform = nil
@@ -41,21 +43,51 @@ end
 get '/list' do
   bh = params[:bh]
 
-  QUERY = <<QUERY_BODY
+  EVENTS = <<SPARQL_EVENTS
 SELECT  ?url ?name ?descr
 FROM    <https://BioHackrXiv.org/graph>
 WHERE   {
- ?url rdfs:label ?name .
- ?url rdfs:comment ?descr
+ ?url schema:name ?name .
+ ?url schema:description ?descr
 }
-QUERY_BODY
+SPARQL_EVENTS
 
   # list = sparql(QUERY, lambda { |rec| rec } )
-  list = sparql(QUERY)
+  list = sparql(EVENTS)
   p list
   biohackathons = {}
   list.each { |rec| biohackathons[rec[:name]] = {url: rec[:url], descr: rec[:descr]} }
   p biohackathons
-  papers = [ "TEST" ]
+
+  PAPERS = <<SPARQL_PAPERS
+SELECT  ?title ?url
+FROM    <https://BioHackrXiv.org/graph>
+WHERE   {
+  ?bh schema:name "#{bh}" .
+  ?url bhx:Event ?bh ;
+    dc:title ?title .
+}
+SPARQL_PAPERS
+
+  papers = sparql(PAPERS, lambda { |paper| OpenStruct.new(paper) } )
+
+  papers.each do | paper |
+
+    AUTHORS = <<SPARQL_AUTHORS
+SELECT  ?author
+FROM    <https://BioHackrXiv.org/graph>
+WHERE   {
+  <#{paper.url}> dc:contributor ?author
+}
+SPARQL_AUTHORS
+
+    authors = sparql(AUTHORS, lambda { |paper| paper[:author] } )
+    p authors
+    paper.authors = authors
+
+  end
+
+  p papers
+
   erb :list, :locals => { bh: bh, link: biohackathons[bh][:url], descr: biohackathons[bh][:descr], bhs: biohackathons, papers: papers }
 end
