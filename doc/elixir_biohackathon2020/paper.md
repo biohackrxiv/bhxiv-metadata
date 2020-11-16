@@ -66,7 +66,7 @@ provides support for basic editorial functions and displaying
 PDFs. More importantly it has a basic search infrastructure.
 
 Many projects in biohackathons are about using FAIR data. The OSF site
-lacks a number of facilities. For example it is not easy to
+lacks a number of facilities. For example it is not easy or
 straightforward to list publications related to certain biohackathons,
 e.g. `biohackathon 2019 Japan'. Another problem is that there is no
 clear link between publications and the projects they refer to. It is
