@@ -94,6 +94,8 @@ papers:
   markdown: https://raw.githubusercontent.com/journal-of-research-objects/Example-BioHackrXiv-Paper/master/paper.md
 ```
 
+FIXME: add IPFS link
+
 The markdown link should be able to fetch the parsable markdown file and fetch
 the contained header metadata. Any conflicting metadata added by
 [papers.yaml](https://github.com/biohackrxiv/bhxiv-metadata/tree/main/etc)
@@ -262,7 +264,9 @@ Even though OSF.io does not provide all the functionality we require
 for BioHackrXiv, we are able to work around limitations and our
 functionality may be merged or linked into the main
 https://biohackrxiv.org/ website in the future. For now, we will host
-a separate web server we operate ourselves.
+a separate web server we operate ourselves and add IPFS permanent URLs
+that can be used instead of DOI to reference a document with a unique
+identifier.
 
 ## Repositories
 
