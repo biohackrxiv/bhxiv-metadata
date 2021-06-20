@@ -2,17 +2,27 @@
 
 https://biohackrxiv.org/ is a scholarly publication service for
 biohackathons and codefests where papers are generated from markdown
-templates (see markdown [[https://raw.githubusercontent.com/biohackrxiv/bhxiv-gen-pdf/master/example/logic/paper.md][example]]).
+templates (see markdown [[https://raw.githubusercontent.com/biohackrxiv/bhxiv-gen-pdf/master/example/logic/paper.md][example]]). In this repository we parse
+the metadata from the paper.md headers and turn that into JSON and
+RDF for processing and searches.
 
-See the [[./doc/elixir_biohackathon2020/paper.md][mini publication]] for background etc.
+See also the relevant [[./doc/elixir_biohackathon2020/paper.md][mini publication]] for background etc.
 
 * Install
+
+The scripts need:
+
+- ruby
 
 * Run
 
 To parse the input files and generate RDF run
 
-: ./bin/biohackr2rdf.rb
+: ruby ./bin/biohackr2rdf.rb
+
+To test the generated TTL use
+
+: rapper -i turtle test/data/biohackrxiv.ttl
 
 * SPARQL
 
@@ -30,4 +40,4 @@ This is a query that [[http://sparql.genenetwork.org/sparql/?default-graph-uri=&
   }
 #+end_src
 
-The endpoint can also generate JSON.
+Note that the virtuoso endpoint can also generate JSON.

@@ -1,0 +1,16 @@
+# Set up GNU Guix environment to run tooling
+#
+# check out Guix channel
+#
+#   cd $HOME 
+#   git clone https://git.genenetwork.org/guix-bioinformatics/guix-update-channel
+#
+# set PATHs with something like 
+#
+#   export PATH=~/opt/guix/bin:$PATH
+#   export GUIX_PACKAGE_PATH=$HOME/guix-update-channel
+#
+
+guix environment -C guix --ad-hoc ruby@2.6.5 nss-certs openssl curl git --network ruby-sinatra ruby-puma ruby-slim less vim ruby-mustermann bundler ruby-nio4r
+
+# Start puma (see README)

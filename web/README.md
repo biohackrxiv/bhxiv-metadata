@@ -2,7 +2,11 @@
 
 This sinatra application explores a few output screens. Run with
 
-    buntle exec app.rb
+    ruby app.rb
+
+or
+
+    bundle exec app.rb
 
 And visit
 

@@ -1,0 +1,15 @@
+# Set up GNU Guix environment to run the command line tooling
+#
+# set path with something like 
+#
+#   export PATH=~/opt/guix/bin:$PATH
+#
+# and
+
+guix environment -C guix --ad-hoc ruby nss-certs openssl curl git --network less vim raptor2
+
+# Test with
+#
+#   ruby ./bin/biohackr2rdf.rb
+#
+
