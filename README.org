@@ -3,8 +3,16 @@
 https://biohackrxiv.org/ is a scholarly publication service for
 biohackathons and codefests where papers are generated from markdown
 templates (see markdown [[https://raw.githubusercontent.com/biohackrxiv/bhxiv-gen-pdf/master/example/logic/paper.md][example]]). In this repository we parse
-the metadata from the paper.md headers and turn that into JSON and
+the metadata from the paper.md headers and turn that into JSON-LD and
 RDF for processing and searches.
+
+The (JSON-LD) output is a hierarchy of
+
+#+begin_quote
+- header
+- events [1-n]
+- publications [1-n]
+#+end_quote
 
 See also the relevant [[./doc/elixir_biohackathon2020/paper.md][mini publication]] for background etc.
 
@@ -15,6 +23,8 @@ The scripts need:
 - ruby
 
 * Generate JSON-LD
+
+
 
 : ruby ./bin/biohackr2json-ld.rb
 

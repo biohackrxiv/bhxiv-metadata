@@ -1,0 +1,108 @@
+{
+  "@context": "https://biohackrxiv.org/resource/",
+  "id": "https://biohackrxiv.org/list",
+  "type": "publications",
+  "name": "Publication List",
+  "issuer": "https://biohackrxiv.org/",
+  "issued": "2021-06-21 07:25:01 +0000",
+"events": [
+    {
+      "@id": "https://github.com/elixir-europe/BioHackathon-projects-2020",
+      "type": "event",
+      "name": "BH20EU",
+      "description": "BioHackathon Europe 2020 Online"
+    }
+    ,
+    {
+      "@id": "https://github.com/virtual-biohackathons/covid-19-bh20",
+      "type": "event",
+      "name": "Covid2020",
+      "description": "Virtual BioHackathon Covid-2020"
+    }
+    ,
+    {
+      "@id": "https://github.com/elixir-europe/BioHackathon-projects-2019",
+      "type": "event",
+      "name": "Elixir2019",
+      "description": "BioHackathon EUROPE, Paris, France, 2019"
+    }
+    ,
+    {
+      "@id": "http://2019.biohackathon.org/",
+      "type": "event",
+      "name": "Japan2019",
+      "description": "NBDC/DBCLS BioHackathon, Fukuoka, Japan, 2019"
+    }
+    ,
+    {
+      "@id": "http://2018.biohackathon.org/",
+      "type": "event",
+      "name": "Japan2018",
+      "description": "NBDC/DBCLS BioHackathon, Matsue, Japan, 2018"
+    }
+  ],
+"publications": [
+  {
+    "@id": "https://biohackrxiv.org/km9ux/",
+    "type": "publication",
+    "event": "Japan2019",
+    "doi": "https://doi.org/10.37044/osf.io/km9ux",
+    "url": "https://raw.githubusercontent.com/journal-of-research-objects/Example-BioHackrXiv-Paper/master/paper.md"
+  }
+    ,
+  {
+    "@id": "https://biohackrxiv.org/esrc9/",
+    "type": "publication",
+    "event": "Elixir2019",
+    "doi": "https://doi.org/10.37044/osf.io/esrc9",
+    "url": "https://raw.githubusercontent.com/bonohu/BHEU2019report/master/paper.md"
+  }
+    ,
+  {
+    "@id": "https://biohackrxiv.org/9d3cz/",
+    "type": "publication",
+    "event": "Covid2020",
+    "doi": "https://doi.org/10.37044/osf.io/9d3cz",
+    "url": "https://raw.githubusercontent.com/rsgturkeygroup3/BioHackathon/master/paper.md"
+  }
+    ,
+  {
+    "@id": "https://biohackrxiv.org/b4zkp/",
+    "type": "publication",
+    "event": "Covid2020",
+    "doi": "https://doi.org/10.37044/osf.io/b4zkp",
+    "url": "https://raw.githubusercontent.com/avantikalal/covid-gene-expression/master/report/paper.md"
+  }
+    ,
+  {
+    "@id": "https://biohackrxiv.org/xt7gw/",
+    "type": "publication",
+    "event": "Covid2020",
+    "doi": "https://doi.org/10.37044/osf.io/xt7gw",
+    "url": "https://raw.githubusercontent.com/covid19-bh-machine-learning/master/master/report/paper.md"
+  }
+    ,
+  {
+    "@id": "https://biohackrxiv.org/cu2s9/",
+    "type": "publication",
+    "event": "Covid2020",
+    "doi": "https://doi.org/10.37044/osf.io/cu2s9",
+    "url": "https://raw.githubusercontent.com/thepanacealab/covid19_biohackathon/master/treatments_misinformation/paper.md"
+  }
+    ,
+  {
+    "@id": "https://biohackrxiv.org/8qdse/",
+    "type": "publication",
+    "event": "Japan2019",
+    "doi": "https://doi.org/10.37044/osf.io/8qdse",
+    "url": "https://raw.githubusercontent.com/ljgarcia/Deleteme/master/paper.md"
+  }
+    ,
+  {
+    "@id": "https://biohackrxiv.org/gmbjv",
+    "type": "publication",
+    "event": "Elixir2019",
+    "doi": "https://doi.org/10.37044/osf.io/gmbjv",
+    "url": "https://raw.githubusercontent.com/elixir-europe/BioHackathon-projects-2019/master/projects/5/report/paper.md"
+  }
+  ]}
