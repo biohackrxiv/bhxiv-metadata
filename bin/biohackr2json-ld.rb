@@ -1,7 +1,8 @@
 #! /usr/bin/env ruby
 #
 # We use JSON-LD for exchanging metadata. For an explanation see, for
-# example: http://niem.github.io/json/tutorial/
+# example: https://w3c.github.io/json-ld-bp/    (explanation)
+#          http://niem.github.io/json/tutorial/ (implementation)
 
 require 'yaml'
 require 'pp'
@@ -27,7 +28,7 @@ HEADER
 
 print HEADER
 
-print "\"events\": [\n"
+print "  \"events\": [\n"
 
 events.each_with_index do | e,i |
   print "    ,\n" if i>0
@@ -43,7 +44,7 @@ EVENT
 end
 
 print "  ],\n"
-print "\"publications\": [\n"
+print "  \"publications\": [\n"
 
 papers.each_with_index do |paper,i|
   print "    ,\n" if i>0

@@ -4,8 +4,8 @@
   "type": "publications",
   "name": "Publication List",
   "issuer": "https://biohackrxiv.org/",
-  "issued": "2021-06-21 07:25:01 +0000",
-"events": [
+  "issued": "2021-06-21 09:29:54 +0000",
+  "events": [
     {
       "@id": "https://github.com/elixir-europe/BioHackathon-projects-2020",
       "type": "event",
@@ -41,7 +41,7 @@
       "description": "NBDC/DBCLS BioHackathon, Matsue, Japan, 2018"
     }
   ],
-"publications": [
+  "publications": [
   {
     "@id": "https://biohackrxiv.org/km9ux/",
     "type": "publication",
