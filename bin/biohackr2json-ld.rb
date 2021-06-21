@@ -10,8 +10,47 @@ require 'uri'
 require 'net/http'
 require 'erb'
 require 'fileutils'
+require 'optparse'
+
+USAGE =<<EOU
+
+  bio-table transforms, filters and reorders table files (CSV, tab-delimited).
+
+EOU
 
 $stderr.print "BioHackrXiv metadata generator...\n"
+
+options = {show_help: false}
+# options[:show_help] = true if ARGV.size == 0
+
+opts = OptionParser.new do |o|
+  o.banner = "Usage: #{File.basename($0)} [options]\n\n"
+  o.on("--debug", "Show debug messages") do |v|
+    options[:debug] = true
+  end
+
+  o.separator ""
+
+  o.on_tail('-h', '--help', 'Display this help and exit') do
+    options[:show_help] = true
+  end
+end
+
+begin
+  opts.parse!(ARGV)
+
+  if options[:show_help]
+    print opts
+    print USAGE
+  end
+
+  # TODO: your code here
+  # use options for your logic
+rescue OptionParser::InvalidOption => e
+  options[:invalid_argument] = e.message
+end
+
+$stderr.print options if options[:debug]
 
 events = YAML.load_file('etc/events.yaml')['events']
 papers = YAML.load_file('etc/papers.yaml')['papers']
