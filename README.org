@@ -14,7 +14,13 @@ The scripts need:
 
 - ruby
 
+* Generate JSON-LD
+
+: ruby ./bin/biohackr2json-ld.rb
+
 * Generate RDF
+
+(Generating RDF will most likely change)
 
 : ruby ./bin/biohackr2rdf.rb
 
