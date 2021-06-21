@@ -14,15 +14,15 @@ The scripts need:
 
 - ruby
 
-* Run
-
-To parse the input files and generate RDF run
+* Generate RDF
 
 : ruby ./bin/biohackr2rdf.rb
 
 To test the generated TTL use
 
 : rapper -i turtle test/data/biohackrxiv.ttl
+
+For the latest version see [[./test/data/biohackrxiv.ttl]]
 
 * SPARQL
 
@@ -40,4 +40,4 @@ This is a query that [[http://sparql.genenetwork.org/sparql/?default-graph-uri=&
   }
 #+end_src
 
-Note that the virtuoso endpoint can also generate JSON.
+Note that the virtuoso endpoint itself can also generate JSON.
