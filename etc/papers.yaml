@@ -1,47 +1,65 @@
 ---
 papers:
-# Logic Programming Working Group
-- id:    https://biohackrxiv.org/km9ux
-  doi:   https://doi.org/10.37044/osf.io/km9ux
-  url:   https://raw.githubusercontent.com/journal-of-research-objects/Example-BioHackrXiv-Paper/master/paper.md
-  event: Japan2019
-# TogoEx: the integration of gene expression data
-- id:    https://biohackrxiv.org/esrc9
-  doi:   https://doi.org/10.37044/osf.io/esrc9
-  url:   https://raw.githubusercontent.com/bonohu/BHEU2019report/master/paper.md
+- id: https://biohackrxiv.org/wu9et
+  title: Knowledge graphs and wikidata subsetting
+  date_published: '2021-04-02'
+- id: https://biohackrxiv.org/b34vm
+  title: 'SB4ER: an ELIXIR Service Bundle for Epidemic Response'
+  date_published: '2021-03-25'
+- id: https://biohackrxiv.org/93qf4
+  title: Connecting molecular sequences to their voucher specimens
+  date_published: '2021-03-03'
+- id: https://biohackrxiv.org/gzfa8
+  title: Linking PubDictionaries with UniBioDicts to support Community Curation
+  date_published: '2020-12-25'
+- id: https://biohackrxiv.org/9mnkb
+  title: Progress on Data Stewardship Wizard during BioHackathon Europe 2020
+  date_published: '2020-12-06'
+- id: https://biohackrxiv.org/cu2s9
+  title: Characterization of Potential Drug Treatments for COVID-19 using Twitter
+  date_published: '2020-06-03'
+  doi: https://doi.org/10.37044/osf.io/cu2s9
+  url: https://raw.githubusercontent.com/thepanacealab/covid19_biohackathon/master/treatments_misinformation/paper.md
+  event: Covid2020
+- id: https://biohackrxiv.org/esrc9
+  title: 'TogoEx: the integration of gene expression data'
+  date_published: '2020-07-13'
+  doi: https://doi.org/10.37044/osf.io/esrc9
+  url: https://raw.githubusercontent.com/bonohu/BHEU2019report/master/paper.md
   event: Elixir2019
-# Comparison of SARS-CoV-2 variants with INSaFLU and galaxyproject
-- id:    https://biohackrxiv.org/9d3cz
-  doi:   https://doi.org/10.37044/osf.io/9d3cz
-  url:   https://raw.githubusercontent.com/rsgturkeygroup3/BioHackathon/master/paper.md
+- id: https://biohackrxiv.org/b4zkp
+  title: Global analysis of human SARS-CoV-2 infection and host-virus interaction
+  date_published: '2020-05-14'
+  doi: https://doi.org/10.37044/osf.io/b4zkp
+  url: https://raw.githubusercontent.com/avantikalal/covid-gene-expression/master/report/paper.md
   event: Covid2020
-# Global analysis of human SARS-CoV-2 infection and host-virus interaction
-- id:    https://biohackrxiv.org/b4zkp
-  doi:   https://doi.org/10.37044/osf.io/b4zkp
-  url:   https://raw.githubusercontent.com/avantikalal/covid-gene-expression/master/report/paper.md
-# Determining a novel feature-space for SARS-COV2 Sequence data
+- id: https://biohackrxiv.org/xt7gw
+  title: Determining a novel feature-space for SARS-CoV-2 sequence data
+  date_published: '2020-05-14'
+  doi: https://doi.org/10.37044/osf.io/xt7gw
+  url: https://raw.githubusercontent.com/covid19-bh-machine-learning/master/master/report/paper.md
   event: Covid2020
-- id:    https://biohackrxiv.org/xt7gw
-  doi:   https://doi.org/10.37044/osf.io/xt7gw
-  url:   https://raw.githubusercontent.com/covid19-bh-machine-learning/master/master/report/paper.md
+- id: https://biohackrxiv.org/9d3cz
+  title: Comparison of SARS-CoV-2 variants with INSaFLU and galaxyproject
+  date_published: '2020-05-14'
+  doi: https://doi.org/10.37044/osf.io/9d3cz
+  url: https://raw.githubusercontent.com/rsgturkeygroup3/BioHackathon/master/paper.md
   event: Covid2020
-# Characterization of Potential Drug Treatments for COVID-19 using Twitter
-- id:    https://biohackrxiv.org/cu2s9
-  doi:   https://doi.org/10.37044/osf.io/cu2s9
-  url:   https://raw.githubusercontent.com/thepanacealab/covid19_biohackathon/master/treatments_misinformation/paper.md
-  event: Covid2020
-# Data validation and schema interoperability
-- id:    https://biohackrxiv.org/8qdse
-  doi:   https://doi.org/10.37044/osf.io/8qdse
-  url:   https://raw.githubusercontent.com/ljgarcia/Deleteme/master/paper.md
+- id: https://biohackrxiv.org/km9ux
+  title: Logic Programming for the Biomedical Sciences
+  date_published: '2020-04-10'
+  doi: https://doi.org/10.37044/osf.io/km9ux
+  url: https://raw.githubusercontent.com/journal-of-research-objects/Example-BioHackrXiv-Paper/master/paper.md
   event: Japan2019
-# Disease and pathway maps for Rare Diseases
+- id: https://biohackrxiv.org/8qdse
+  title: Data validation and schema interoperability
+  date_published: '2020-04-07'
+  doi: https://doi.org/10.37044/osf.io/8qdse
+  url: https://raw.githubusercontent.com/ljgarcia/Deleteme/master/paper.md
+  event: Japan2019
 - id: https://biohackrxiv.org/gmbjv
+  title: Disease and pathway maps for Rare Diseases
+  date_published: '2020-07-13'
   doi: https://doi.org/10.37044/osf.io/gmbjv
   url: https://raw.githubusercontent.com/elixir-europe/BioHackathon-projects-2019/master/projects/5/report/paper.md
   event: Elixir2019
-
-# - id:
-#   doi:
-#   url:
-#   event: Covid2020

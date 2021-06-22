@@ -86,9 +86,9 @@ while url
       rec = {}
       if attr['is_published'] and not attr['is_preprint_orphan']
         date = attr['date_published'][0..9]
-        rec = { 'id': "https://biohackrxiv.org/"+o['id'],
-                'title': attr['title'],
-                'date_published': date
+        rec = { 'id' => "https://biohackrxiv.org/"+o['id'],
+                'title' => attr['title'],
+                'date_published' => date
               }
       end
       rec
@@ -100,22 +100,31 @@ end
 p2 = papers2.flatten
 
 # now combine p2 and the original papers
+# First create a hash of all OSF entries in p2
 h = {}
 p2.each do | v |
-  # p v
-  h[v[:id]] = v
+  h[v["id"]] = v
 end
 
+# now 'h' contains all OSF records indexed by "id"
+# run through the existing entries and combine
 papers.each do | v |
-  p v
   id = v["id"]
+  #p [id,h[id],v]
   if h[id]
-    p h[id]
+    h[id] = h[id].merge(v)
+    #p [id,h[id]]
+    #exit 1 if id == "https://biohackrxiv.org/km9ux/"
   end
-  h[id] = h[id].merge(v)
+  #p v
+  #exit 1 if id == "https://biohackrxiv.org/km9ux/"
 end
 
-
-# print({"papers" => p2}.to_yaml)
+# remap to array
+a = []
+h.each { |k,v|
+  a.push v
+}
+print({"papers" => a}.to_yaml)
 
 # Fetch info on a paper https://api.osf.io/v2/preprints/wu9et/
