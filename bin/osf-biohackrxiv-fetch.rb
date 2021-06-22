@@ -3,6 +3,7 @@
 # Fetch metadata from OSF using the API
 
 require 'yaml'
+require 'json'
 require 'pp'
 require 'uri'
 require 'net/http'
@@ -59,18 +60,42 @@ papers = YAML.load_file('etc/papers.yaml')['papers']
 OUTDIR = "./papers/OSF"
 
 url = "https://api.osf.io/v2/providers/preprints/biohackrxiv/preprints/"
-fn = OUTDIR+"/page1.json"
-if not options[:no_fetch]
-  $stderr.print "Fetching '#{url}'...\n"
-  uri = URI.parse(url)
-  data = Net::HTTP.get(uri)
-  $stderr.print "Writing #{fn}...\n"
-  File.open(fn,"w") { |f|
-    f.write(data)
-  }
-else
-  data = File.read(fn)
-end
 
-print data
+papers2 = papers
+num = 0
+while url
+  num += 1
+  fn = OUTDIR+"/page#{num}.json"
+  if not options[:no_fetch]
+    $stderr.print "Fetching '#{url}'...\n"
+    uri = URI.parse(url)
+    data = Net::HTTP.get(uri)
+    File.open(fn,"w") { |f|
+      f.write(data)
+    }
+  else
+    data = File.read(fn)
+  end
+  $stderr.print "Processed #{fn}\n"
+
+  osf_ps = JSON.parse(data)
+
+  list =
+    osf_ps['data'].map do | o |
+      attr = o['attributes']
+      rec = {}
+      if attr['is_published'] and not attr['is_preprint_orphan']
+        date = attr['date_published'][0..9]
+        rec = { 'id': "https://biohackrxiv.org/"+o['id'],
+                'title': attr['title'],
+                'date_published': date
+              }
+      end
+      rec
+  end
+  papers2 += list
+  url = osf_ps['links']['next']
+end
+print papers2.flatten.to_yaml
+
 # Fetch info on a paper https://api.osf.io/v2/preprints/wu9et/
