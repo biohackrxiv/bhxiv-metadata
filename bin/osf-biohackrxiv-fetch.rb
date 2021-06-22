@@ -61,7 +61,7 @@ OUTDIR = "./papers/OSF"
 
 url = "https://api.osf.io/v2/providers/preprints/biohackrxiv/preprints/"
 
-papers2 = papers
+papers2 = []
 num = 0
 while url
   num += 1
@@ -96,6 +96,26 @@ while url
   papers2 += list
   url = osf_ps['links']['next']
 end
-print papers2.flatten.to_yaml
+
+p2 = papers2.flatten
+
+# now combine p2 and the original papers
+h = {}
+p2.each do | v |
+  # p v
+  h[v[:id]] = v
+end
+
+papers.each do | v |
+  p v
+  id = v["id"]
+  if h[id]
+    p h[id]
+  end
+  h[id] = h[id].merge(v)
+end
+
+
+# print({"papers" => p2}.to_yaml)
 
 # Fetch info on a paper https://api.osf.io/v2/preprints/wu9et/
