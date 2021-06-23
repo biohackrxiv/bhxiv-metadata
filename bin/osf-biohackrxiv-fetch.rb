@@ -1,6 +1,10 @@
 #! /usr/bin/env ruby
 #
-# Fetch metadata from OSF using the API
+# Fetch metadata from OSF using the API - essentially combines an
+# existing papers.yaml file with metadata and writes it out. Make sure
+# not to overwrite ./etc/papers.yaml - but use a 2-step approach
+#
+# Also make sure the IDs have no trailing slash.
 
 require 'yaml'
 require 'json'
@@ -12,7 +16,7 @@ require 'optparse'
 
 USAGE =<<EOU
 
-  Nothing yet
+  Fetch metadata from OSF
 
 EOU
 
@@ -123,6 +127,7 @@ end
 # remap to array
 a = []
 h.each { |k,v|
+  v["id"].chomp('/')
   a.push v
 }
 print({"papers" => a}.to_yaml)
