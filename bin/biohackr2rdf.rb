@@ -1,4 +1,6 @@
 #! /usr/bin/env ruby
+#
+# Use this script to generate the RDF TTL file
 
 require 'yaml'
 require 'pp'
@@ -60,10 +62,14 @@ File.open(OUTPUT, 'w') do |file|
     url = paper['url']
     id = paper['id']
     doi = paper['doi']
-    if url
+    if url and url != 'unknown'
       print "Fetching '#{url}'...\n"
       uri = URI.parse(url)
-      data = Net::HTTP.get(uri)
+      begin
+        data = Net::HTTP.get(uri)
+      rescue Errno::ECONNREFUSED
+        raise "Could not fetch #{url} for #{id}"
+      end
       # fetch markdown
       md = ""
       data.split("\n").each { |line|
@@ -79,6 +85,7 @@ File.open(OUTPUT, 'w') do |file|
       authors = info['authors']
       tags = info['tags']
       eventid = info['event']
+      raise "Uknown event for #{id} - please update ./etc/papers.yaml" if not eventid
       event = events[eventid]['url']
       raise "Missing event for #{id}" if !event
       renderer = ERB.new(rdf_paper_template)
@@ -88,6 +95,10 @@ File.open(OUTPUT, 'w') do |file|
       FileUtils.mkdir_p dir
       fn = dir + "/" + title + ".md"
       File.open(fn, 'w') { |file| file.write(data) }
+    else
+      if not url
+        raise "Undefined paper.md URL for #{id} - please update ./etc/papers.yaml"
+      end
     end
   end
 end

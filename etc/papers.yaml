@@ -3,27 +3,39 @@ papers:
 - id: https://biohackrxiv.org/v3jct
   title: Exploiting Bioschemas Markup to Populate IDPcentral
   date_published: '2021-06-22'
+  url: https://raw.githubusercontent.com/elixir-europe/BioHackathon-projects-2020/master/projects/24/IDPCentral/BioHackrXivReport/paper.md
   doi: https://doi.org/10.37044/osf.io/v3jct
+  event: Elixir2019
 - id: https://biohackrxiv.org/wu9et
   title: Knowledge graphs and wikidata subsetting
   date_published: '2021-04-02'
   doi: https://doi.org/10.37044/osf.io/wu9et
+  url: unknown
+  event: BH20EU
 - id: https://biohackrxiv.org/b34vm
   title: 'SB4ER: an ELIXIR Service Bundle for Epidemic Response'
   date_published: '2021-03-25'
   doi: https://doi.org/10.37044/osf.io/b34vm
+  url: https://raw.githubusercontent.com/savojard/sb4er-paper/main/paper.md
+  event: BH20EU
 - id: https://biohackrxiv.org/93qf4
   title: Connecting molecular sequences to their voucher specimens
   date_published: '2021-03-03'
   doi: https://doi.org/10.37044/osf.io/93qf4
+  url: https://raw.githubusercontent.com/elixir-europe/BioHackathon-projects-2020/master/projects/33/paper.md
+  event: BH20EU
 - id: https://biohackrxiv.org/gzfa8
   title: Linking PubDictionaries with UniBioDicts to support Community Curation
   date_published: '2020-12-25'
   doi: https://doi.org/10.37044/osf.io/gzfa8
+  url: https://raw.githubusercontent.com/UniBioDicts/vsm-pubdictionaries/master/paper/paper.md
+  event: BH20EU
 - id: https://biohackrxiv.org/9mnkb
   title: Progress on Data Stewardship Wizard during BioHackathon Europe 2020
   date_published: '2020-12-06'
   doi: https://doi.org/10.37044/osf.io/9mnkb
+  url: unknown
+  event: BH20EU
 - id: https://biohackrxiv.org/cu2s9
   title: Characterization of Potential Drug Treatments for COVID-19 using Twitter
   date_published: '2020-06-03'
