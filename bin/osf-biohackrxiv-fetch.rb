@@ -124,6 +124,23 @@ papers.each do | v |
   #exit 1 if id == "https://biohackrxiv.org/km9ux/"
 end
 
+
+# In the next step we fetch the individual papers and store them
+# Fetch info on a paper https://api.osf.io/v2/preprints/wu9et/
+
+h.each { |id,v|
+  url = "https://api.osf.io/v2/preprints/"+File.basename(id)+"/"
+  fn = OUTDIR+"/"+File.basename(id)+".json"
+  if not options[:no_fetch]
+    $stderr.print "Fetching '#{url}'...\n"
+    print `curl -s "#{url}" > #{fn}`
+  end
+  raise "Can not find #{fn}. Run a fetch!" if not File.exist?(fn)
+  pjson = JSON.parse(File.read(fn))
+  attr = pjson['data']['attributes']
+  v['doi'] = pjson['data']['links']['preprint_doi']
+}
+
 # remap to array
 a = []
 h.each { |k,v|
@@ -131,5 +148,3 @@ h.each { |k,v|
   a.push v
 }
 print({"papers" => a}.to_yaml)
-
-# Fetch info on a paper https://api.osf.io/v2/preprints/wu9et/
