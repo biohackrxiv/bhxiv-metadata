@@ -46,6 +46,58 @@
 
 <https://biohackrxiv.org/v3jct> bhx:Tag "Data harvesting"@en .
 
+<https://biohackrxiv.org/wu9et> dc:title "Knowledge graphs and wikidata subsetting"@en ;
+    schema:sameAs <https://doi.org/10.37044/osf.io/wu9et> ;
+    schema:url <https://raw.githubusercontent.com/kg-subsetting/preprint-biohackrxiv/main/README.md> ;
+    bhx:Event <https://github.com/elixir-europe/BioHackathon-projects-2020> ;
+    a schema:CreativeWork .
+
+
+<https://biohackrxiv.org/wu9et> dc:contributor "Jose Emilio Labra Gayo" .
+
+<https://biohackrxiv.org/wu9et> dc:contributor "Ammar Ammar" .
+
+<https://biohackrxiv.org/wu9et> dc:contributor "Dan Brickley" .
+
+<https://biohackrxiv.org/wu9et> dc:contributor "Daniel Fernández Álvarez" .
+
+<https://biohackrxiv.org/wu9et> dc:contributor "Alejandro González Hevia" .
+
+<https://biohackrxiv.org/wu9et> dc:contributor "Alasdair J G Gray" .
+
+<https://biohackrxiv.org/wu9et> dc:contributor "Eric Prud'hommeaux" .
+
+<https://biohackrxiv.org/wu9et> dc:contributor "Denise Slenter" .
+
+<https://biohackrxiv.org/wu9et> dc:contributor "Harold Solbrig" .
+
+<https://biohackrxiv.org/wu9et> dc:contributor "Seyed Amir Hosseini Beghaeiraveri" .
+
+<https://biohackrxiv.org/wu9et> dc:contributor "Benno Fünkfstük" .
+
+<https://biohackrxiv.org/wu9et> dc:contributor "Andra Waagmeester" .
+
+<https://biohackrxiv.org/wu9et> dc:contributor "Egon Willighagen" .
+
+<https://biohackrxiv.org/wu9et> dc:contributor "Liza Ovchinnikova" .
+
+<https://biohackrxiv.org/wu9et> dc:contributor "Guillermo Benjaminsen" .
+
+<https://biohackrxiv.org/wu9et> dc:contributor "Roberto García" .
+
+<https://biohackrxiv.org/wu9et> dc:contributor "Leyla Jael Castro" .
+
+<https://biohackrxiv.org/wu9et> dc:contributor "Daniel Mietchen" .
+
+
+<https://biohackrxiv.org/wu9et> bhx:Tag "Wikidata"@en .
+
+<https://biohackrxiv.org/wu9et> bhx:Tag "ShEx"@en .
+
+<https://biohackrxiv.org/wu9et> bhx:Tag "RDF"@en .
+
+<https://biohackrxiv.org/wu9et> bhx:Tag "Knowledge graphs"@en .
+
 <https://biohackrxiv.org/b34vm> dc:title "SB4ER: an ELIXIR Service Bundle for Epidemic Response"@en ;
     schema:sameAs <https://doi.org/10.37044/osf.io/b34vm> ;
     schema:url <https://raw.githubusercontent.com/savojard/sb4er-paper/main/paper.md> ;

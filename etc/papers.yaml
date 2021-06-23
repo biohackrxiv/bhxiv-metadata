@@ -10,7 +10,7 @@ papers:
   title: Knowledge graphs and wikidata subsetting
   date_published: '2021-04-02'
   doi: https://doi.org/10.37044/osf.io/wu9et
-  url: unknown
+  url: https://raw.githubusercontent.com/kg-subsetting/preprint-biohackrxiv/main/README.md
   event: BH20EU
 - id: https://biohackrxiv.org/b34vm
   title: 'SB4ER: an ELIXIR Service Bundle for Epidemic Response'
