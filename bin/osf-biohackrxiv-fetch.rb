@@ -147,4 +147,4 @@ h.sort_by { |k,v| v["date_published"] }.each { |k,v|
   v["id"].chomp('/')
   a.push v
 }
-print({"papers" => a}.to_yaml)
+print({"papers" => a.reverse}.to_yaml)
