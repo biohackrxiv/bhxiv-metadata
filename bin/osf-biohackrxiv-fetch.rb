@@ -143,7 +143,7 @@ h.each { |id,v|
 
 # remap to array
 a = []
-h.each { |k,v|
+h.sort_by { |k,v| v["date_published"] }.each { |k,v|
   v["id"].chomp('/')
   a.push v
 }
