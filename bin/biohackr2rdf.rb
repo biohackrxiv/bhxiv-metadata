@@ -14,6 +14,7 @@ OUTPUT="test/data/biohackrxiv.ttl"
 RDF_HEADER = <<HEADER
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix dc: <http://purl.org/dc/terms/> .
 @prefix bhx: <http://biohackerxiv.org/resource/> .
 @prefix schema: <https://schema.org/> .
@@ -23,6 +24,7 @@ HEADER
 rdf_event_template = <<ETEMPLATE
 <<%= url %>> schema:description "<%= descr %>"@en ;
     schema:name "<%= name %>" ;
+    dc:date "<%= date %>"^^xsd:date ;
     a schema:Event .
 ETEMPLATE
 
@@ -31,6 +33,7 @@ rdf_paper_template = <<PTEMPLATE
     schema:sameAs <<%= doi %>> ;
     schema:url <<%= url %>> ;
     bhx:Event <<%= event %>> ;
+    dc:date "<%= date_published %>"^^xsd:date ;
     a schema:CreativeWork .
 
 <% authors.each do | author | %>
@@ -53,6 +56,7 @@ File.open(OUTPUT, 'w') do |file|
     p data
     url = data['url']
     descr = data['txt']
+    date = data['date']
     renderer = ERB.new(rdf_event_template)
     file.print(output = renderer.result(binding))
   end
@@ -62,6 +66,7 @@ File.open(OUTPUT, 'w') do |file|
     url = paper['url']
     id = paper['id']
     doi = paper['doi']
+    date_published = paper['date_published']
     if url and url != 'unknown'
       print "Fetching '#{url}'...\n"
       uri = URI.parse(url)
