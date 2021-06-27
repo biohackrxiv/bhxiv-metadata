@@ -36,8 +36,10 @@ rdf_paper_template = <<PTEMPLATE
     dc:date "<%= date_published %>"^^xsd:date ;
     a schema:CreativeWork .
 
-<% authors.each do | author | %>
-<<%= id %>> dc:contributor "<%= author['name'] %>" .<% end %>
+<<%= id %>> dc:contributor [
+  a rdf:Seq;<% authors.each_with_index do | author,i | %>
+  rdf:_<%= i+1 %> "<%= author['name'] %>" ;<% end %>
+  ].
 <% tags.each do | tag | %>
 <<%= id %>> bhx:Tag "<%= tag %>"@en .<% end %>
 PTEMPLATE

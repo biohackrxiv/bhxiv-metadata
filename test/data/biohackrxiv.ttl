@@ -37,11 +37,13 @@
     dc:date "2021-06-22"^^xsd:date ;
     a schema:CreativeWork .
 
-
-<https://biohackrxiv.org/v3jct> dc:contributor "Alasdair Gray" .
-<https://biohackrxiv.org/v3jct> dc:contributor "Petros Papadopoulos" .
-<https://biohackrxiv.org/v3jct> dc:contributor "Ivan Mičetić" .
-<https://biohackrxiv.org/v3jct> dc:contributor "András Hatos" .
+<https://biohackrxiv.org/v3jct> dc:contributor [
+  a rdf:Seq;
+  rdf:_1 "Alasdair Gray" ;
+  rdf:_2 "Petros Papadopoulos" ;
+  rdf:_3 "Ivan Mičetić" ;
+  rdf:_4 "András Hatos" ;
+  ].
 
 <https://biohackrxiv.org/v3jct> bhx:Tag "Bioschemas"@en .
 <https://biohackrxiv.org/v3jct> bhx:Tag "Intrinsically Disordered Proteins"@en .
@@ -55,25 +57,27 @@
     dc:date "2021-04-02"^^xsd:date ;
     a schema:CreativeWork .
 
-
-<https://biohackrxiv.org/wu9et> dc:contributor "Jose Emilio Labra Gayo" .
-<https://biohackrxiv.org/wu9et> dc:contributor "Ammar Ammar" .
-<https://biohackrxiv.org/wu9et> dc:contributor "Dan Brickley" .
-<https://biohackrxiv.org/wu9et> dc:contributor "Daniel Fernández Álvarez" .
-<https://biohackrxiv.org/wu9et> dc:contributor "Alejandro González Hevia" .
-<https://biohackrxiv.org/wu9et> dc:contributor "Alasdair J G Gray" .
-<https://biohackrxiv.org/wu9et> dc:contributor "Eric Prud'hommeaux" .
-<https://biohackrxiv.org/wu9et> dc:contributor "Denise Slenter" .
-<https://biohackrxiv.org/wu9et> dc:contributor "Harold Solbrig" .
-<https://biohackrxiv.org/wu9et> dc:contributor "Seyed Amir Hosseini Beghaeiraveri" .
-<https://biohackrxiv.org/wu9et> dc:contributor "Benno Fünkfstük" .
-<https://biohackrxiv.org/wu9et> dc:contributor "Andra Waagmeester" .
-<https://biohackrxiv.org/wu9et> dc:contributor "Egon Willighagen" .
-<https://biohackrxiv.org/wu9et> dc:contributor "Liza Ovchinnikova" .
-<https://biohackrxiv.org/wu9et> dc:contributor "Guillermo Benjaminsen" .
-<https://biohackrxiv.org/wu9et> dc:contributor "Roberto García" .
-<https://biohackrxiv.org/wu9et> dc:contributor "Leyla Jael Castro" .
-<https://biohackrxiv.org/wu9et> dc:contributor "Daniel Mietchen" .
+<https://biohackrxiv.org/wu9et> dc:contributor [
+  a rdf:Seq;
+  rdf:_1 "Jose Emilio Labra Gayo" ;
+  rdf:_2 "Ammar Ammar" ;
+  rdf:_3 "Dan Brickley" ;
+  rdf:_4 "Daniel Fernández Álvarez" ;
+  rdf:_5 "Alejandro González Hevia" ;
+  rdf:_6 "Alasdair J G Gray" ;
+  rdf:_7 "Eric Prud'hommeaux" ;
+  rdf:_8 "Denise Slenter" ;
+  rdf:_9 "Harold Solbrig" ;
+  rdf:_10 "Seyed Amir Hosseini Beghaeiraveri" ;
+  rdf:_11 "Benno Fünkfstük" ;
+  rdf:_12 "Andra Waagmeester" ;
+  rdf:_13 "Egon Willighagen" ;
+  rdf:_14 "Liza Ovchinnikova" ;
+  rdf:_15 "Guillermo Benjaminsen" ;
+  rdf:_16 "Roberto García" ;
+  rdf:_17 "Leyla Jael Castro" ;
+  rdf:_18 "Daniel Mietchen" ;
+  ].
 
 <https://biohackrxiv.org/wu9et> bhx:Tag "Wikidata"@en .
 <https://biohackrxiv.org/wu9et> bhx:Tag "ShEx"@en .
@@ -86,17 +90,19 @@
     dc:date "2021-03-25"^^xsd:date ;
     a schema:CreativeWork .
 
-
-<https://biohackrxiv.org/b34vm> dc:contributor "Castrense Savojardo" .
-<https://biohackrxiv.org/b34vm> dc:contributor "Pier Luigi Martelli" .
-<https://biohackrxiv.org/b34vm> dc:contributor "Giulia Babbi" .
-<https://biohackrxiv.org/b34vm> dc:contributor "Marco Anteghini" .
-<https://biohackrxiv.org/b34vm> dc:contributor "Matteo Manfredi" .
-<https://biohackrxiv.org/b34vm> dc:contributor "Giovanni Madeo" .
-<https://biohackrxiv.org/b34vm> dc:contributor "Emidio Capriotti" .
-<https://biohackrxiv.org/b34vm> dc:contributor "Jumamurat R. Bayjanov" .
-<https://biohackrxiv.org/b34vm> dc:contributor "Margherita Mutarelli" .
-<https://biohackrxiv.org/b34vm> dc:contributor "Rita Casadio" .
+<https://biohackrxiv.org/b34vm> dc:contributor [
+  a rdf:Seq;
+  rdf:_1 "Castrense Savojardo" ;
+  rdf:_2 "Pier Luigi Martelli" ;
+  rdf:_3 "Giulia Babbi" ;
+  rdf:_4 "Marco Anteghini" ;
+  rdf:_5 "Matteo Manfredi" ;
+  rdf:_6 "Giovanni Madeo" ;
+  rdf:_7 "Emidio Capriotti" ;
+  rdf:_8 "Jumamurat R. Bayjanov" ;
+  rdf:_9 "Margherita Mutarelli" ;
+  rdf:_10 "Rita Casadio" ;
+  ].
 
 <https://biohackrxiv.org/b34vm> bhx:Tag "ELIXIR Service Bundle"@en .
 <https://biohackrxiv.org/b34vm> bhx:Tag "Pathogen genomic analysis"@en .
@@ -108,15 +114,17 @@
     dc:date "2021-03-03"^^xsd:date ;
     a schema:CreativeWork .
 
-
-<https://biohackrxiv.org/93qf4> dc:contributor "Quentin Groom" .
-<https://biohackrxiv.org/93qf4> dc:contributor "Mathias Dillen" .
-<https://biohackrxiv.org/93qf4> dc:contributor "Pieter Huybrechts" .
-<https://biohackrxiv.org/93qf4> dc:contributor "Rukaya Johaadien" .
-<https://biohackrxiv.org/93qf4> dc:contributor "Niki Kyriakopoulou" .
-<https://biohackrxiv.org/93qf4> dc:contributor "Francisco Quevedo" .
-<https://biohackrxiv.org/93qf4> dc:contributor "Maarten Trekels" .
-<https://biohackrxiv.org/93qf4> dc:contributor "Wai Yee Wong" .
+<https://biohackrxiv.org/93qf4> dc:contributor [
+  a rdf:Seq;
+  rdf:_1 "Quentin Groom" ;
+  rdf:_2 "Mathias Dillen" ;
+  rdf:_3 "Pieter Huybrechts" ;
+  rdf:_4 "Rukaya Johaadien" ;
+  rdf:_5 "Niki Kyriakopoulou" ;
+  rdf:_6 "Francisco Quevedo" ;
+  rdf:_7 "Maarten Trekels" ;
+  rdf:_8 "Wai Yee Wong" ;
+  ].
 
 <https://biohackrxiv.org/93qf4> bhx:Tag "Voucher Specimens"@en .
 <https://biohackrxiv.org/93qf4> bhx:Tag "Collections"@en .
@@ -131,11 +139,13 @@
     dc:date "2020-12-25"^^xsd:date ;
     a schema:CreativeWork .
 
-
-<https://biohackrxiv.org/gzfa8> dc:contributor "John Zobolas" .
-<https://biohackrxiv.org/gzfa8> dc:contributor "Jin-Dong Kim" .
-<https://biohackrxiv.org/gzfa8> dc:contributor "Martin Kuiper" .
-<https://biohackrxiv.org/gzfa8> dc:contributor "Steven Vercruysse" .
+<https://biohackrxiv.org/gzfa8> dc:contributor [
+  a rdf:Seq;
+  rdf:_1 "John Zobolas" ;
+  rdf:_2 "Jin-Dong Kim" ;
+  rdf:_3 "Martin Kuiper" ;
+  rdf:_4 "Steven Vercruysse" ;
+  ].
 
 <https://biohackrxiv.org/gzfa8> bhx:Tag "vocabulary search"@en .
 <https://biohackrxiv.org/gzfa8> bhx:Tag "dictionary search"@en .
@@ -152,17 +162,19 @@
     dc:date "2020-07-13"^^xsd:date ;
     a schema:CreativeWork .
 
-
-<https://biohackrxiv.org/gmbjv> dc:contributor "Marek Ostaszewski" .
-<https://biohackrxiv.org/gmbjv> dc:contributor "Piotr Gawron" .
-<https://biohackrxiv.org/gmbjv> dc:contributor "David Hoksza" .
-<https://biohackrxiv.org/gmbjv> dc:contributor "Laura I. Furlong" .
-<https://biohackrxiv.org/gmbjv> dc:contributor "Janet Pinero" .
-<https://biohackrxiv.org/gmbjv> dc:contributor "Joaquin Dopazo" .
-<https://biohackrxiv.org/gmbjv> dc:contributor "Maria Pena Chilet" .
-<https://biohackrxiv.org/gmbjv> dc:contributor "Marina Esteban" .
-<https://biohackrxiv.org/gmbjv> dc:contributor "Jose Luis Fernandez" .
-<https://biohackrxiv.org/gmbjv> dc:contributor "Vincenza Colonna" .
+<https://biohackrxiv.org/gmbjv> dc:contributor [
+  a rdf:Seq;
+  rdf:_1 "Marek Ostaszewski" ;
+  rdf:_2 "Piotr Gawron" ;
+  rdf:_3 "David Hoksza" ;
+  rdf:_4 "Laura I. Furlong" ;
+  rdf:_5 "Janet Pinero" ;
+  rdf:_6 "Joaquin Dopazo" ;
+  rdf:_7 "Maria Pena Chilet" ;
+  rdf:_8 "Marina Esteban" ;
+  rdf:_9 "Jose Luis Fernandez" ;
+  rdf:_10 "Vincenza Colonna" ;
+  ].
 
 <https://biohackrxiv.org/gmbjv> bhx:Tag "rare diseases"@en .
 <https://biohackrxiv.org/gmbjv> bhx:Tag "gene-disease association"@en .
@@ -176,9 +188,11 @@
     dc:date "2020-07-13"^^xsd:date ;
     a schema:CreativeWork .
 
-
-<https://biohackrxiv.org/esrc9> dc:contributor "Hidemasa Bono" .
-<https://biohackrxiv.org/esrc9> dc:contributor "Takeya Kasukawa" .
+<https://biohackrxiv.org/esrc9> dc:contributor [
+  a rdf:Seq;
+  rdf:_1 "Hidemasa Bono" ;
+  rdf:_2 "Takeya Kasukawa" ;
+  ].
 
 <https://biohackrxiv.org/esrc9> bhx:Tag "gene expression"@en .
 <https://biohackrxiv.org/cu2s9> dc:title "Characterization of Potential Drug Treatments for COVID-19 using Twitter"@en ;
@@ -188,9 +202,11 @@
     dc:date "2020-06-03"^^xsd:date ;
     a schema:CreativeWork .
 
-
-<https://biohackrxiv.org/cu2s9> dc:contributor "Ramya Tekumalla" .
-<https://biohackrxiv.org/cu2s9> dc:contributor "Juan M Banda" .
+<https://biohackrxiv.org/cu2s9> dc:contributor [
+  a rdf:Seq;
+  rdf:_1 "Ramya Tekumalla" ;
+  rdf:_2 "Juan M Banda" ;
+  ].
 
 <https://biohackrxiv.org/cu2s9> bhx:Tag "COVID-19"@en .
 <https://biohackrxiv.org/cu2s9> bhx:Tag "Machine Learning"@en .
@@ -202,13 +218,15 @@
     dc:date "2020-05-14"^^xsd:date ;
     a schema:CreativeWork .
 
-
-<https://biohackrxiv.org/9d3cz> dc:contributor "Nazli Sila Kara" .
-<https://biohackrxiv.org/9d3cz> dc:contributor "Meltem Kutnu" .
-<https://biohackrxiv.org/9d3cz> dc:contributor "Yasemin Utkueri" .
-<https://biohackrxiv.org/9d3cz> dc:contributor "Funda Yilmaz" .
-<https://biohackrxiv.org/9d3cz> dc:contributor "Elif Bozlak" .
-<https://biohackrxiv.org/9d3cz> dc:contributor "Evrim Fer" .
+<https://biohackrxiv.org/9d3cz> dc:contributor [
+  a rdf:Seq;
+  rdf:_1 "Nazli Sila Kara" ;
+  rdf:_2 "Meltem Kutnu" ;
+  rdf:_3 "Yasemin Utkueri" ;
+  rdf:_4 "Funda Yilmaz" ;
+  rdf:_5 "Elif Bozlak" ;
+  rdf:_6 "Evrim Fer" ;
+  ].
 
 <https://biohackrxiv.org/9d3cz> bhx:Tag "COVID-19"@en .
 <https://biohackrxiv.org/9d3cz> bhx:Tag "galaxyproject"@en .
@@ -224,18 +242,20 @@
     dc:date "2020-05-14"^^xsd:date ;
     a schema:CreativeWork .
 
-
-<https://biohackrxiv.org/xt7gw> dc:contributor "Francesco Ballesio" .
-<https://biohackrxiv.org/xt7gw> dc:contributor "Ali Haider Bangash" .
-<https://biohackrxiv.org/xt7gw> dc:contributor "Didier Barradas-Bautista" .
-<https://biohackrxiv.org/xt7gw> dc:contributor "Justin Barton" .
-<https://biohackrxiv.org/xt7gw> dc:contributor "Andrea Guarracino" .
-<https://biohackrxiv.org/xt7gw> dc:contributor "Lukas Heumos" .
-<https://biohackrxiv.org/xt7gw> dc:contributor "Aneesh Panoli" .
-<https://biohackrxiv.org/xt7gw> dc:contributor "Marco Pietrosanto" .
-<https://biohackrxiv.org/xt7gw> dc:contributor "Anastasios Togkousidis" .
-<https://biohackrxiv.org/xt7gw> dc:contributor "Phillip Davis" .
-<https://biohackrxiv.org/xt7gw> dc:contributor "Fotis Psomopoulos" .
+<https://biohackrxiv.org/xt7gw> dc:contributor [
+  a rdf:Seq;
+  rdf:_1 "Francesco Ballesio" ;
+  rdf:_2 "Ali Haider Bangash" ;
+  rdf:_3 "Didier Barradas-Bautista" ;
+  rdf:_4 "Justin Barton" ;
+  rdf:_5 "Andrea Guarracino" ;
+  rdf:_6 "Lukas Heumos" ;
+  rdf:_7 "Aneesh Panoli" ;
+  rdf:_8 "Marco Pietrosanto" ;
+  rdf:_9 "Anastasios Togkousidis" ;
+  rdf:_10 "Phillip Davis" ;
+  rdf:_11 "Fotis Psomopoulos" ;
+  ].
 
 <https://biohackrxiv.org/xt7gw> bhx:Tag "Feature determination"@en .
 <https://biohackrxiv.org/xt7gw> bhx:Tag "k-mer modelling"@en .
@@ -251,32 +271,34 @@
     dc:date "2020-05-14"^^xsd:date ;
     a schema:CreativeWork .
 
-
-<https://biohackrxiv.org/b4zkp> dc:contributor "Mariana G. Ferrarini" .
-<https://biohackrxiv.org/b4zkp> dc:contributor "Vanessa Aguiar-Pulido" .
-<https://biohackrxiv.org/b4zkp> dc:contributor "Eric T. Dawson" .
-<https://biohackrxiv.org/b4zkp> dc:contributor "Andrea Guarracino" .
-<https://biohackrxiv.org/b4zkp> dc:contributor "Andreas Gruber" .
-<https://biohackrxiv.org/b4zkp> dc:contributor "Lukas Heumos" .
-<https://biohackrxiv.org/b4zkp> dc:contributor "Alexander Kanitz" .
-<https://biohackrxiv.org/b4zkp> dc:contributor "Avantika Lal" .
-<https://biohackrxiv.org/b4zkp> dc:contributor "Brett E. Pickett" .
-<https://biohackrxiv.org/b4zkp> dc:contributor "Rita Rebollo" .
-<https://biohackrxiv.org/b4zkp> dc:contributor "Carlos Ruiz-Arenas" .
-<https://biohackrxiv.org/b4zkp> dc:contributor "Olaitan Awe" .
-<https://biohackrxiv.org/b4zkp> dc:contributor "Suhana Bedi" .
-<https://biohackrxiv.org/b4zkp> dc:contributor "Ben Busby" .
-<https://biohackrxiv.org/b4zkp> dc:contributor "Marielena Georgaki" .
-<https://biohackrxiv.org/b4zkp> dc:contributor "Chela James" .
-<https://biohackrxiv.org/b4zkp> dc:contributor "Itziar Martinez Gonzalez" .
-<https://biohackrxiv.org/b4zkp> dc:contributor "Birgit Meldal" .
-<https://biohackrxiv.org/b4zkp> dc:contributor "Scheila G. Mucha" .
-<https://biohackrxiv.org/b4zkp> dc:contributor "Noushin Nabavi" .
-<https://biohackrxiv.org/b4zkp> dc:contributor "Jakke Neiro" .
-<https://biohackrxiv.org/b4zkp> dc:contributor "Nuria Queralt Rosinach" .
-<https://biohackrxiv.org/b4zkp> dc:contributor "Philippe Rocca-Serra" .
-<https://biohackrxiv.org/b4zkp> dc:contributor "Daniel Siqueira de Oliveira" .
-<https://biohackrxiv.org/b4zkp> dc:contributor "Maria Tsagiopoulou" .
+<https://biohackrxiv.org/b4zkp> dc:contributor [
+  a rdf:Seq;
+  rdf:_1 "Mariana G. Ferrarini" ;
+  rdf:_2 "Vanessa Aguiar-Pulido" ;
+  rdf:_3 "Eric T. Dawson" ;
+  rdf:_4 "Andrea Guarracino" ;
+  rdf:_5 "Andreas Gruber" ;
+  rdf:_6 "Lukas Heumos" ;
+  rdf:_7 "Alexander Kanitz" ;
+  rdf:_8 "Avantika Lal" ;
+  rdf:_9 "Brett E. Pickett" ;
+  rdf:_10 "Rita Rebollo" ;
+  rdf:_11 "Carlos Ruiz-Arenas" ;
+  rdf:_12 "Olaitan Awe" ;
+  rdf:_13 "Suhana Bedi" ;
+  rdf:_14 "Ben Busby" ;
+  rdf:_15 "Marielena Georgaki" ;
+  rdf:_16 "Chela James" ;
+  rdf:_17 "Itziar Martinez Gonzalez" ;
+  rdf:_18 "Birgit Meldal" ;
+  rdf:_19 "Scheila G. Mucha" ;
+  rdf:_20 "Noushin Nabavi" ;
+  rdf:_21 "Jakke Neiro" ;
+  rdf:_22 "Nuria Queralt Rosinach" ;
+  rdf:_23 "Philippe Rocca-Serra" ;
+  rdf:_24 "Daniel Siqueira de Oliveira" ;
+  rdf:_25 "Maria Tsagiopoulou" ;
+  ].
 
 <https://biohackrxiv.org/b4zkp> bhx:Tag "BioHackathon"@en .
 <https://biohackrxiv.org/b4zkp> bhx:Tag "Preprint"@en .
@@ -296,15 +318,17 @@
     dc:date "2020-04-10"^^xsd:date ;
     a schema:CreativeWork .
 
-
-<https://biohackrxiv.org/km9ux> dc:contributor "Chris Mungall" .
-<https://biohackrxiv.org/km9ux> dc:contributor "Hirokazu Chiba" .
-<https://biohackrxiv.org/km9ux> dc:contributor "Shuichi Kawashima" .
-<https://biohackrxiv.org/km9ux> dc:contributor "Yasunori Yamamoto" .
-<https://biohackrxiv.org/km9ux> dc:contributor "Pjotr Prins" .
-<https://biohackrxiv.org/km9ux> dc:contributor "Nada Amin" .
-<https://biohackrxiv.org/km9ux> dc:contributor "Deepak Unni" .
-<https://biohackrxiv.org/km9ux> dc:contributor "<nobr>William&nbsp;E.&nbsp;Byrd</nobr>" .
+<https://biohackrxiv.org/km9ux> dc:contributor [
+  a rdf:Seq;
+  rdf:_1 "Chris Mungall" ;
+  rdf:_2 "Hirokazu Chiba" ;
+  rdf:_3 "Shuichi Kawashima" ;
+  rdf:_4 "Yasunori Yamamoto" ;
+  rdf:_5 "Pjotr Prins" ;
+  rdf:_6 "Nada Amin" ;
+  rdf:_7 "Deepak Unni" ;
+  rdf:_8 "<nobr>William&nbsp;E.&nbsp;Byrd</nobr>" ;
+  ].
 
 <https://biohackrxiv.org/km9ux> bhx:Tag "logic programming"@en .
 <https://biohackrxiv.org/8qdse> dc:title "Data validation and schema interoperability"@en ;
@@ -314,16 +338,18 @@
     dc:date "2020-04-07"^^xsd:date ;
     a schema:CreativeWork .
 
-
-<https://biohackrxiv.org/8qdse> dc:contributor "Leyla Garcia" .
-<https://biohackrxiv.org/8qdse> dc:contributor "Jerven Bolleman" .
-<https://biohackrxiv.org/8qdse> dc:contributor "Michel Dumontier" .
-<https://biohackrxiv.org/8qdse> dc:contributor "Simon Jupp" .
-<https://biohackrxiv.org/8qdse> dc:contributor "Jose Emilio Labra Gayo" .
-<https://biohackrxiv.org/8qdse> dc:contributor "Thomas Liener" .
-<https://biohackrxiv.org/8qdse> dc:contributor "Tazro Ohta" .
-<https://biohackrxiv.org/8qdse> dc:contributor "Núria Queralt-Rosinach" .
-<https://biohackrxiv.org/8qdse> dc:contributor "Chunlei Wu" .
+<https://biohackrxiv.org/8qdse> dc:contributor [
+  a rdf:Seq;
+  rdf:_1 "Leyla Garcia" ;
+  rdf:_2 "Jerven Bolleman" ;
+  rdf:_3 "Michel Dumontier" ;
+  rdf:_4 "Simon Jupp" ;
+  rdf:_5 "Jose Emilio Labra Gayo" ;
+  rdf:_6 "Thomas Liener" ;
+  rdf:_7 "Tazro Ohta" ;
+  rdf:_8 "Núria Queralt-Rosinach" ;
+  rdf:_9 "Chunlei Wu" ;
+  ].
 
 <https://biohackrxiv.org/8qdse> bhx:Tag "schema"@en .
 <https://biohackrxiv.org/8qdse> bhx:Tag "data validation"@en .
