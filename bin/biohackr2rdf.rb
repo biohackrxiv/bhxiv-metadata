@@ -33,6 +33,7 @@ rdf_paper_template = <<PTEMPLATE
     schema:sameAs <<%= doi %>> ;
     schema:url <<%= url %>> ;
     bhx:Event <<%= event %>> ;
+    bhx:repository <<%= repo %>> ;
     dc:date "<%= date_published %>"^^xsd:date ;
     a schema:CreativeWork .
 
@@ -83,7 +84,7 @@ File.open(OUTPUT, 'w') do |file|
       }
       print("Metadata: ",md)
 
-      info = YAML.load(md).merge(paper) # note that contents of paper override md
+      info = YAML.load(md).merge(paper) # note that contents of paper override metadata
       pp info
       title = info['title']
       id = info['id']
