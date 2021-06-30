@@ -62,6 +62,7 @@ papers = YAML.load_file('etc/papers.yaml')['papers']
 #   curl https://api.osf.io/v2/providers/preprints/biohackrxiv/preprints/ |jq -C "." |less -R
 
 OUTDIR = "./papers/OSF"
+FileUtils.mkdir_p(OUTDIR)
 
 url = "https://api.osf.io/v2/providers/preprints/biohackrxiv/preprints/"
 

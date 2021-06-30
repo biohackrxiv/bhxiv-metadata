@@ -9,6 +9,10 @@
     schema:name "BH21EU" ;
     dc:date "2021-11-08"^^xsd:date ;
     a schema:Event .
+<https://www.library.cmu.edu/> schema:description "Clinical Reporting of MultiOmics Data"@en ;
+    schema:name "CMULibraries2021" ;
+    dc:date "2021-06-01"^^xsd:date ;
+    a schema:Event .
 <https://2020.biohackathon-europe.org/> schema:description "BioHackathon Europe 2020 Online"@en ;
     schema:name "BH20EU" ;
     dc:date "2020-11-09"^^xsd:date ;
@@ -29,11 +33,61 @@
     schema:name "Japan2018" ;
     dc:date "2018-12-09"^^xsd:date ;
     a schema:Event .
+<https://github.com/biohackrxiv/> schema:description "Alternative Open Source BioHackathon"@en ;
+    schema:name "Other" ;
+    dc:date "1970-01-01"^^xsd:date ;
+    a schema:Event .
 
+<https://biohackrxiv.org/5j7cm> dc:title "SnpReportR: A Tool for Clinical Reporting of RNAseq Expression and Variants"@en ;
+    schema:sameAs <https://doi.org/10.37044/osf.io/5j7cm> ;
+    schema:url <https://raw.githubusercontent.com/cmu-lib/bgdc2021-hackathon/main/paper.md> ;
+    bhx:Event <https://www.library.cmu.edu/> ;
+    bhx:repository <https://github.com/biohackrxiv/> ;
+    dc:date "2021-06-29"^^xsd:date ;
+    a schema:CreativeWork .
+
+<https://biohackrxiv.org/5j7cm> dc:contributor [
+  a rdf:Seq;
+  rdf:_1 "Ahmad Al Khleifat" ;
+  rdf:_2 "Jenny Leopoldina Smith" ;
+  rdf:_3 "Brandon M. Blobner" ;
+  rdf:_4 "Sierra D. Miller" ;
+  rdf:_5 "Kymberleigh Pagel" ;
+  rdf:_6 "Annie Nadkarni" ;
+  rdf:_7 "Melanie Gainey" ;
+  rdf:_8 "Patrick Campbell" ;
+  rdf:_9 "Olaitan I. Awe" ;
+  rdf:_10 "Manuel Belmadani" ;
+  rdf:_11 "Alan M. Cleary" ;
+  rdf:_12 "Nicholas P. Cooley" ;
+  rdf:_13 "Shamika Dhuri" ;
+  rdf:_14 "Virginie Grosboillot" ;
+  rdf:_15 "Brian Haas" ;
+  rdf:_16 "Samuel Hokin" ;
+  rdf:_17 "Ekaterina Orlova" ;
+  rdf:_18 "Meghana Pagadala" ;
+  rdf:_19 "Stephen Price" ;
+  rdf:_20 "Adelaide Rhodes" ;
+  rdf:_21 "Janice Kyla Nascimento Smith" ;
+  rdf:_22 "Chaitanya Srinivasan" ;
+  rdf:_23 "Barry Zorman" ;
+  rdf:_24 "Ben Busby" ;
+  ].
+
+<https://biohackrxiv.org/5j7cm> bhx:Tag "Expression"@en .
+<https://biohackrxiv.org/5j7cm> bhx:Tag "Precision Medicine"@en .
+<https://biohackrxiv.org/5j7cm> bhx:Tag "Human Genomics"@en .
+<https://biohackrxiv.org/5j7cm> bhx:Tag "RNA-Seq"@en .
+<https://biohackrxiv.org/5j7cm> bhx:Tag "Clinical Report"@en .
+<https://biohackrxiv.org/5j7cm> bhx:Tag "Genetic testing"@en .
+<https://biohackrxiv.org/5j7cm> bhx:Tag "Reporting research results"@en .
+<https://biohackrxiv.org/5j7cm> bhx:Tag "Variants"@en .
+<https://biohackrxiv.org/5j7cm> bhx:Tag "Genetic test reports"@en .
 <https://biohackrxiv.org/v3jct> dc:title "Exploiting Bioschemas Markup to Populate IDPcentral"@en ;
     schema:sameAs <https://doi.org/10.37044/osf.io/v3jct> ;
     schema:url <https://raw.githubusercontent.com/elixir-europe/BioHackathon-projects-2020/master/projects/24/IDPCentral/BioHackrXivReport/paper.md> ;
     bhx:Event <https://2019.biohackathon-europe.org/> ;
+    bhx:repository <https://github.com/biohackrxiv/> ;
     dc:date "2021-06-22"^^xsd:date ;
     a schema:CreativeWork .
 
@@ -54,6 +108,7 @@
     schema:sameAs <https://doi.org/10.37044/osf.io/wu9et> ;
     schema:url <https://raw.githubusercontent.com/kg-subsetting/preprint-biohackrxiv/main/README.md> ;
     bhx:Event <https://2020.biohackathon-europe.org/> ;
+    bhx:repository <https://github.com/biohackrxiv/> ;
     dc:date "2021-04-02"^^xsd:date ;
     a schema:CreativeWork .
 
@@ -87,6 +142,7 @@
     schema:sameAs <https://doi.org/10.37044/osf.io/b34vm> ;
     schema:url <https://raw.githubusercontent.com/savojard/sb4er-paper/main/paper.md> ;
     bhx:Event <https://2020.biohackathon-europe.org/> ;
+    bhx:repository <https://github.com/biohackrxiv/> ;
     dc:date "2021-03-25"^^xsd:date ;
     a schema:CreativeWork .
 
@@ -111,6 +167,7 @@
     schema:sameAs <https://doi.org/10.37044/osf.io/93qf4> ;
     schema:url <https://raw.githubusercontent.com/elixir-europe/BioHackathon-projects-2020/master/projects/33/paper.md> ;
     bhx:Event <https://2020.biohackathon-europe.org/> ;
+    bhx:repository <https://github.com/biohackrxiv/> ;
     dc:date "2021-03-03"^^xsd:date ;
     a schema:CreativeWork .
 
@@ -136,6 +193,7 @@
     schema:sameAs <https://doi.org/10.37044/osf.io/gzfa8> ;
     schema:url <https://raw.githubusercontent.com/UniBioDicts/vsm-pubdictionaries/master/paper/paper.md> ;
     bhx:Event <https://2020.biohackathon-europe.org/> ;
+    bhx:repository <https://github.com/biohackrxiv/> ;
     dc:date "2020-12-25"^^xsd:date ;
     a schema:CreativeWork .
 
@@ -159,6 +217,7 @@
     schema:sameAs <https://doi.org/10.37044/osf.io/gmbjv> ;
     schema:url <https://raw.githubusercontent.com/elixir-europe/BioHackathon-projects-2019/master/projects/5/report/paper.md> ;
     bhx:Event <https://2019.biohackathon-europe.org/> ;
+    bhx:repository <https://github.com/biohackrxiv/> ;
     dc:date "2020-07-13"^^xsd:date ;
     a schema:CreativeWork .
 
@@ -185,6 +244,7 @@
     schema:sameAs <https://doi.org/10.37044/osf.io/esrc9> ;
     schema:url <https://raw.githubusercontent.com/bonohu/BHEU2019report/master/paper.md> ;
     bhx:Event <https://2019.biohackathon-europe.org/> ;
+    bhx:repository <https://github.com/biohackrxiv/> ;
     dc:date "2020-07-13"^^xsd:date ;
     a schema:CreativeWork .
 
@@ -199,6 +259,7 @@
     schema:sameAs <https://doi.org/10.37044/osf.io/cu2s9> ;
     schema:url <https://raw.githubusercontent.com/thepanacealab/covid19_biohackathon/master/treatments_misinformation/paper.md> ;
     bhx:Event <https://github.com/virtual-biohackathons/covid-19-bh20> ;
+    bhx:repository <https://github.com/biohackrxiv/> ;
     dc:date "2020-06-03"^^xsd:date ;
     a schema:CreativeWork .
 
@@ -215,6 +276,7 @@
     schema:sameAs <https://doi.org/10.37044/osf.io/9d3cz> ;
     schema:url <https://raw.githubusercontent.com/rsgturkeygroup3/BioHackathon/master/paper.md> ;
     bhx:Event <https://github.com/virtual-biohackathons/covid-19-bh20> ;
+    bhx:repository <https://github.com/biohackrxiv/> ;
     dc:date "2020-05-14"^^xsd:date ;
     a schema:CreativeWork .
 
@@ -239,6 +301,7 @@
     schema:sameAs <https://doi.org/10.37044/osf.io/xt7gw> ;
     schema:url <https://raw.githubusercontent.com/covid19-bh-machine-learning/master/master/report/paper.md> ;
     bhx:Event <https://github.com/virtual-biohackathons/covid-19-bh20> ;
+    bhx:repository <https://github.com/biohackrxiv/> ;
     dc:date "2020-05-14"^^xsd:date ;
     a schema:CreativeWork .
 
@@ -268,6 +331,7 @@
     schema:sameAs <https://doi.org/10.37044/osf.io/b4zkp> ;
     schema:url <https://raw.githubusercontent.com/avantikalal/covid-gene-expression/master/report/paper.md> ;
     bhx:Event <https://github.com/virtual-biohackathons/covid-19-bh20> ;
+    bhx:repository <https://github.com/biohackrxiv/> ;
     dc:date "2020-05-14"^^xsd:date ;
     a schema:CreativeWork .
 
@@ -315,6 +379,7 @@
     schema:sameAs <https://doi.org/10.37044/osf.io/km9ux> ;
     schema:url <https://raw.githubusercontent.com/journal-of-research-objects/Example-BioHackrXiv-Paper/master/paper.md> ;
     bhx:Event <http://2019.biohackathon.org/> ;
+    bhx:repository <https://github.com/biohackrxiv/> ;
     dc:date "2020-04-10"^^xsd:date ;
     a schema:CreativeWork .
 
@@ -335,6 +400,7 @@
     schema:sameAs <https://doi.org/10.37044/osf.io/8qdse> ;
     schema:url <https://raw.githubusercontent.com/ljgarcia/Deleteme/master/paper.md> ;
     bhx:Event <http://2019.biohackathon.org/> ;
+    bhx:repository <https://github.com/biohackrxiv/> ;
     dc:date "2020-04-07"^^xsd:date ;
     a schema:CreativeWork .
 

@@ -33,7 +33,7 @@ rdf_paper_template = <<PTEMPLATE
     schema:sameAs <<%= doi %>> ;
     schema:url <<%= url %>> ;
     bhx:Event <<%= event %>> ;
-    bhx:repository <<%= repo %>> ;
+    bhx:repository <<%= git_url %>> ;
     dc:date "<%= date_published %>"^^xsd:date ;
     a schema:CreativeWork .
 
@@ -65,6 +65,12 @@ File.open(OUTPUT, 'w') do |file|
   papers.each do |paper|
     pp paper
     url = paper['url']
+    git_url =
+      if paper.has_key?('git_url')
+        paper['git_url']
+      else
+        "https://github.com/biohackrxiv/" # default, for better or worse
+      end
     id = paper['id']
     doi = paper['doi']
     date_published = paper['date_published']
@@ -91,7 +97,8 @@ File.open(OUTPUT, 'w') do |file|
       authors = info['authors']
       tags = info['tags']
       eventid = info['event']
-      raise "Uknown event for #{id} - please update ./etc/papers.yaml" if not eventid
+      raise "Unknown event for #{id} - please update ./etc/papers.yaml" if not eventid
+      raise "Event not listed for #{eventid} - please update ./etc/events.yaml" if not events.has_key?(eventid)
       event = events[eventid]['url']
       raise "Missing event for #{id}" if !event
       renderer = ERB.new(rdf_paper_template)
