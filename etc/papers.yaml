@@ -1,5 +1,10 @@
 ---
 papers:
+- id: https://biohackrxiv.org/5j7cm
+  title: 'SnpReportR: A Tool for Clinical Reporting of RNAseq Expression and Variants'
+  date_published: '2021-06-29'
+  url: https://raw.githubusercontent.com/cmu-lib/bgdc2021-hackathon/main/paper.md
+  doi: https://doi.org/10.37044/osf.io/5j7cm
 - id: https://biohackrxiv.org/v3jct
   title: Exploiting Bioschemas Markup to Populate IDPcentral
   date_published: '2021-06-22'
