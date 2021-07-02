@@ -9,7 +9,7 @@
     schema:name "BH21EU" ;
     dc:date "2021-11-08"^^xsd:date ;
     a schema:Event .
-<https://www.library.cmu.edu/> schema:description "Clinical Reporting of MultiOmics Data"@en ;
+<https://www.library.cmu.edu/> schema:description "Virtual CMU BioHackathon on Clinical Reporting of MultiOmics Data"@en ;
     schema:name "CMULibraries2021" ;
     dc:date "2021-06-01"^^xsd:date ;
     a schema:Event .
@@ -213,6 +213,26 @@
 <https://biohackrxiv.org/gzfa8> bhx:Tag "public dictionaries"@en .
 <https://biohackrxiv.org/gzfa8> bhx:Tag "knowledge annotation"@en .
 <https://biohackrxiv.org/gzfa8> bhx:Tag "semantic web"@en .
+<https://biohackrxiv.org/9mnkb> dc:title "Progress on Data Stewardship Wizard during BioHackathon Europe 2020"@en ;
+    schema:sameAs <https://doi.org/10.37044/osf.io/9mnkb> ;
+    schema:url <https://raw.githubusercontent.com/ds-wizard/bh2020-report/main/paper.md> ;
+    bhx:Event <https://2020.biohackathon-europe.org/> ;
+    bhx:repository <https://github.com/biohackrxiv/> ;
+    dc:date "2020-12-06"^^xsd:date ;
+    a schema:CreativeWork .
+
+<https://biohackrxiv.org/9mnkb> dc:contributor [
+  a rdf:Seq;
+  rdf:_1 "Marek Suchánek" ;
+  rdf:_2 "Rob Hooft" ;
+  rdf:_3 "Konogan Bourhy" ;
+  ].
+
+<https://biohackrxiv.org/9mnkb> bhx:Tag "data stewardship"@en .
+<https://biohackrxiv.org/9mnkb> bhx:Tag "data management plan"@en .
+<https://biohackrxiv.org/9mnkb> bhx:Tag "document templates"@en .
+<https://biohackrxiv.org/9mnkb> bhx:Tag "public API integration"@en .
+<https://biohackrxiv.org/9mnkb> bhx:Tag "software internationalization"@en .
 <https://biohackrxiv.org/gmbjv> dc:title "Disease and pathway maps for Rare Diseases"@en ;
     schema:sameAs <https://doi.org/10.37044/osf.io/gmbjv> ;
     schema:url <https://raw.githubusercontent.com/elixir-europe/BioHackathon-projects-2019/master/projects/5/report/paper.md> ;

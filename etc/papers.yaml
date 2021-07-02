@@ -39,7 +39,7 @@ papers:
   title: Progress on Data Stewardship Wizard during BioHackathon Europe 2020
   date_published: '2020-12-06'
   doi: https://doi.org/10.37044/osf.io/9mnkb
-  url: unknown
+  url: https://raw.githubusercontent.com/ds-wizard/bh2020-report/main/paper.md
   event: BH20EU
 - id: https://biohackrxiv.org/gmbjv
   title: Disease and pathway maps for Rare Diseases
