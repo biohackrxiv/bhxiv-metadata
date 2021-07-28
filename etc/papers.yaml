@@ -10,7 +10,7 @@ papers:
   date_published: '2021-06-22'
   url: https://raw.githubusercontent.com/elixir-europe/BioHackathon-projects-2020/master/projects/24/IDPCentral/BioHackrXivReport/paper.md
   doi: https://doi.org/10.37044/osf.io/v3jct
-  event: Elixir2019
+  event: BH20EU
 - id: https://biohackrxiv.org/wu9et
   title: Knowledge graphs and wikidata subsetting
   date_published: '2021-04-02'
@@ -82,7 +82,7 @@ papers:
   date_published: '2020-04-10'
   doi: https://doi.org/10.37044/osf.io/km9ux
   url: https://raw.githubusercontent.com/journal-of-research-objects/Example-BioHackrXiv-Paper/master/paper.md
-  event: Japan2019
+  event: Covid2020
 - id: https://biohackrxiv.org/8qdse
   title: Data validation and schema interoperability
   date_published: '2020-04-07'
