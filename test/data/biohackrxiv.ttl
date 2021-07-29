@@ -86,7 +86,7 @@
 <https://biohackrxiv.org/v3jct> dc:title "Exploiting Bioschemas Markup to Populate IDPcentral"@en ;
     schema:sameAs <https://doi.org/10.37044/osf.io/v3jct> ;
     schema:url <https://raw.githubusercontent.com/elixir-europe/BioHackathon-projects-2020/master/projects/24/IDPCentral/BioHackrXivReport/paper.md> ;
-    bhx:Event <https://2019.biohackathon-europe.org/> ;
+    bhx:Event <https://2020.biohackathon-europe.org/> ;
     bhx:repository <https://github.com/biohackrxiv/> ;
     dc:date "2021-06-22"^^xsd:date ;
     a schema:CreativeWork .
@@ -398,7 +398,7 @@
 <https://biohackrxiv.org/km9ux> dc:title "Logic Programming for the Biomedical Sciences"@en ;
     schema:sameAs <https://doi.org/10.37044/osf.io/km9ux> ;
     schema:url <https://raw.githubusercontent.com/journal-of-research-objects/Example-BioHackrXiv-Paper/master/paper.md> ;
-    bhx:Event <http://2019.biohackathon.org/> ;
+    bhx:Event <https://github.com/virtual-biohackathons/covid-19-bh20> ;
     bhx:repository <https://github.com/biohackrxiv/> ;
     dc:date "2020-04-10"^^xsd:date ;
     a schema:CreativeWork .
