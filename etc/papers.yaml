@@ -82,7 +82,7 @@ papers:
   date_published: '2020-04-10'
   doi: https://doi.org/10.37044/osf.io/km9ux
   url: https://raw.githubusercontent.com/journal-of-research-objects/Example-BioHackrXiv-Paper/master/paper.md
-  event: Covid2020
+  event: Japan2019
 - id: https://biohackrxiv.org/8qdse
   title: Data validation and schema interoperability
   date_published: '2020-04-07'
