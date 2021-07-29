@@ -398,7 +398,7 @@
 <https://biohackrxiv.org/km9ux> dc:title "Logic Programming for the Biomedical Sciences"@en ;
     schema:sameAs <https://doi.org/10.37044/osf.io/km9ux> ;
     schema:url <https://raw.githubusercontent.com/journal-of-research-objects/Example-BioHackrXiv-Paper/master/paper.md> ;
-    bhx:Event <https://github.com/virtual-biohackathons/covid-19-bh20> ;
+    bhx:Event <http://2019.biohackathon.org/> ;
     bhx:repository <https://github.com/biohackrxiv/> ;
     dc:date "2020-04-10"^^xsd:date ;
     a schema:CreativeWork .
