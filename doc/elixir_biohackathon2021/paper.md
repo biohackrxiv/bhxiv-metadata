@@ -54,6 +54,22 @@ Next steps:
 3. Test the new preview generator - and add some tests
 4. Support biohackathon groups with their publications (let's get 30 publications in 2021!)
 
+## CiTO support
+
+The Citation Typing Ontology [@usesMethodIn:CiTO] provides a framework to annotation citations
+with the reasons ("intention") why that citation is made. For example, you can cite an article
+because it describes data or a method you are using. Or you are citing the article because
+you disagree with it.
+
+Despite the long history, it is not widely used yet. The Springer Nature
+Journal of Cheminformatics, however, started in 2020 a pilot with using CiTO annotation
+[@citesAsAuthority:Willighagen2020]. As part of this pilot, Lua scripts were developed
+that would allow the citation typing to happen when the citation was made.
+
+The tool to convert BioHackrXiv Markdown to PDF has now been extended with an updated
+Lua filter to work with the APA Citation Styling Language (CSL), different from CSL
+used by the Journal of Cheminformatics.
+
 # Discussion
 
 As part of the Elixir Biohackathon 2021 we added
