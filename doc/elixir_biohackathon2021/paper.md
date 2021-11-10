@@ -11,12 +11,15 @@ authors:
     orcid: 0000-0003-3777-5945
     affiliation: 2
   - name: Egon Willighagen
+    orcid: 0000-0001-7542-0286
     affiliation: 3
 affiliations:
   - name: Department of Genetics, Genomics and Informatics, The University of Tennessee Health Science Center, Memphis, TN, USA.
     index: 1
   - name: Database Center for Life Science, Research Organization of Information and Systems, Japan
     index: 2
+  - name: Department of Bioinformatics - BiGCaT, Maastricht University, Maastricht, The Netherlands
+    index: 3
 date: 15 November 2021
 bibliography: paper.bib
 event: Elixir2021
