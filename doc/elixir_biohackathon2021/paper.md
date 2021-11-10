@@ -21,9 +21,13 @@ affiliations:
   - name: Department of Bioinformatics - BiGCaT, Maastricht University, Maastricht, The Netherlands
     index: 3
 date: 15 November 2021
-bibliography: paper.bib
-event: Elixir2021
-group: BioHackrXiv Group
+cito-bibliography: paper.bib
+event: Fukuoka2019
+biohackathon_name: "BioHackathon Europe"
+biohackathon_url:   "https://biohackathon-europe.org/"
+biohackathon_location: "Barcalona, Spain, 2021"
+group: Logic programming group
+git_url: https://github.com/biohackrxiv/bhxiv-gen-pdf
 authors_short: Pjotr Prins, Tazro Otha, Egon Willighagen
 ---
 
