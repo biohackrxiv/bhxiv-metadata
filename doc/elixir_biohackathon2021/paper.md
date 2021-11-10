@@ -11,12 +11,15 @@ authors:
     orcid: 0000-0003-3777-5945
     affiliation: 2
   - name: Egon Willighagen
+    orcid: 0000-0001-7542-0286
     affiliation: 3
 affiliations:
   - name: Department of Genetics, Genomics and Informatics, The University of Tennessee Health Science Center, Memphis, TN, USA.
     index: 1
   - name: Database Center for Life Science, Research Organization of Information and Systems, Japan
     index: 2
+  - name: Department of Bioinformatics - BiGCaT, Maastricht University, Maastricht, The Netherlands
+    index: 3
 date: 15 November 2021
 bibliography: paper.bib
 event: Elixir2021
@@ -50,6 +53,22 @@ Next steps:
 2. Add CiTO information to our own RDF store
 3. Test the new preview generator - and add some tests
 4. Support biohackathon groups with their publications (let's get 30 publications in 2021!)
+
+## CiTO support
+
+The Citation Typing Ontology [@usesMethodIn:CiTO] provides a framework to annotation citations
+with the reasons ("intention") why that citation is made. For example, you can cite an article
+because it describes data or a method you are using. Or you are citing the article because
+you disagree with it.
+
+Despite the long history, it is not widely used yet. The Springer Nature
+Journal of Cheminformatics, however, started in 2020 a pilot with using CiTO annotation
+[@citesAsAuthority:Willighagen2020]. As part of this pilot, Lua scripts were developed
+that would allow the citation typing to happen when the citation was made.
+
+The tool to convert BioHackrXiv Markdown to PDF has now been extended with an updated
+Lua filter to work with the APA Citation Styling Language (CSL), different from CSL
+used by the Journal of Cheminformatics.
 
 # Discussion
 
