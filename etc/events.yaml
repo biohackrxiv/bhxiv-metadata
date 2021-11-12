@@ -5,6 +5,8 @@ events:
     url: https://biohackathon-europe.org/
     txt: BioHackathon Europe, Barcelona, Spain, 2021
     date: 2021-11-08
+  Aomori2021:
+    txt: Japan
   CMULibraries2021:
     projects: https://www.library.cmu.edu/about/publications/news/upcoming-event-hackathon-2021
     url: https://www.library.cmu.edu/

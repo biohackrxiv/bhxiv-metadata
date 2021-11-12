@@ -4,6 +4,7 @@ papers:
   title: ELIXIR Software Management Plan for Life Sciences
   date_published: '2021-10-25'
   doi: https://doi.org/10.37044/osf.io/k8znb
+  url: https://raw.githubusercontent.com/elixir-europe/smp/main/paper/paper.md
   event: BH20EU
 - id: https://biohackrxiv.org/gbt8p
   title: Rapid metagenomic workflow using annotated 16S RNA dataset
@@ -18,6 +19,7 @@ papers:
   event: Covid2020
 - id: https://biohackrxiv.org/3dxhg
   title: Measuring outcomes and impact from the BioHackathon Europe
+  url: https://raw.githubusercontent.com/zbmed-semtec/BioHackOutcomes/main/paper/paper.md
   date_published: '2021-08-10'
   doi: https://doi.org/10.37044/osf.io/3dxhg
   event: BH20EU
