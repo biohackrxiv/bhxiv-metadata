@@ -4,23 +4,29 @@ papers:
   title: ELIXIR Software Management Plan for Life Sciences
   date_published: '2021-10-25'
   doi: https://doi.org/10.37044/osf.io/k8znb
+  event: BH20EU
 - id: https://biohackrxiv.org/gbt8p
   title: Rapid metagenomic workflow using annotated 16S RNA dataset
   date_published: '2021-09-30'
   doi: https://doi.org/10.37044/osf.io/gbt8p
+  event: Japan
 - id: https://biohackrxiv.org/n6tcz
   title: The COVID-19 epidemiology and monitoring ontology
   date_published: '2021-08-11'
+  url: https://raw.githubusercontent.com/NuriaQueralt/covid19-epidemiology-ontology/main/paper/biohackrxiv/paper.md
   doi: https://doi.org/10.37044/osf.io/n6tcz
+  event: Covid2020
 - id: https://biohackrxiv.org/3dxhg
   title: Measuring outcomes and impact from the BioHackathon Europe
   date_published: '2021-08-10'
   doi: https://doi.org/10.37044/osf.io/3dxhg
+  event: BH20EU
 - id: https://biohackrxiv.org/5j7cm
   title: 'SnpReportR: A Tool for Clinical Reporting of RNAseq Expression and Variants'
   date_published: '2021-06-29'
   url: https://raw.githubusercontent.com/cmu-lib/bgdc2021-hackathon/main/paper.md
   doi: https://doi.org/10.37044/osf.io/5j7cm
+  event: CMULibraries2021
 - id: https://biohackrxiv.org/v3jct
   title: Exploiting Bioschemas Markup to Populate IDPcentral
   date_published: '2021-06-22'
