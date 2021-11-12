@@ -24,8 +24,6 @@ The scripts need:
 
 * Generate JSON-LD
 
-
-
 : ruby ./bin/biohackr2json-ld.rb
 
 * Generate RDF
