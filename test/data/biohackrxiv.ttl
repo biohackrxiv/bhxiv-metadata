@@ -9,6 +9,10 @@
     schema:name "BH21EU" ;
     dc:date "2021-11-08"^^xsd:date ;
     a schema:Event .
+<> schema:description "Japan"@en ;
+    schema:name "Aomori2021" ;
+    dc:date ""^^xsd:date ;
+    a schema:Event .
 <https://www.library.cmu.edu/> schema:description "Virtual CMU BioHackathon on Clinical Reporting of MultiOmics Data"@en ;
     schema:name "CMULibraries2021" ;
     dc:date "2021-06-01"^^xsd:date ;
@@ -38,6 +42,80 @@
     dc:date "1970-01-01"^^xsd:date ;
     a schema:Event .
 
+<https://biohackrxiv.org/k8znb> dc:title "ELIXIR Software Management Plan for Life Sciences"@en ;
+    schema:sameAs <https://doi.org/10.37044/osf.io/k8znb> ;
+    schema:url <https://raw.githubusercontent.com/elixir-europe/smp/main/paper/paper.md> ;
+    bhx:Event <https://2020.biohackathon-europe.org/> ;
+    bhx:repository <https://github.com/biohackrxiv/> ;
+    dc:date "2021-10-25"^^xsd:date ;
+    a schema:CreativeWork .
+
+<https://biohackrxiv.org/k8znb> dc:contributor [
+  a rdf:Seq;
+  rdf:_1 "Renato Alves" ;
+  rdf:_2 "Dimitrios Bampalikis" ;
+  rdf:_3 "Leyla Jael Castro" ;
+  rdf:_4 "José M. Fernández" ;
+  rdf:_5 "Jennifer Harrow" ;
+  rdf:_6 "Mateusz Kuzak" ;
+  rdf:_7 "Eva Martín del Pico" ;
+  rdf:_8 "Fotis Psomopoulos" ;
+  rdf:_9 "Allegra Via" ;
+  ].
+
+<https://biohackrxiv.org/k8znb> bhx:Tag "Research software"@en .
+<https://biohackrxiv.org/k8znb> bhx:Tag "Management plans"@en .
+<https://biohackrxiv.org/k8znb> bhx:Tag "ELIXIR Tools"@en .
+<https://biohackrxiv.org/k8znb> bhx:Tag "Software Best Practices"@en .
+<https://biohackrxiv.org/k8znb> bhx:Tag "Life Sciences"@en .
+<https://biohackrxiv.org/k8znb> bhx:Tag "FAIR Software"@en .
+<https://biohackrxiv.org/k8znb> bhx:Tag "Open Science"@en .
+<https://biohackrxiv.org/n6tcz> dc:title "The COVID-19 epidemiology and monitoring ontology"@en ;
+    schema:sameAs <https://doi.org/10.37044/osf.io/n6tcz> ;
+    schema:url <https://raw.githubusercontent.com/NuriaQueralt/covid19-epidemiology-ontology/main/paper/biohackrxiv/paper.md> ;
+    bhx:Event <https://github.com/virtual-biohackathons/covid-19-bh20> ;
+    bhx:repository <https://github.com/biohackrxiv/> ;
+    dc:date "2021-08-11"^^xsd:date ;
+    a schema:CreativeWork .
+
+<https://biohackrxiv.org/n6tcz> dc:contributor [
+  a rdf:Seq;
+  rdf:_1 "Núria Queralt-Rosinach" ;
+  rdf:_2 "Paul Schofield" ;
+  rdf:_3 "Robert Hoehndorf" ;
+  rdf:_4 "Claus Weiland" ;
+  rdf:_5 "Erik Schultes" ;
+  rdf:_6 "César Henrique Bernabé" ;
+  rdf:_7 "Marco Roos" ;
+  ].
+
+<https://biohackrxiv.org/n6tcz> bhx:Tag "COVID-19"@en .
+<https://biohackrxiv.org/n6tcz> bhx:Tag "Epidemiology"@en .
+<https://biohackrxiv.org/n6tcz> bhx:Tag "Monitoring"@en .
+<https://biohackrxiv.org/n6tcz> bhx:Tag "Ontology"@en .
+<https://biohackrxiv.org/3dxhg> dc:title "Measuring outcomes and impact from the BioHackathon Europe"@en ;
+    schema:sameAs <https://doi.org/10.37044/osf.io/3dxhg> ;
+    schema:url <https://raw.githubusercontent.com/zbmed-semtec/BioHackOutcomes/main/paper/paper.md> ;
+    bhx:Event <https://2020.biohackathon-europe.org/> ;
+    bhx:repository <https://github.com/biohackrxiv/> ;
+    dc:date "2021-08-10"^^xsd:date ;
+    a schema:CreativeWork .
+
+<https://biohackrxiv.org/3dxhg> dc:contributor [
+  a rdf:Seq;
+  rdf:_1 "Leyla Jael Castro" ;
+  rdf:_2 "Corinne Martin" ;
+  rdf:_3 "Georgi Lazarov" ;
+  rdf:_4 "Dana Cernoskova" ;
+  rdf:_5 "Terue Takatsuki" ;
+  rdf:_6 "Jennifer Harrow" ;
+  rdf:_7 "Dietrich Rebholz-Schuhmann" ;
+  ].
+
+<https://biohackrxiv.org/3dxhg> bhx:Tag "BioHackathon"@en .
+<https://biohackrxiv.org/3dxhg> bhx:Tag "GitHub"@en .
+<https://biohackrxiv.org/3dxhg> bhx:Tag "Impact"@en .
+<https://biohackrxiv.org/3dxhg> bhx:Tag "Outcomes"@en .
 <https://biohackrxiv.org/5j7cm> dc:title "SnpReportR: A Tool for Clinical Reporting of RNAseq Expression and Variants"@en ;
     schema:sameAs <https://doi.org/10.37044/osf.io/5j7cm> ;
     schema:url <https://raw.githubusercontent.com/cmu-lib/bgdc2021-hackathon/main/paper.md> ;
