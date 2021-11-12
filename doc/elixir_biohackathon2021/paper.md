@@ -58,6 +58,28 @@ Next steps:
 3. Test the new preview generator - and add some tests
 4. Support biohackathon groups with their publications (let's get 30 publications in 2021!)
 
+## Friday final report
+
+Outcomes
+
+1. CiTO support with recent CSL
+2. SVG support
+3. Added RDF
+4. Updated software stack
+5. More papers this biohackathon
+6. Add tests
+
+Future
+
+1. Publish paper.md BioHackEU2021
+2. Support other group papers
+3. Bring CiTO to JOSS
+4. Improve RDF/wikidata/opencitations with CiTO
+5. More info on OSF page
+6. Support multiple papers in one repo by giving a full (git) path
+
+See http://preview.biohackrxiv.org/
+
 ## CiTO support
 
 The Citation Typing Ontology [@usesMethodIn:CiTO] provides a framework to annotation citations
