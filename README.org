@@ -1,5 +1,9 @@
 * BioHackrXiv metadata
 
+This repository handles BioHackrXiv's metadata (through RDF and JSON).
+Note that paper.md publications get cached here, so as to keep a stable
+record.
+
 https://biohackrxiv.org/ is a scholarly publication service for
 biohackathons and codefests where papers are generated from markdown
 templates (see markdown [[https://raw.githubusercontent.com/biohackrxiv/bhxiv-gen-pdf/master/example/logic/paper.md][example]]). In this repository we parse

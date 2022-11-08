@@ -6,11 +6,11 @@ papers:
   doi: https://doi.org/10.37044/osf.io/k8znb
   url: https://raw.githubusercontent.com/elixir-europe/smp/main/paper/paper.md
   event: BH20EU
-- id: https://biohackrxiv.org/gbt8p
-  title: Rapid metagenomic workflow using annotated 16S RNA dataset
-  date_published: '2021-09-30'
-  doi: https://doi.org/10.37044/osf.io/gbt8p
-  event: Japan
+# - id: https://biohackrxiv.org/gbt8p
+#   title: Rapid metagenomic workflow using annotated 16S RNA dataset
+#   date_published: '2021-09-30'
+#   doi: https://doi.org/10.37044/osf.io/gbt8p
+#   event: Japan
 - id: https://biohackrxiv.org/n6tcz
   title: The COVID-19 epidemiology and monitoring ontology
   date_published: '2021-08-11'
