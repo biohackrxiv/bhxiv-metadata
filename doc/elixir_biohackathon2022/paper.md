@@ -51,9 +51,9 @@ markdown layout used in the Journal of Open Source Software
 
 BioHackrXiv uses RDF to track metadata on publications, parsed directly from the markdown documents that are submitted. The preview webserver, for example, queries the graph and caches the result in memory. The main RDF store and SPARQL endpoint runs in virtuoso-ose and for this biohackathon we decided to create a GNU Guix system container - that allows easy deployment of the full service anywhere. The definition is [here](https://github.com/genenetwork/genenetwork-machines/commit/3cebfb3e30e903851aefb2f997d8847d3f0ddee4) with the public SPARQL endpoint https://sparql.genenetwork.org/sparql
 
-
 ## Hackathon integration (Pjotr)
 
+* Added secondary preview after updating Guix http://biohackrxiv.genenetwork.org/
 
 # Discussion
 
