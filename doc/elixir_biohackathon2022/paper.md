@@ -41,11 +41,37 @@ markdown layout used in the Journal of Open Source Software
 (JOSS)[@JOSS]. Templates are provided as an
 [example](https://github.com/biohackrxiv/submission-templates).
 
+* Describe current method through OSF
+
 # Results
 
 ## Zenodo API (Arun)
 
 ## OpenCitations (Mats)
+
+* Contains papers that cite each other
+* Uncited papers not included
+* Data fetched from europmc.org
+* Includes DOI
+* Includes misspelled authors
+* ORCID?
+* Takes time to sync
+
+* europepmc is complete
+* europepmc exposes RDF from REST API
+* Includes misspellings
+* Wel abstract
+* Missing ORCID
+
+Missing metadata and wrong metadata from europepmc
+Missing papers from opencitations
+
+Conclusion: kunnen niet zonder metadata, we need to validate europepmc with the paper metadata.
+
+Solution: write our own uploader that can push to OSF and/or Zenodo to get an API.
+Advantage: choice for DOI generation. No double input for author name. Automatic ORCIDs and other metadata.
+
+See if we can use the OSF API for this.
 
 ## Virtuoso as a system container (Arun)
 
