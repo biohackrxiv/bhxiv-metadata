@@ -13,6 +13,8 @@ authors:
   - name: Egon Willighagen
     orcid: 0000-0001-7542-0286
     affiliation: 3
+  - name: Mats Perk
+    affiliation: 4
 affiliations:
   - name: Department of Genetics, Genomics and Informatics, The University of Tennessee Health Science Center, Memphis, TN, USA.
     index: 1
@@ -20,6 +22,8 @@ affiliations:
     index: 2
   - name: Department of Bioinformatics - BiGCaT, Maastricht University, Maastricht, The Netherlands
     index: 3
+  - name: Turku Bioscience Centre, University of Turku, Turun yliopisto, Finland
+    index: 4
 date: 15 November 2022
 cito-bibliography: paper.bib
 event: BIO22EU
@@ -88,6 +92,7 @@ BioHackrXiv uses RDF to track metadata on publications, parsed directly from the
 ## Hackathon integration (Pjotr)
 
 * Added secondary preview after updating Guix http://biohackrxiv.genenetwork.org/
+* Fediverse
 
 # Discussion
 
