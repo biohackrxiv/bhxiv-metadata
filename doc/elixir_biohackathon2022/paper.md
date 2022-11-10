@@ -45,6 +45,10 @@ markdown layout used in the Journal of Open Source Software
 
 # Results
 
+## TODO
+
+* Mermaid on pandoc
+
 ## Zenodo API (Arun)
 
 ## OpenCitations (Mats)
