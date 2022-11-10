@@ -77,6 +77,10 @@ Advantage: choice for DOI generation. No double input for author name. Automatic
 
 See if we can use the OSF API for this.
 
+You seem to be able to create & upload preprint via the api in /v2/prerpints,
+as described [here](https://developer.osf.io/#operation/preprints_create),
+for local reference, you can clone the docs [here](https://github.com/CenterForOpenScience/developer.osf.io) and then check the files `osf-docs/swagger-spec/preprints/list.yaml` and `osf-docs/swagger-spec/preprints/definition.yaml`.
+A well documented test-case can be found [here](https://raw.githubusercontent.com/CenterForOpenScience/osf-selenium-tests/develop/api/osf_api.py) which can start as a good launch-off point.
 ## Virtuoso as a system container (Arun)
 
 BioHackrXiv uses RDF to track metadata on publications, parsed directly from the markdown documents that are submitted. The preview webserver, for example, queries the graph and caches the result in memory. The main RDF store and SPARQL endpoint runs in virtuoso-ose and for this biohackathon we decided to create a GNU Guix system container - that allows easy deployment of the full service anywhere. The definition is [here](https://github.com/genenetwork/genenetwork-machines/commit/3cebfb3e30e903851aefb2f997d8847d3f0ddee4) with the public SPARQL endpoint https://sparql.genenetwork.org/sparql
