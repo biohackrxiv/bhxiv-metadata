@@ -4,8 +4,10 @@ title_short: 'Metadata for BioHackrXiv'
 tags:
   - metadata RDF pre-prints
 authors:
-  - name: Pjotr Prins
-    orcid: 0000-0002-8021-9162
+  - name: Mats Perk
+    affiliation: 4
+  - name: Arun Isaac
+    orcid: 0000-0002-6810-8195
     affiliation: 1
   - name: Tazro Ohta
     orcid: 0000-0003-3777-5945
@@ -13,8 +15,15 @@ authors:
   - name: Egon Willighagen
     orcid: 0000-0001-7542-0286
     affiliation: 3
-  - name: Mats Perk
-    affiliation: 4
+  - name: Leyla Garcia Castro
+    affiliation: 5
+    orcid: 0000-0003-3986-0510
+  - name: Toshiaki Katayama
+    orcid: 0000-0003-2391-0384
+    affiliation: 2
+  - name: Pjotr Prins
+    orcid: 0000-0002-8021-9162
+    affiliation: 1
 affiliations:
   - name: Department of Genetics, Genomics and Informatics, The University of Tennessee Health Science Center, Memphis, TN, USA.
     index: 1
@@ -24,6 +33,7 @@ affiliations:
     index: 3
   - name: Turku Bioscience Centre, University of Turku, Turun yliopisto, Finland
     index: 4
+  - name: Knowledge Management Group, at ZBMED Information Centre for life sciences
 date: 15 November 2022
 cito-bibliography: paper.bib
 event: BIO22EU
@@ -37,21 +47,39 @@ authors_short: Pjotr Prins, Tazro Otha, Egon Willighagen
 
 # Introduction
 
-https://biohackrxiv.org/ is a scholarly publication service for
-biohackathons and codefests where papers are generated from markdown
+In this paper we present the work done on BioHackrXiv during the Elixir Biohackathon in Paris, 2022. The goal was to improve deployment and takeup of the web service and to set a roadmap for improving the workflow and explore integration of EuropePMC, OpenCitation and Zenodo services.
+
+[BioHackrXiv](https://biohackrxiv.org/) is a scholarly publication service for
+biohackathons and codefests where papers are generated from markdown/LaTeX
 templates where the header is a YAML/JSON record that includes the
 title, authors, affiliations and tags. The idea originated from the
 markdown layout used in the Journal of Open Source Software
 (JOSS)[@JOSS]. Templates are provided as an
-[example](https://github.com/biohackrxiv/submission-templates).
+[example](https://github.com/biohackrxiv/publication-template). So far, some 30 papers have been published through this system.
 
-* Describe current method through OSF
+As described in the Elixir 2020 Biohackathon paper (FIXME: cite) metadata is crucial to publications, including acquiring a digital object identifier (DOI). DOIs are permanent URIs to PDFs, so publications can be cited by others. One interesting aspect is that DOIs support versioning - that means papers can be updated under the same DOI, this is not the case with content-addressable identifiers, such as IPFS.
+
+In the existing workflow we host BioHackrXiv.org as a - so called - preprint server with the Open Science Foundation (OSF). OSF manages the publication submission system and creates a DOI on acceptance. A DOI may look like \url{https://doi.org/10.37044/osf.io/km9ux} and should resolve to a hosted PDF.
+
+For the authors, the current setup, demands writing a paper in a git repository using pandoc flavoured markdown that allows for embedded LaTeX. We wrote a preview webservice at \url{http://preview.biohackrxiv.org/} that generates a nice looking PDF from a pasted git URL, or alternatively a zipped up file containing paper.md and paper.bib. Next, the main author has to submit the paper through the OSF managed preprint system.
+After a cursory check, one of the editors of BioHackrXiv will accept or reject the paper -- mostly as a curation step against SPAM. After acceptance the paper appears online with a DOI and automatically gets included in the EU PMID or EuropePMID, followed by OpenCitations.
+
+Even though the system works as a `minimal viable product', and the PDF generation and submission works rather well, we identified a number of problems with the existing workflow:
+
+1. Authors have to submit some information twice - particularly author names - which is prone to mistakes (missing authors, misspellings)
+1. In previous biohackathons we engineered a metadata graph that exports publications and their authors. Updating this graph includes some manual steps and that causes significant delays in updating the graph
+1. When authors submit a zip file we have to contact the authors for all relevant metadata
+1. The current system can not include code+data with the submission
+1. and the preview service has a limitation of one paper per git repository
+
+We identified these challenges and decided we need to automate more and work on the mechanism of submitting and generating publications and their metadata. In this biohackathon, in addition to fixing bugs and helping other groups format their biohackathon publications, we visited OSF, Zenodo, and OpenCitations APIs and RDF, wrote proof-of-concept code, and this resulted in a new road map for BioHackrXiv.
 
 # Results
 
 ## TODO
 
 * Mermaid on pandoc
+* i8n support
 
 ## Zenodo API (Arun)
 
@@ -67,8 +95,9 @@ markdown layout used in the Journal of Open Source Software
 
 * europepmc is complete
 * europepmc exposes RDF from REST API
+  - https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=doi:10.37044/osf.io/8qdse&format=dc
 * Includes misspellings
-* Wel abstract
+* With abstract
 * Missing ORCID
 
 Missing metadata and wrong metadata from europepmc
