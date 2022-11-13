@@ -47,15 +47,12 @@ authors_short: Pjotr Prins, Tazro Otha, Egon Willighagen
 
 # Introduction
 
-In this paper we present the work done on BioHackrXiv during the Elixir Biohackathon in Paris, 2022. The goal was to improve deployment and takeup of the web service and to set a roadmap for improving the workflow and explore integration of EuropePMC, OpenCitation and Zenodo services.
-
 [BioHackrXiv](https://biohackrxiv.org/) is a scholarly publication service for
-biohackathons and codefests where papers are generated from markdown/LaTeX
-templates where the header is a YAML/JSON record that includes the
-title, authors, affiliations and tags. The idea originated from the
-markdown layout used in the Journal of Open Source Software
-(JOSS)[@JOSS]. Templates are provided as an
-[example](https://github.com/biohackrxiv/publication-template). So far, some 30 papers have been published through this system.
+biohackathons and codefests. So far, some 30 papers by XX authors have been published through this system and with the amount of biohackathons and codefests increasing we expect this type of reporting and publishing to continue.
+
+In this paper we present the work executed on BioHackrXiv during the Elixir Biohackathon in Paris, 2022. The goal was to improve deployment and takeup of the web service and to set a roadmap for improving the workflow and explore integration of EuropePMC, OpenCitation and Zenodo services.
+
+BioHackrXiv publications are generated from markdown/LaTeX templates where the header is a YAML/JSON record that includes the title, authors, affiliations and tags. The idea originated from the markdown layout that is used in the Journal of Open Source Software (JOSS)[@JOSS] where Prins used to be part of the editorial board (cite). Templates are provided as an [example](https://github.com/biohackrxiv/publication-template).
 
 As described in the Elixir 2020 Biohackathon paper (FIXME: cite) metadata is crucial to publications, including acquiring a digital object identifier (DOI). DOIs are permanent URIs to PDFs, so publications can be cited by others. One interesting aspect is that DOIs support versioning - that means papers can be updated under the same DOI, this is not the case with content-addressable identifiers, such as IPFS.
 
@@ -123,7 +120,19 @@ BioHackrXiv uses RDF to track metadata on publications, parsed directly from the
 * Added secondary preview after updating Guix http://biohackrxiv.genenetwork.org/
 * Fediverse
 
+## Enhancements
+
+* Unit tests
+* CITO
+* LaTeX
+* Template
+
+Templates are provided as an
+[example](https://github.com/biohackrxiv/publication-template). So far, some 30 papers have been published through this system.
+
 # Discussion
+
+BioHackrXiv allow projects to publish their work as a citeable resource in the form of non-peer reviewed pre-published papers. A minority of these may end up as a peer reviewed paper. Even so, getting citeable resources is valuable and work done at biohackathons does not get lost this way.
 
 ## Repositories
 
