@@ -34,6 +34,7 @@ affiliations:
   - name: Turku Bioscience Centre, University of Turku, Turun yliopisto, Finland
     index: 4
   - name: Knowledge Management Group, at ZBMED Information Centre for life sciences
+    index: 5
 date: 15 November 2022
 cito-bibliography: paper.bib
 event: BIO22EU
@@ -47,16 +48,18 @@ authors_short: Pjotr Prins, Tazro Otha, Egon Willighagen
 
 # Introduction
 
+In this paper we present the work executed on BioHackrXiv during the Elixir Biohackathon in Paris, 2022.
+Over thirty papers have been published through this system and with the amount of biohackathons and codefests increasing every year, we expect this type of reporting and publishing to continue.
+The goal was to further improve deployment and takeup of the web service and to set a roadmap for improving the workflow and explore integration of EuropePMC, OpenCitation and Zenodo services (cite?).
+
 [BioHackrXiv](https://biohackrxiv.org/) is a scholarly publication service for
-biohackathons and codefests. So far, some 30 papers by XX authors have been published through this system and with the amount of biohackathons and codefests increasing we expect this type of reporting and publishing to continue.
+biohackathons and codefests.
+BioHackrXiv publications are generated from markdown/LaTeX templates where the header is a YAML/JSON record that includes the title, authors, affiliations and tags. The idea originated from the [pandoc flavoured markdown](https://garrettgman.github.io/rmarkdown/authoring_pandoc_markdown.html) layout (cite?) that is used in the Journal of Open Source Software (JOSS)[@JOSS] where Prins used to be part of the editorial board (cite?).
+Templates are provided as an [example](https://github.com/biohackrxiv/publication-template).
 
-In this paper we present the work executed on BioHackrXiv during the Elixir Biohackathon in Paris, 2022. The goal was to improve deployment and takeup of the web service and to set a roadmap for improving the workflow and explore integration of EuropePMC, OpenCitation and Zenodo services.
+As described in the Elixir 2020 Biohackathon paper (cite?) metadata is crucial to publications, including acquiring a digital object identifier (DOI). DOIs are permanent URIs to PDFs, so publications can be cited by others. One interesting aspect is that DOIs support versioning - that means papers can be updated under the same DOI, this is not the case with content-addressable identifiers, such as IPFS (cite?).
 
-BioHackrXiv publications are generated from markdown/LaTeX templates where the header is a YAML/JSON record that includes the title, authors, affiliations and tags. The idea originated from the markdown layout that is used in the Journal of Open Source Software (JOSS)[@JOSS] where Prins used to be part of the editorial board (cite). Templates are provided as an [example](https://github.com/biohackrxiv/publication-template).
-
-As described in the Elixir 2020 Biohackathon paper (FIXME: cite) metadata is crucial to publications, including acquiring a digital object identifier (DOI). DOIs are permanent URIs to PDFs, so publications can be cited by others. One interesting aspect is that DOIs support versioning - that means papers can be updated under the same DOI, this is not the case with content-addressable identifiers, such as IPFS.
-
-In the existing workflow we host BioHackrXiv.org as a - so called - preprint server with the Open Science Foundation (OSF). OSF manages the publication submission system and creates a DOI on acceptance. A DOI may look like \url{https://doi.org/10.37044/osf.io/km9ux} and should resolve to a hosted PDF.
+In the existing workflow we host BioHackrXiv.org as a --- so called --- preprint service with the Open Science Foundation (OSF). OSF manages the publication submission system and creates a DOI on acceptance. A DOI may look like \url{https://doi.org/10.37044/osf.io/km9ux} and should resolve to a hosted PDF.
 
 For the authors, the current setup, demands writing a paper in a git repository using pandoc flavoured markdown that allows for embedded LaTeX. We wrote a preview webservice at \url{http://preview.biohackrxiv.org/} that generates a nice looking PDF from a pasted git URL, or alternatively a zipped up file containing paper.md and paper.bib. Next, the main author has to submit the paper through the OSF managed preprint system.
 After a cursory check, one of the editors of BioHackrXiv will accept or reject the paper -- mostly as a curation step against SPAM. After acceptance the paper appears online with a DOI and automatically gets included in the EU PMID or EuropePMID, followed by OpenCitations.
@@ -65,9 +68,9 @@ Even though the system works as a `minimal viable product', and the PDF generati
 
 1. Authors have to submit some information twice - particularly author names - which is prone to mistakes (missing authors, misspellings)
 1. In previous biohackathons we engineered a metadata graph that exports publications and their authors. Updating this graph includes some manual steps and that causes significant delays in updating the graph
-1. When authors submit a zip file we have to contact the authors for all relevant metadata
-1. The current system can not include code+data with the submission
-1. and the preview service has a limitation of one paper per git repository
+1. When authors choose to submit a zip file we have to contact the authors for all relevant metadata
+1. The current system can not include accompanying code and data with the submission
+1. The preview service has a limitation of one paper per git repository --- this often confuses authors
 
 We identified these challenges and decided we need to automate more and work on the mechanism of submitting and generating publications and their metadata. In this biohackathon, in addition to fixing bugs and helping other groups format their biohackathon publications, we visited OSF, Zenodo, and OpenCitations APIs and RDF, wrote proof-of-concept code, and this resulted in a new road map for BioHackrXiv.
 
@@ -111,6 +114,10 @@ You seem to be able to create & upload preprint via the api in /v2/prerpints,
 as described [here](https://developer.osf.io/#operation/preprints_create),
 for local reference, you can clone the docs [here](https://github.com/CenterForOpenScience/developer.osf.io) and then check the files `osf-docs/swagger-spec/preprints/list.yaml` and `osf-docs/swagger-spec/preprints/definition.yaml`.
 A well documented test-case can be found [here](https://raw.githubusercontent.com/CenterForOpenScience/osf-selenium-tests/develop/api/osf_api.py) which can start as a good launch-off point.
+
+
+## OSF API (Mats)
+
 ## Virtuoso as a system container (Arun)
 
 BioHackrXiv uses RDF to track metadata on publications, parsed directly from the markdown documents that are submitted. The preview webserver, for example, queries the graph and caches the result in memory. The main RDF store and SPARQL endpoint runs in virtuoso-ose and for this biohackathon we decided to create a GNU Guix system container - that allows easy deployment of the full service anywhere. The definition is [here](https://github.com/genenetwork/genenetwork-machines/commit/3cebfb3e30e903851aefb2f997d8847d3f0ddee4) with the public SPARQL endpoint https://sparql.genenetwork.org/sparql
