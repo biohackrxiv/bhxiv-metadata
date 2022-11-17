@@ -67,11 +67,11 @@ After a cursory check, one of the editors of BioHackrXiv will accept or reject t
 Even though the system works as a `minimal viable product', and the PDF generation and submission works rather well, we identified a number of problems with the existing workflow:
 
 1. Authors have to submit some information twice - particularly author names - which is prone to mistakes (missing authors, misspellings)
-1. In previous biohackathons we engineered a metadata graph that exports publications and their authors. Updating this graph includes some manual steps and that causes significant delays in updating the graph
+1. The current submission page does not track the git repository where the publication is hosted. Often the editor has to ask for that separately
+1. In previous biohackathons we engineered a metadata graph that exports publications and their authors. Updating this graph includes some manual steps and that causes significant delays in updating the graph to show our aggregated output page at http://preview.biohackrxiv.org/list. That page should show a list of publications and their authors and it has a JSON version at http://preview.biohackrxiv.org/list.json
 1. When authors choose to submit a zip file we have to contact the authors for all relevant metadata
 1. The current system can not include accompanying code and data with the submission
 1. The preview service has a limitation of one paper per git repository --- this often confuses authors
-1. Our RDF database needs to be updated by hand to show our aggregated output page at http://preview.biohackrxiv.org/list that should show a list of publications and their authors
 
 We identified these challenges and decided we need to automate more and work on the mechanism of submitting and generating publications and their metadata. In this biohackathon, in addition to fixing bugs and helping other groups format their biohackathon publications, we visited OSF, Zenodo, and OpenCitations APIs and RDF, wrote proof-of-concept code, and this resulted in a new road map for BioHackrXiv.
 
