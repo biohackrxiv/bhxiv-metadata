@@ -71,6 +71,7 @@ Even though the system works as a `minimal viable product', and the PDF generati
 1. When authors choose to submit a zip file we have to contact the authors for all relevant metadata
 1. The current system can not include accompanying code and data with the submission
 1. The preview service has a limitation of one paper per git repository --- this often confuses authors
+1. Our RDF database needs to be updated by hand to show our aggregated output page at http://preview.biohackrxiv.org/list that should show a list of publications and their authors
 
 We identified these challenges and decided we need to automate more and work on the mechanism of submitting and generating publications and their metadata. In this biohackathon, in addition to fixing bugs and helping other groups format their biohackathon publications, we visited OSF, Zenodo, and OpenCitations APIs and RDF, wrote proof-of-concept code, and this resulted in a new road map for BioHackrXiv.
 
@@ -89,31 +90,53 @@ A well documented test-case can be found [here](https://raw.githubusercontent.co
 
 ## EuropePMC
 
-* europepmc is complete
-* europepmc exposes RDF from REST API
-  - https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=doi:10.37044/osf.io/8qdse&format=dc
-* Includes misspellings
-* With abstract
-* Missing ORCID
+EuropePMC gets its metadata from OSF and contains all papers published on BioHackrXiv, after a little delay.
 
-Missing metadata and wrong metadata from europepmc
-Missing papers from opencitations
+Interestingly EuropePMC exposes RDF from REST API. E.g. the query
+ https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=doi:10.37044/osf.io/8qdse&format=dc
 
-Conclusion: kunnen niet zonder metadata, we need to validate europepmc with the paper metadata.
-
-Solution: write our own uploader that can push to OSF and/or Zenodo to get an API.
-Advantage: choice for DOI generation. No double input for author name. Automatic ORCIDs and other metadata.
+Results in something like
 
 
-https://europepmc.org/RestfulWebService
-10.37044/osf.io/8qdse
-https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=doi:10.37044/osf.io/8qdse&format=xml
-https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=doi:10.37044/osf.io/8qdse&format=json
-https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=doi:10.37044/osf.io/8qdse&format=dc
-How does europepmc get its info?
+```xml
+<rdf:RDF>
+  <rdf:Description rdf:about="http://europepmc.org/abstract/PPR/PPR281949">
+    <dc:title>Data validation and schema interoperability</dc:title>
+    <dc:creator>Garcia Castro, LJ</dc:creator>
+    <dc:creator>Bolleman, J</dc:creator>
+    (...)
+    <dc:description>Preprint</dc:description>
+    <dc:date>2020-04-07</dc:date>
+    <dc:identifier>http://europepmc.org/abstract/PPR/PPR281949</dc:identifier>
+    <dc:identifier>https://doi.org/10.37044/osf.io/8qdse</dc:identifier>
+    <dcterms:bibliographicCitation>
+      Garcia Castro LJ, Bolleman J, dumontier m, Jupp S, Labra-Gayo JE,
+      Liener T, Ohta T, Queralt-Rosinach N, Wu C.
+      Data validation and schema interoperability BioHackrXiv;2020.
+      .doi:10.37044/osf.io/8qdse. PPR:PPR281949.
+    </dcterms:bibliographicCitation>
+    <dcterms:bibliographicCitation/>
+    <dcterms:abstract>
+      Validating RDF data becomes necessary in order to ensure data
+      compliance against the conceptualization model it follows, e.g., ...
+  </dcterms:abstract>
+  </rdf:Description>
+</rdf:RDF>
+```
 
+All this information is derived from the OSF API, including misspellings of authors and missing authors on second time of entry. This reentering of author data should be taken out.
+Also the ORCIDs that are collected in the publication do not appear in this data.
+So, the main issue is:
 
-## OpenCitations (Mats)
+1. Missing metadata and wrong metadata from europepmc
+
+Interesting URLs we collected that the [EuropePMC REST API](https://europepmc.org/RestfulWebService) provides:
+
+* [XML output](https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=doi:10.37044/osf.io/8qdse&format=xml)
+* [JSON output](https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=doi:10.37044/osf.io/8qdse&format=json)
+* [RDF](https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=doi:10.37044/osf.io/8qdse&format=dc)
+
+## OpenCitations
 
 * Contains papers that cite each other
 * Uncited papers not included
@@ -196,9 +219,9 @@ Templates are provided as an
 [example](https://github.com/biohackrxiv/publication-template).
 So far, some 30 papers have been published through this system.
 
-## Road map
 
-Based on above explorations of APIs we believe we can create our own workflow for paper submissions on top of the OSF-API. In the next step we can opt for Zenodo to store the accompanying source code and data to create one or more citeable DOIs. Zenodo allows storing up to 50Gb of data per person --- in this case the uploading author --- which should be good enough for most projects.
+
+
 
 # Discussion
 
@@ -222,9 +245,16 @@ Zenodo is a European initiative to create DOIs on resources, such as software an
 
 ## Road map
 
-We have defined a road map which can greatly improve the user experience of BioHackrXiv.org. Creating our own front-end and workflow will free us to lower the barrier to entry even more for publishing group efforts in a citeable paper. In time we can provide the option of storing code+data with the PDF. Even later we may be able to explore running reproducible environments using that code and data, maybe using the type of continuous integration systems that are on offer. Anyway, the itemised roadmap in a feasible order might be:
+Based on above explorations of APIs we believe we can create our own workflow for paper submissions on top of the OSF-API. In the next step we can opt for Zenodo to store the accompanying source code and data to create one or more citeable DOIs. Zenodo allows storing up to 50Gb of data per person --- in this case the uploading author --- which should be good enough for most projects.
+
+We have defined a road map which can greatly improve the user experience of BioHackrXiv.org. Creating our own front-end and workflow will free us to lower the barrier to entry even more for publishing group efforts in a citeable paper. In time we can provide the option of storing code+data with the PDF. Even later we may be able to explore running reproducible environments using that code and data using the type of continuous integration systems that are availble through github, for example.
+
+EuropePMC gets its data from OSF and that has issues. The solution is to write our own uploader that can push to OSF and/or Zenodo to get an API. Advantage: choice for DOI generation. No double input for author name. Automatic ORCIDs and other metadata.
+
+The itemised roadmap in a feasible order might be:
 
 1. Replace BioHackrXiv front page with our own and use the OSF API to submit the PDF making the process easier and avoiding duplication of entering author names etc. We can keep using the OSF editorial workflow initially.
+1. Validate the metadata on EuropePMC and OpenCitations through comparison with our RDF backend
 1. Replace OSF editorial workflow so we can more easily support editorial delegation to biohackathon organisers. Another aspect may be internationalisation of the front-ends.
 
 The justification for this work is that there may be hundreds of biohackathons in the coming years and, supposing we have a nice setup, it may be possible to get thousands of publications.
