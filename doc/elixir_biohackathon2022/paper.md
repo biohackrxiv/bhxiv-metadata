@@ -43,7 +43,7 @@ biohackathon_url:   "https://biohackathon-europe.org/"
 biohackathon_location: "Paris, France, 2022"
 group: BioHackrXiv
 git_url: https://github.com/biohackrxiv/bhxiv-gen-pdf
-authors_short: Pjotr Prins, Tazro Otha, Egon Willighagen
+authors_short: Mats Perk, Arun Isaac et al.
 ---
 
 # Introduction
@@ -76,22 +76,18 @@ We identified these challenges and decided we need to automate more and work on 
 
 # Results
 
-## TODO
+## OSF API
 
-* Mermaid on pandoc
-* i8n support
+BioHackrXiv uses OSF as a web service to manage the workflow for PDF submission, editorial review, DOI generation, PDF view and basic search. There are a number of limitations and during this biohackathon we explored if we can use the OSF API to create our own submission system.
 
-## Zenodo API (Arun)
+One of the cool aspects of OSF is that its web UI services use their own REST API to create the functionalities. This means that we, in theory, can use the REST API to roll our own.
 
-## OpenCitations (Mats)
+According to the documentation it is possible to create & upload PDFs via the API in /v2/preprints,
+as described [here](https://developer.osf.io/#operation/preprints_create).
+The docs can be found [here](https://github.com/CenterForOpenScience/developer.osf.io). and then check the Relevant are files `osf-docs/swagger-spec/preprints/list.yaml` and `osf-docs/swagger-spec/preprints/definition.yaml`.
+A well documented test-case can be found [here](https://raw.githubusercontent.com/CenterForOpenScience/osf-selenium-tests/develop/api/osf_api.py) which can start as a good launch-off point.
 
-* Contains papers that cite each other
-* Uncited papers not included
-* Data fetched from europmc.org
-* Includes DOI
-* Includes misspelled authors
-* ORCID?
-* Takes time to sync
+## EuropePMC
 
 * europepmc is complete
 * europepmc exposes RDF from REST API
@@ -108,15 +104,77 @@ Conclusion: kunnen niet zonder metadata, we need to validate europepmc with the 
 Solution: write our own uploader that can push to OSF and/or Zenodo to get an API.
 Advantage: choice for DOI generation. No double input for author name. Automatic ORCIDs and other metadata.
 
-See if we can use the OSF API for this.
 
-You seem to be able to create & upload preprint via the api in /v2/prerpints,
-as described [here](https://developer.osf.io/#operation/preprints_create),
-for local reference, you can clone the docs [here](https://github.com/CenterForOpenScience/developer.osf.io) and then check the files `osf-docs/swagger-spec/preprints/list.yaml` and `osf-docs/swagger-spec/preprints/definition.yaml`.
-A well documented test-case can be found [here](https://raw.githubusercontent.com/CenterForOpenScience/osf-selenium-tests/develop/api/osf_api.py) which can start as a good launch-off point.
+https://europepmc.org/RestfulWebService
+10.37044/osf.io/8qdse
+https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=doi:10.37044/osf.io/8qdse&format=xml
+https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=doi:10.37044/osf.io/8qdse&format=json
+https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=doi:10.37044/osf.io/8qdse&format=dc
+How does europepmc get its info?
 
 
-## OSF API (Mats)
+## OpenCitations (Mats)
+
+* Contains papers that cite each other
+* Uncited papers not included
+* Data fetched from europmc.org
+* Includes DOI
+* Includes misspelled authors
+* ORCID?
+* Takes time to sync
+* Opencitations also provides a REST API
+
+The following is the example query used in https://opencitations.net/index/sparql
+
+```SQL
+PREFIX cito:<http://purl.org/spar/cito/>
+
+SELECT DISTINCT ?citing_entity ?cited_entity ?creation_date ?timespan
+WHERE {
+	GRAPH <https://w3id.org/oc/index/coci/> {
+		?citation a cito:Citation ;
+			cito:hasCitingEntity ?citing_entity ;
+			cito:hasCitationCreationDate ?creation_date ;
+			cito:hasCitationTimeSpan ?timespan ;
+			cito:hasCitedEntity ?cited_entity
+	}
+} LIMIT 10
+```
+
+testing with curl
+
+```sh
+curl -v --data-urlencode query@examplerq.rq \
+  https://opencitations.net/index/sparql
+```
+
+results in a list of
+
+```xml
+<result>
+     <binding name='citing_entity'>
+ 		<uri>http://dx.doi.org/10.1007/978-3-319-92979-8_1</uri>
+ 	</binding>
+ 	<binding name='cited_entity'>
+ 		<uri>http://dx.doi.org/10.1002/gj.2736</uri>
+ 	</binding>
+ 	<binding name='creation_date'>
+ 		<literal datatype='http://www.w3.org/2001/XMLSchema#date'>
+          2018-06-12</literal>
+ 	</binding>
+ 	<binding name='timespan'>
+ 		<literal datatype='http://www.w3.org/2001/XMLSchema#duration'>
+          P2Y6M5D</literal>
+ 	</binding>
+</result>
+```
+
+
+## Zenodo API (Arun)
+
+Arun wrote a Guile program to test the Zenodo API (see supplement below). Zenodo has a special test infrastructure that you can test the API. Only problem was that they kicked us off after the first data upload! After contacting support it took a week to open up the testing environment for us --- that was after the Biohackaton.
+
+
 
 ## Virtuoso as a system container (Arun)
 
@@ -135,22 +193,159 @@ BioHackrXiv uses RDF to track metadata on publications, parsed directly from the
 * Template
 
 Templates are provided as an
-[example](https://github.com/biohackrxiv/publication-template). So far, some 30 papers have been published through this system.
+[example](https://github.com/biohackrxiv/publication-template).
+So far, some 30 papers have been published through this system.
+
+## Road map
+
+Based on above explorations of APIs we believe we can create our own workflow for paper submissions on top of the OSF-API. In the next step we can opt for Zenodo to store the accompanying source code and data to create one or more citeable DOIs. Zenodo allows storing up to 50Gb of data per person --- in this case the uploading author --- which should be good enough for most projects.
 
 # Discussion
 
-BioHackrXiv allow projects to publish their work as a citeable resource in the form of non-peer reviewed pre-published papers. A minority of these may end up as a peer reviewed paper. Even so, getting citeable resources is valuable and work done at biohackathons does not get lost this way.
+BioHackrXiv allow projects to publish their work as a citeable resource in the form of non-peer reviewed pre-published papers. A minority of these may end up as a peer reviewed paper. Even so, getting citeable resources is valuable and work done at biohackathons does not get lost this way. These non-peer reviewed publications:
 
-## Repositories
+1. Help working groups capture and expose their work for future reference
+1. Help authors gain a track record and citations as they automatically get included in EuropePMID and google citations
+1. Help organisers of biohackathons and codefests justify their work and budget
+
+In this Elixir biohackathon 2022 over 200 people contributed to 40 working groups and we expect to capture much of that effort in BioHackrXiv publications. Having no peer review for BioHackrXiv publications lowers the barrier to entry and, even though, papers may not be perfect in terms of language or grammar, we find the information content to be high and the quality to reflect the work people are executing in their projects.
+
+We received many positive comments on the usefulness of BioHackrXiv and a commitment to include more biohackathons. Our workflow supports handing out accounts to biohackathon organisers, so they themselves can handle the 'editor' curation of papers coming in from their event.
+
+BioHackrXiv itself also participated as group 4 and this resulted in the work presented in this paper. Apart from fixing bugs and improving functionality, such as LaTeX table support and adding CITO terms, we explored the APIs of opencitations, EuropePMC, Zenodo and OSF.
+
+Opencitations present a RDF graph of papers that get cited by other papers. This is a very useful resource because it allows back tracing the graph to relevant papers. We will embed opencitations in a web UI for authors, working groups to explore publications that references their publication.
+
+EuropePMC is the European version of Pubmed and allows referencing on non-peer reviewed publications, such as bioarxiv (FIXME) and BioHackrXiv.
+
+Zenodo is a European initiative to create DOIs on resources, such as software and data. It allows up to 50Gb of storage per user for free.
+
+## Road map
+
+We have defined a road map which can greatly improve the user experience of BioHackrXiv.org. Creating our own front-end and workflow will free us to lower the barrier to entry even more for publishing group efforts in a citeable paper. In time we can provide the option of storing code+data with the PDF. Even later we may be able to explore running reproducible environments using that code and data, maybe using the type of continuous integration systems that are on offer. Anyway, the itemised roadmap in a feasible order might be:
+
+1. Replace BioHackrXiv front page with our own and use the OSF API to submit the PDF making the process easier and avoiding duplication of entering author names etc. We can keep using the OSF editorial workflow initially.
+1. Replace OSF editorial workflow so we can more easily support editorial delegation to biohackathon organisers. Another aspect may be internationalisation of the front-ends.
+
+The justification for this work is that there may be hundreds of biohackathons in the coming years and, supposing we have a nice setup, it may be possible to get thousands of publications.
+
+## Future work
+
+For future work, one feature request is to include support for converting graphs to images for PDF generation. This can be achieved with mermaid in pandoc, for example. At this point we do not opt to include mermaid because it depends on a headless chromium browser --- that is not something we like to run in a web service environment.
+
+We also discussed support for papers submitted in other languages. We think that is a good idea and pandoc+tetex should support internationalisation (i8n). For a next biohackathon such a proof-of-concept appears to be in order.
+Another feature we would like to introduce is to support org-mode as an alternative for markdown. Pandoc can transform one to the other, so it should not be too hard.
+
+At this biohackathon we did not explore APIs of wikidata, Pubmed, Uniprot and others relevant to BioHackrXiv publications. In the near future, before implementing the full workflow, we will also need to look at software heritage archive (cite?) because one of the goals is to store software output and data as part of a working groups outcome. The goal of the Software Heritage initiative is to collect all publicly available software in source code form together with its development history, replicate it massively to ensure its preservation, and share it with everyone who needs it. It provides an API and on upload exposes a permanent identifier. It is therefore not necessary to store software in Zenodo that is contributed to Software Heritage.
+
+Of the mentioned services in this paper: Wikidata, Pubmed, Uniprot, Software Heritage Archive, EuropePMC and Zenodo appear to be long term initiatives that we can build on for BioHackrXiv (FIXME). Building our own submission system will give us new options for presenting BioHackrXiv and for improving the workflow and experience for both submitters and readers of BioHackrXiv.
+
+# Repositories
 
 We invite contributions to parsing and adding relevant metadata to
 BioHackrXiv RDF. Simply do a pull request on
 https://github.com/biohackrxiv/bhxiv-metadata. The web server examples
 are hosted on https://github.com/biohackrxiv/bhxiv-gen-pdf.
 
-## Acknowledgements
+# Acknowledgements
 
-We thank the organizers of the Elixir BioHackathon 2020 for the event.
+We thank the organizers of the Elixir BioHackathon 2022 for the event and hosting the BioHackrXiv working group.
 We also thank DBCLS for sponsoring the OSF.io hosting of BioHackrXiv.
 
-## References
+# Supplemental listing
+
+Guile Scheme script for accessing the Zenodo API and submitting a zip file, code written by Arun Isaac:
+
+```scheme
+(use-modules (rnrs io ports)
+             (srfi srfi-26)
+             (srfi srfi-71)
+             (ice-9 match)
+             (web client)
+             (web response)
+             (web uri)
+             (json))
+
+(define %zenodo-api-endpoint
+  (string->uri "https://sandbox.zenodo.org/api"))
+
+;; Register on the sandbox zenodo server at
+;; https://sandbox.zenodo.org/, create an access token at
+;; https://sandbox.zenodo.org/account/settings/applications/tokens/new/,
+;; and put in a file "access-token".
+(define %zenodo-access-token
+  (call-with-input-file "access-token"
+    get-string-all))
+
+(define %file-to-upload
+  "foo.zip")
+
+(define %metadata
+  '(("title" . "My first upload")
+    ("upload_type" . "poster")
+    ("description" . "This is my first upload.")
+    ("creators" . #((("name" . "Doe, John")
+                     ("affiliation" . "Zenodo"))))))
+
+(define (json-ref scm . keys)
+  (match keys
+    ((key other-keys ...)
+     (apply json-ref
+            ((if (list? scm) assoc-ref vector-ref) scm key)
+            other-keys))
+    (() scm)))
+
+(define* (zenodo-request method uri #:key body json)
+  (let ((uri (build-uri (uri-scheme (if (uri? uri)
+                                        uri
+                                        %zenodo-api-endpoint))
+                        #:host (uri-host (if (uri? uri)
+                                             uri
+                                             %zenodo-api-endpoint))
+                        #:port (uri-port (if (uri? uri)
+                                             uri
+                                             %zenodo-api-endpoint))
+                        #:path (if (uri? uri)
+                                   (uri-path uri)
+                                   (string-append (uri-path %zenodo-api-endpoint) (uri-path uri)))
+                        #:query (string-append "access_token=" %zenodo-access-token))))
+    (format (current-error-port) "~a ~a~%" method (uri->string uri))
+    (let ((response port (http-request uri
+                                       #:method method
+                                       #:body (if json
+                                                  (scm->json-string json)
+                                                  body)
+                                       #:headers (if json
+                                                     '((content-type application/json))
+                                                     '())
+                                       #:streaming? #t)))
+      (let ((json (json->scm port)))
+        (unless (= (quotient (response-code response) 100)
+                   2)
+          (error "Request failed with response" response json))
+        json))))
+
+(define zenodo-get
+  (cut zenodo-request 'GET <...>))
+
+(define zenodo-post
+  (cut zenodo-request 'POST <...>))
+
+(define zenodo-put
+  (cut zenodo-request 'PUT <...>))
+
+(let ((json
+       ;; Create a deposition with some metadata.
+       (zenodo-post (string->uri-reference "/deposit/depositions")
+                    #:json `(("metadata" . ,%metadata)))))
+  ;; Upload file
+  (zenodo-put (string->uri (string-append (json-ref json "links" "bucket")
+                                          "/" %file-to-upload))
+              #:body (call-with-input-file %file-to-upload
+                       get-bytevector-all))
+  ;; Publish.
+  (zenodo-post (string->uri (json-ref json "links" "publish"))))
+```
+
+
+# References
