@@ -49,19 +49,21 @@ authors_short: Mats Perk, Arun Isaac et al.
 # Introduction
 
 In this paper we present the work executed on BioHackrXiv during the Elixir Biohackathon in Paris, 2022.
-Over thirty papers have been published through this system and with the amount of biohackathons and codefests increasing every year, we expect this type of reporting and publishing to continue.
-The goal was to further improve deployment and takeup of the web service and to set a roadmap for improving the workflow and explore integration of EuropePMC, OpenCitation and Zenodo services (cite?).
-
 [BioHackrXiv](https://biohackrxiv.org/) is a scholarly publication service for
 biohackathons and codefests.
-BioHackrXiv publications are generated from markdown/LaTeX templates where the header is a YAML/JSON record that includes the title, authors, affiliations and tags. The idea originated from the [pandoc flavoured markdown](https://garrettgman.github.io/rmarkdown/authoring_pandoc_markdown.html) layout (cite?) that is used in the Journal of Open Source Software (JOSS)[@JOSS] where Prins used to be part of the editorial board (cite?).
+Over thirty papers have been published through this system and with the amount of biohackathons and codefests increasing every year, we expect this type of reporting and publishing to continue.
+The goal was to further improve deployment and takeup of the web service and to set a roadmap for improving the workflow and explore integration of EuropePMC [@citesAsAuthority:EuropePMC], OpenCitation
+[@citesAsRecommendedReading:Shotton2018; @citesAsAuthority:Shotton2013]
+and [Zenodo](https://zenodo.org/) services.
+
+BioHackrXiv publications are generated from markdown/LaTeX templates where the header is a YAML/JSON record that includes the title, authors, affiliations and tags. The idea originated from the [pandoc flavoured markdown](https://garrettgman.github.io/rmarkdown/authoring_pandoc_markdown.html) layout that is used in the Journal of Open Source Software (JOSS)[@citesAsAuthority:JOSS] where Prins used to be part of the editorial board.
 Templates are provided as an [example](https://github.com/biohackrxiv/publication-template).
 
-As described in the Elixir 2020 Biohackathon paper (cite?) metadata is crucial to publications, including acquiring a digital object identifier (DOI). DOIs are permanent URIs to PDFs, so publications can be cited by others. One interesting aspect is that DOIs support versioning - that means papers can be updated under the same DOI, this is not the case with content-addressable identifiers, such as IPFS (cite?).
+As described in the Elixir 2020 Biohackathon paper (in preparation), metadata is crucial to publications, including acquiring a digital object identifier (DOI). DOIs are permanent URIs to PDFs, so publications can be cited by others. One interesting aspect is that DOIs support versioning - that means papers can be updated under the same DOI, this is not the case with content-addressable identifiers, such as the Interplanetary File System (IPFS).
 
-In the existing workflow we host BioHackrXiv.org as a --- so called --- preprint service with the Open Science Foundation (OSF). OSF manages the publication submission system and creates a DOI on acceptance. A DOI may look like \url{https://doi.org/10.37044/osf.io/km9ux} and should resolve to a hosted PDF.
+In the existing workflow we host BioHackrXiv.org as a --- so called --- preprint service with the Open Science Foundation (OSF.io). OSF manages the publication submission system and creates a DOI on acceptance. A DOI may look like \url{https://doi.org/10.37044/osf.io/km9ux} and should resolve to a hosted PDF.
 
-For the authors, the current setup, demands writing a paper in a git repository using pandoc flavoured markdown that allows for embedded LaTeX. We wrote a preview webservice at \url{http://preview.biohackrxiv.org/} that generates a nice looking PDF from a pasted git URL, or alternatively a zipped up file containing paper.md and paper.bib. Next, the main author has to submit the paper through the OSF managed preprint system.
+For the authors, the current setup, demands writing a paper in a git repository using [pandoc flavoured markdown](https://garrettgman.github.io/rmarkdown/authoring_pandoc_markdown.html) that allows for embedded LaTeX. We wrote a preview webservice at \url{http://preview.biohackrxiv.org/} that generates a nice looking PDF from a pasted git URL, or alternatively a zipped up file containing paper.md and paper.bib. Next, the main author has to submit the paper through the OSF managed preprint system.
 After a cursory check, one of the editors of BioHackrXiv will accept or reject the paper -- mostly as a curation step against SPAM. After acceptance the paper appears online with a DOI and automatically gets included in the EU PMID or EuropePMID, followed by OpenCitations.
 
 Even though the system works as a `minimal viable product', and the PDF generation and submission works rather well, we identified a number of problems with the existing workflow:
@@ -98,6 +100,8 @@ Interestingly EuropePMC exposes RDF from REST API. E.g. the query
 Results in something like
 
 
+\scriptsize
+
 ```xml
 <rdf:RDF>
   <rdf:Description rdf:about="http://europepmc.org/abstract/PPR/PPR281949">
@@ -124,6 +128,8 @@ Results in something like
 </rdf:RDF>
 ```
 
+\normalsize
+
 All this information is derived from the OSF API, including misspellings of authors and missing authors on second time of entry. This reentering of author data should be taken out.
 Also the ORCIDs that are collected in the publication do not appear in this data.
 So, the main issue is:
@@ -149,6 +155,8 @@ Interesting URLs we collected that the [EuropePMC REST API](https://europepmc.or
 
 The following is the example query used in https://opencitations.net/index/sparql
 
+\scriptsize
+
 ```SQL
 PREFIX cito:<http://purl.org/spar/cito/>
 
@@ -164,6 +172,8 @@ WHERE {
 } LIMIT 10
 ```
 
+\normalsize
+
 testing with curl
 
 ```sh
@@ -172,6 +182,8 @@ curl -v --data-urlencode query@examplerq.rq \
 ```
 
 results in a list of
+
+\scriptsize
 
 ```xml
 <result>
@@ -192,36 +204,27 @@ results in a list of
 </result>
 ```
 
+\normalsize
 
-## Zenodo API (Arun)
+## Zenodo API
 
-Arun wrote a Guile program to test the Zenodo API (see supplement below). Zenodo has a special test infrastructure that you can test the API. Only problem was that they kicked us off after the first data upload! After contacting support it took a week to open up the testing environment for us --- that was after the Biohackaton.
+Arun wrote a Guile program to test the Zenodo API (see supplement below). Zenodo has a special test infrastructure that you can test the API. Only problem was that they kicked us off after the first data upload! After contacting support it took a week to open up the sandbox testing environment for us, i.e., after the Biohackaton.
 
-
-
-## Virtuoso as a system container (Arun)
+## Virtuoso as a system container
 
 BioHackrXiv uses RDF to track metadata on publications, parsed directly from the markdown documents that are submitted. The preview webserver, for example, queries the graph and caches the result in memory. The main RDF store and SPARQL endpoint runs in virtuoso-ose and for this biohackathon we decided to create a GNU Guix system container - that allows easy deployment of the full service anywhere. The definition is [here](https://github.com/genenetwork/genenetwork-machines/commit/3cebfb3e30e903851aefb2f997d8847d3f0ddee4) with the public SPARQL endpoint https://sparql.genenetwork.org/sparql
 
-## Hackathon integration (Pjotr)
-
-* Added secondary preview after updating Guix http://biohackrxiv.genenetwork.org/
-* Fediverse
-
 ## Enhancements
 
+During the week we added or improved:
+
 * Unit tests
-* CITO
-* LaTeX
-* Template
+* CITO (cite)
+* LaTeX support
+* Template support
 
-Templates are provided as an
-[example](https://github.com/biohackrxiv/publication-template).
-So far, some 30 papers have been published through this system.
-
-
-
-
+As such, a new template is provided with
+[examples](https://github.com/biohackrxiv/publication-template) of figures, tables and bibliography.
 
 # Discussion
 
@@ -264,9 +267,9 @@ The justification for this work is that there may be hundreds of biohackathons i
 For future work, one feature request is to include support for converting graphs to images for PDF generation. This can be achieved with mermaid in pandoc, for example. At this point we do not opt to include mermaid because it depends on a headless chromium browser --- that is not something we like to run in a web service environment.
 
 We also discussed support for papers submitted in other languages. We think that is a good idea and pandoc+tetex should support internationalisation (i8n). For a next biohackathon such a proof-of-concept appears to be in order.
-Another feature we would like to introduce is to support org-mode as an alternative for markdown. Pandoc can transform one to the other, so it should not be too hard.
+Another feature we would like to introduce is to support org-mode as an alternative for markdown. Pandoc can already transform one to the other.
 
-At this biohackathon we did not explore APIs of wikidata, Pubmed, Uniprot and others relevant to BioHackrXiv publications. In the near future, before implementing the full workflow, we will also need to look at software heritage archive (cite?) because one of the goals is to store software output and data as part of a working groups outcome. The goal of the Software Heritage initiative is to collect all publicly available software in source code form together with its development history, replicate it massively to ensure its preservation, and share it with everyone who needs it. It provides an API and on upload exposes a permanent identifier. It is therefore not necessary to store software in Zenodo that is contributed to Software Heritage.
+At this biohackathon we did not explore APIs of wikidata, Pubmed, Uniprot and others relevant to BioHackrXiv publications. In the near future, before implementing the full workflow, we will also need to look at [software heritage archive](https://www.softwareheritage.org/) because one of the goals is to store software output and data as part of a working groups outcome. The goal of the Software Heritage initiative is to collect all publicly available software in source code form together with its development history, replicate it massively to ensure its preservation, and share it with everyone who needs it. It provides an API and on upload exposes a permanent identifier. It is therefore not necessary to store software in Zenodo that is contributed to Software Heritage.
 
 Of the mentioned services in this paper: Wikidata, Pubmed, Uniprot, Software Heritage Archive, EuropePMC and Zenodo appear to be long term initiatives that we can build on for BioHackrXiv (FIXME). Building our own submission system will give us new options for presenting BioHackrXiv and for improving the workflow and experience for both submitters and readers of BioHackrXiv.
 
@@ -285,6 +288,8 @@ We also thank DBCLS for sponsoring the OSF.io hosting of BioHackrXiv.
 # Supplemental listing
 
 Guile Scheme script for accessing the Zenodo API and submitting a zip file, code written by Arun Isaac:
+
+\scriptsize
 
 ```scheme
 (use-modules (rnrs io ports)

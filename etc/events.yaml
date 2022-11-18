@@ -1,5 +1,15 @@
 ---
 events:
+  BCC2020 :
+    txt: "Bioinformatics Community Conference 2020 CollaborationFest (CoFest)"
+    projects: "https://bcc2020.github.io/cofest/"
+    url: https://bcc2020.github.io/cofest/
+    date: 2022-07-22
+  BH22EU:
+    projects: https://github.com/elixir-europe/BioHackathon-projects-2022
+    url: https://biohackathon-europe.org/
+    txt: BioHackathon Europe, Paris, France, 2022
+    date: 2022-11-08
   BH21EU:
     projects: https://github.com/elixir-europe/BioHackathon-projects-2021
     url: https://biohackathon-europe.org/

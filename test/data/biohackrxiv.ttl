@@ -5,6 +5,14 @@
 @prefix bhx: <http://biohackerxiv.org/resource/> .
 @prefix schema: <https://schema.org/> .
 
+<https://bcc2020.github.io/cofest/> schema:description "Bioinformatics Community Conference 2020 CollaborationFest (CoFest)"@en ;
+    schema:name "BCC2020" ;
+    dc:date "2022-07-22"^^xsd:date ;
+    a schema:Event .
+<https://biohackathon-europe.org/> schema:description "BioHackathon Europe, Paris, France, 2022"@en ;
+    schema:name "BH22EU" ;
+    dc:date "2022-11-08"^^xsd:date ;
+    a schema:Event .
 <https://biohackathon-europe.org/> schema:description "BioHackathon Europe, Barcelona, Spain, 2021"@en ;
     schema:name "BH21EU" ;
     dc:date "2021-11-08"^^xsd:date ;
@@ -42,3 +50,480 @@
     dc:date "1970-01-01"^^xsd:date ;
     a schema:Event .
 
+<https://biohackrxiv.org/k8znb> dc:title "ELIXIR Software Management Plan for Life Sciences"@en ;
+    schema:sameAs <https://doi.org/10.37044/osf.io/k8znb> ;
+    schema:url <https://raw.githubusercontent.com/elixir-europe/smp/main/paper/paper.md> ;
+    bhx:Event <https://2020.biohackathon-europe.org/> ;
+    bhx:repository <https://github.com/biohackrxiv/> ;
+    dc:date "2021-10-25"^^xsd:date ;
+    a schema:CreativeWork .
+
+<https://biohackrxiv.org/k8znb> dc:contributor [
+  a rdf:Seq;
+  rdf:_1 "Renato Alves" ;
+  rdf:_2 "Dimitrios Bampalikis" ;
+  rdf:_3 "Leyla Jael Castro" ;
+  rdf:_4 "José M. Fernández" ;
+  rdf:_5 "Jennifer Harrow" ;
+  rdf:_6 "Mateusz Kuzak" ;
+  rdf:_7 "Eva Martín del Pico" ;
+  rdf:_8 "Fotis Psomopoulos" ;
+  rdf:_9 "Allegra Via" ;
+  ].
+
+<https://biohackrxiv.org/k8znb> bhx:Tag "Research software"@en .
+<https://biohackrxiv.org/k8znb> bhx:Tag "Management plans"@en .
+<https://biohackrxiv.org/k8znb> bhx:Tag "ELIXIR Tools"@en .
+<https://biohackrxiv.org/k8znb> bhx:Tag "Software Best Practices"@en .
+<https://biohackrxiv.org/k8znb> bhx:Tag "Life Sciences"@en .
+<https://biohackrxiv.org/k8znb> bhx:Tag "FAIR Software"@en .
+<https://biohackrxiv.org/k8znb> bhx:Tag "Open Science"@en .
+<https://biohackrxiv.org/n6tcz> dc:title "The COVID-19 epidemiology and monitoring ontology"@en ;
+    schema:sameAs <https://doi.org/10.37044/osf.io/n6tcz> ;
+    schema:url <https://raw.githubusercontent.com/NuriaQueralt/covid19-epidemiology-ontology/main/paper/biohackrxiv/paper.md> ;
+    bhx:Event <https://github.com/virtual-biohackathons/covid-19-bh20> ;
+    bhx:repository <https://github.com/biohackrxiv/> ;
+    dc:date "2021-08-11"^^xsd:date ;
+    a schema:CreativeWork .
+
+<https://biohackrxiv.org/n6tcz> dc:contributor [
+  a rdf:Seq;
+  rdf:_1 "Núria Queralt-Rosinach" ;
+  rdf:_2 "Paul Schofield" ;
+  rdf:_3 "Robert Hoehndorf" ;
+  rdf:_4 "Claus Weiland" ;
+  rdf:_5 "Erik Schultes" ;
+  rdf:_6 "César Henrique Bernabé" ;
+  rdf:_7 "Marco Roos" ;
+  ].
+
+<https://biohackrxiv.org/n6tcz> bhx:Tag "COVID-19"@en .
+<https://biohackrxiv.org/n6tcz> bhx:Tag "Epidemiology"@en .
+<https://biohackrxiv.org/n6tcz> bhx:Tag "Monitoring"@en .
+<https://biohackrxiv.org/n6tcz> bhx:Tag "Ontology"@en .
+<https://biohackrxiv.org/3dxhg> dc:title "Measuring outcomes and impact from the BioHackathon Europe"@en ;
+    schema:sameAs <https://doi.org/10.37044/osf.io/3dxhg> ;
+    schema:url <https://raw.githubusercontent.com/zbmed-semtec/BioHackOutcomes/main/paper/paper.md> ;
+    bhx:Event <https://2020.biohackathon-europe.org/> ;
+    bhx:repository <https://github.com/biohackrxiv/> ;
+    dc:date "2021-08-10"^^xsd:date ;
+    a schema:CreativeWork .
+
+<https://biohackrxiv.org/3dxhg> dc:contributor [
+  a rdf:Seq;
+  rdf:_1 "Leyla Jael Castro" ;
+  rdf:_2 "Corinne Martin" ;
+  rdf:_3 "Georgi Lazarov" ;
+  rdf:_4 "Dana Cernoskova" ;
+  rdf:_5 "Terue Takatsuki" ;
+  rdf:_6 "Jennifer Harrow" ;
+  rdf:_7 "Dietrich Rebholz-Schuhmann" ;
+  ].
+
+<https://biohackrxiv.org/3dxhg> bhx:Tag "BioHackathon"@en .
+<https://biohackrxiv.org/3dxhg> bhx:Tag "GitHub"@en .
+<https://biohackrxiv.org/3dxhg> bhx:Tag "Impact"@en .
+<https://biohackrxiv.org/3dxhg> bhx:Tag "Outcomes"@en .
+<https://biohackrxiv.org/5j7cm> dc:title "SnpReportR: A Tool for Clinical Reporting of RNAseq Expression and Variants"@en ;
+    schema:sameAs <https://doi.org/10.37044/osf.io/5j7cm> ;
+    schema:url <https://raw.githubusercontent.com/cmu-lib/bgdc2021-hackathon/main/paper.md> ;
+    bhx:Event <https://www.library.cmu.edu/> ;
+    bhx:repository <https://github.com/biohackrxiv/> ;
+    dc:date "2021-06-29"^^xsd:date ;
+    a schema:CreativeWork .
+
+<https://biohackrxiv.org/5j7cm> dc:contributor [
+  a rdf:Seq;
+  rdf:_1 "Ahmad Al Khleifat" ;
+  rdf:_2 "Jenny Leopoldina Smith" ;
+  rdf:_3 "Brandon M. Blobner" ;
+  rdf:_4 "Sierra D. Miller" ;
+  rdf:_5 "Kymberleigh Pagel" ;
+  rdf:_6 "Annie Nadkarni" ;
+  rdf:_7 "Melanie Gainey" ;
+  rdf:_8 "Patrick Campbell" ;
+  rdf:_9 "Olaitan I. Awe" ;
+  rdf:_10 "Manuel Belmadani" ;
+  rdf:_11 "Alan M. Cleary" ;
+  rdf:_12 "Nicholas P. Cooley" ;
+  rdf:_13 "Shamika Dhuri" ;
+  rdf:_14 "Virginie Grosboillot" ;
+  rdf:_15 "Brian Haas" ;
+  rdf:_16 "Samuel Hokin" ;
+  rdf:_17 "Ekaterina Orlova" ;
+  rdf:_18 "Meghana Pagadala" ;
+  rdf:_19 "Stephen Price" ;
+  rdf:_20 "Adelaide Rhodes" ;
+  rdf:_21 "Janice Kyla Nascimento Smith" ;
+  rdf:_22 "Chaitanya Srinivasan" ;
+  rdf:_23 "Barry Zorman" ;
+  rdf:_24 "Ben Busby" ;
+  ].
+
+<https://biohackrxiv.org/5j7cm> bhx:Tag "Expression"@en .
+<https://biohackrxiv.org/5j7cm> bhx:Tag "Precision Medicine"@en .
+<https://biohackrxiv.org/5j7cm> bhx:Tag "Human Genomics"@en .
+<https://biohackrxiv.org/5j7cm> bhx:Tag "RNA-Seq"@en .
+<https://biohackrxiv.org/5j7cm> bhx:Tag "Clinical Report"@en .
+<https://biohackrxiv.org/5j7cm> bhx:Tag "Genetic testing"@en .
+<https://biohackrxiv.org/5j7cm> bhx:Tag "Reporting research results"@en .
+<https://biohackrxiv.org/5j7cm> bhx:Tag "Variants"@en .
+<https://biohackrxiv.org/5j7cm> bhx:Tag "Genetic test reports"@en .
+<https://biohackrxiv.org/v3jct> dc:title "Exploiting Bioschemas Markup to Populate IDPcentral"@en ;
+    schema:sameAs <https://doi.org/10.37044/osf.io/v3jct> ;
+    schema:url <https://raw.githubusercontent.com/elixir-europe/BioHackathon-projects-2020/master/projects/24/IDPCentral/BioHackrXivReport/paper.md> ;
+    bhx:Event <https://2020.biohackathon-europe.org/> ;
+    bhx:repository <https://github.com/biohackrxiv/> ;
+    dc:date "2021-06-22"^^xsd:date ;
+    a schema:CreativeWork .
+
+<https://biohackrxiv.org/v3jct> dc:contributor [
+  a rdf:Seq;
+  rdf:_1 "Alasdair Gray" ;
+  rdf:_2 "Petros Papadopoulos" ;
+  rdf:_3 "Ivan Mičetić" ;
+  rdf:_4 "András Hatos" ;
+  ].
+
+<https://biohackrxiv.org/v3jct> bhx:Tag "Bioschemas"@en .
+<https://biohackrxiv.org/v3jct> bhx:Tag "Intrinsically Disordered Proteins"@en .
+<https://biohackrxiv.org/v3jct> bhx:Tag "Schema.org"@en .
+<https://biohackrxiv.org/v3jct> bhx:Tag "Markup"@en .
+<https://biohackrxiv.org/v3jct> bhx:Tag "Data harvesting"@en .
+<https://biohackrxiv.org/wu9et> dc:title "Knowledge graphs and wikidata subsetting"@en ;
+    schema:sameAs <https://doi.org/10.37044/osf.io/wu9et> ;
+    schema:url <https://raw.githubusercontent.com/kg-subsetting/preprint-biohackrxiv/main/README.md> ;
+    bhx:Event <https://2020.biohackathon-europe.org/> ;
+    bhx:repository <https://github.com/biohackrxiv/> ;
+    dc:date "2021-04-02"^^xsd:date ;
+    a schema:CreativeWork .
+
+<https://biohackrxiv.org/wu9et> dc:contributor [
+  a rdf:Seq;
+  rdf:_1 "Jose Emilio Labra Gayo" ;
+  rdf:_2 "Ammar Ammar" ;
+  rdf:_3 "Dan Brickley" ;
+  rdf:_4 "Daniel Fernández Álvarez" ;
+  rdf:_5 "Alejandro González Hevia" ;
+  rdf:_6 "Alasdair J G Gray" ;
+  rdf:_7 "Eric Prud'hommeaux" ;
+  rdf:_8 "Denise Slenter" ;
+  rdf:_9 "Harold Solbrig" ;
+  rdf:_10 "Seyed Amir Hosseini Beghaeiraveri" ;
+  rdf:_11 "Benno Fünkfstük" ;
+  rdf:_12 "Andra Waagmeester" ;
+  rdf:_13 "Egon Willighagen" ;
+  rdf:_14 "Liza Ovchinnikova" ;
+  rdf:_15 "Guillermo Benjaminsen" ;
+  rdf:_16 "Roberto García" ;
+  rdf:_17 "Leyla Jael Castro" ;
+  rdf:_18 "Daniel Mietchen" ;
+  ].
+
+<https://biohackrxiv.org/wu9et> bhx:Tag "Wikidata"@en .
+<https://biohackrxiv.org/wu9et> bhx:Tag "ShEx"@en .
+<https://biohackrxiv.org/wu9et> bhx:Tag "RDF"@en .
+<https://biohackrxiv.org/wu9et> bhx:Tag "Knowledge graphs"@en .
+<https://biohackrxiv.org/b34vm> dc:title "SB4ER: an ELIXIR Service Bundle for Epidemic Response"@en ;
+    schema:sameAs <https://doi.org/10.37044/osf.io/b34vm> ;
+    schema:url <https://raw.githubusercontent.com/savojard/sb4er-paper/main/paper.md> ;
+    bhx:Event <https://2020.biohackathon-europe.org/> ;
+    bhx:repository <https://github.com/biohackrxiv/> ;
+    dc:date "2021-03-25"^^xsd:date ;
+    a schema:CreativeWork .
+
+<https://biohackrxiv.org/b34vm> dc:contributor [
+  a rdf:Seq;
+  rdf:_1 "Castrense Savojardo" ;
+  rdf:_2 "Pier Luigi Martelli" ;
+  rdf:_3 "Giulia Babbi" ;
+  rdf:_4 "Marco Anteghini" ;
+  rdf:_5 "Matteo Manfredi" ;
+  rdf:_6 "Giovanni Madeo" ;
+  rdf:_7 "Emidio Capriotti" ;
+  rdf:_8 "Jumamurat R. Bayjanov" ;
+  rdf:_9 "Margherita Mutarelli" ;
+  rdf:_10 "Rita Casadio" ;
+  ].
+
+<https://biohackrxiv.org/b34vm> bhx:Tag "ELIXIR Service Bundle"@en .
+<https://biohackrxiv.org/b34vm> bhx:Tag "Pathogen genomic analysis"@en .
+<https://biohackrxiv.org/b34vm> bhx:Tag "Anti-Microbial Resistance"@en .
+<https://biohackrxiv.org/93qf4> dc:title "Connecting molecular sequences to their voucher specimens"@en ;
+    schema:sameAs <https://doi.org/10.37044/osf.io/93qf4> ;
+    schema:url <https://raw.githubusercontent.com/elixir-europe/BioHackathon-projects-2020/master/projects/33/paper.md> ;
+    bhx:Event <https://2020.biohackathon-europe.org/> ;
+    bhx:repository <https://github.com/biohackrxiv/> ;
+    dc:date "2021-03-03"^^xsd:date ;
+    a schema:CreativeWork .
+
+<https://biohackrxiv.org/93qf4> dc:contributor [
+  a rdf:Seq;
+  rdf:_1 "Quentin Groom" ;
+  rdf:_2 "Mathias Dillen" ;
+  rdf:_3 "Pieter Huybrechts" ;
+  rdf:_4 "Rukaya Johaadien" ;
+  rdf:_5 "Niki Kyriakopoulou" ;
+  rdf:_6 "Francisco Quevedo" ;
+  rdf:_7 "Maarten Trekels" ;
+  rdf:_8 "Wai Yee Wong" ;
+  ].
+
+<https://biohackrxiv.org/93qf4> bhx:Tag "Voucher Specimens"@en .
+<https://biohackrxiv.org/93qf4> bhx:Tag "Collections"@en .
+<https://biohackrxiv.org/93qf4> bhx:Tag "Herbarium"@en .
+<https://biohackrxiv.org/93qf4> bhx:Tag "Museum"@en .
+<https://biohackrxiv.org/93qf4> bhx:Tag "linking data"@en .
+<https://biohackrxiv.org/93qf4> bhx:Tag "Accession numbers"@en .
+<https://biohackrxiv.org/gzfa8> dc:title "Linking PubDictionaries with UniBioDicts to support Community Curation"@en ;
+    schema:sameAs <https://doi.org/10.37044/osf.io/gzfa8> ;
+    schema:url <https://raw.githubusercontent.com/UniBioDicts/vsm-pubdictionaries/master/paper/paper.md> ;
+    bhx:Event <https://2020.biohackathon-europe.org/> ;
+    bhx:repository <https://github.com/biohackrxiv/> ;
+    dc:date "2020-12-25"^^xsd:date ;
+    a schema:CreativeWork .
+
+<https://biohackrxiv.org/gzfa8> dc:contributor [
+  a rdf:Seq;
+  rdf:_1 "John Zobolas" ;
+  rdf:_2 "Jin-Dong Kim" ;
+  rdf:_3 "Martin Kuiper" ;
+  rdf:_4 "Steven Vercruysse" ;
+  ].
+
+<https://biohackrxiv.org/gzfa8> bhx:Tag "vocabulary search"@en .
+<https://biohackrxiv.org/gzfa8> bhx:Tag "dictionary search"@en .
+<https://biohackrxiv.org/gzfa8> bhx:Tag "biocuration"@en .
+<https://biohackrxiv.org/gzfa8> bhx:Tag "curation tools"@en .
+<https://biohackrxiv.org/gzfa8> bhx:Tag "REST API"@en .
+<https://biohackrxiv.org/gzfa8> bhx:Tag "public dictionaries"@en .
+<https://biohackrxiv.org/gzfa8> bhx:Tag "knowledge annotation"@en .
+<https://biohackrxiv.org/gzfa8> bhx:Tag "semantic web"@en .
+<https://biohackrxiv.org/9mnkb> dc:title "Progress on Data Stewardship Wizard during BioHackathon Europe 2020"@en ;
+    schema:sameAs <https://doi.org/10.37044/osf.io/9mnkb> ;
+    schema:url <https://raw.githubusercontent.com/ds-wizard/bh2020-report/main/paper.md> ;
+    bhx:Event <https://2020.biohackathon-europe.org/> ;
+    bhx:repository <https://github.com/biohackrxiv/> ;
+    dc:date "2020-12-06"^^xsd:date ;
+    a schema:CreativeWork .
+
+<https://biohackrxiv.org/9mnkb> dc:contributor [
+  a rdf:Seq;
+  rdf:_1 "Marek Suchánek" ;
+  rdf:_2 "Rob Hooft" ;
+  rdf:_3 "Konogan Bourhy" ;
+  ].
+
+<https://biohackrxiv.org/9mnkb> bhx:Tag "data stewardship"@en .
+<https://biohackrxiv.org/9mnkb> bhx:Tag "data management plan"@en .
+<https://biohackrxiv.org/9mnkb> bhx:Tag "document templates"@en .
+<https://biohackrxiv.org/9mnkb> bhx:Tag "public API integration"@en .
+<https://biohackrxiv.org/9mnkb> bhx:Tag "software internationalization"@en .
+<https://biohackrxiv.org/gmbjv> dc:title "Disease and pathway maps for Rare Diseases"@en ;
+    schema:sameAs <https://doi.org/10.37044/osf.io/gmbjv> ;
+    schema:url <https://raw.githubusercontent.com/elixir-europe/BioHackathon-projects-2019/master/projects/5/report/paper.md> ;
+    bhx:Event <https://2019.biohackathon-europe.org/> ;
+    bhx:repository <https://github.com/biohackrxiv/> ;
+    dc:date "2020-07-13"^^xsd:date ;
+    a schema:CreativeWork .
+
+<https://biohackrxiv.org/gmbjv> dc:contributor [
+  a rdf:Seq;
+  rdf:_1 "Marek Ostaszewski" ;
+  rdf:_2 "Piotr Gawron" ;
+  rdf:_3 "David Hoksza" ;
+  rdf:_4 "Laura I. Furlong" ;
+  rdf:_5 "Janet Pinero" ;
+  rdf:_6 "Joaquin Dopazo" ;
+  rdf:_7 "Maria Pena Chilet" ;
+  rdf:_8 "Marina Esteban" ;
+  rdf:_9 "Jose Luis Fernandez" ;
+  rdf:_10 "Vincenza Colonna" ;
+  ].
+
+<https://biohackrxiv.org/gmbjv> bhx:Tag "rare diseases"@en .
+<https://biohackrxiv.org/gmbjv> bhx:Tag "gene-disease association"@en .
+<https://biohackrxiv.org/gmbjv> bhx:Tag "disease maps"@en .
+<https://biohackrxiv.org/gmbjv> bhx:Tag "pathway diagrams"@en .
+<https://biohackrxiv.org/gmbjv> bhx:Tag "systems biomedicine"@en .
+<https://biohackrxiv.org/esrc9> dc:title "TogoEx: the integration of gene expression data"@en ;
+    schema:sameAs <https://doi.org/10.37044/osf.io/esrc9> ;
+    schema:url <https://raw.githubusercontent.com/bonohu/BHEU2019report/master/paper.md> ;
+    bhx:Event <https://2019.biohackathon-europe.org/> ;
+    bhx:repository <https://github.com/biohackrxiv/> ;
+    dc:date "2020-07-13"^^xsd:date ;
+    a schema:CreativeWork .
+
+<https://biohackrxiv.org/esrc9> dc:contributor [
+  a rdf:Seq;
+  rdf:_1 "Hidemasa Bono" ;
+  rdf:_2 "Takeya Kasukawa" ;
+  ].
+
+<https://biohackrxiv.org/esrc9> bhx:Tag "gene expression"@en .
+<https://biohackrxiv.org/cu2s9> dc:title "Characterization of Potential Drug Treatments for COVID-19 using Twitter"@en ;
+    schema:sameAs <https://doi.org/10.37044/osf.io/cu2s9> ;
+    schema:url <https://raw.githubusercontent.com/thepanacealab/covid19_biohackathon/master/treatments_misinformation/paper.md> ;
+    bhx:Event <https://github.com/virtual-biohackathons/covid-19-bh20> ;
+    bhx:repository <https://github.com/biohackrxiv/> ;
+    dc:date "2020-06-03"^^xsd:date ;
+    a schema:CreativeWork .
+
+<https://biohackrxiv.org/cu2s9> dc:contributor [
+  a rdf:Seq;
+  rdf:_1 "Ramya Tekumalla" ;
+  rdf:_2 "Juan M Banda" ;
+  ].
+
+<https://biohackrxiv.org/cu2s9> bhx:Tag "COVID-19"@en .
+<https://biohackrxiv.org/cu2s9> bhx:Tag "Machine Learning"@en .
+<https://biohackrxiv.org/cu2s9> bhx:Tag "Twitter"@en .
+<https://biohackrxiv.org/9d3cz> dc:title "Comparison of SARS-CoV-2 variants with INSaFLU and galaxyproject"@en ;
+    schema:sameAs <https://doi.org/10.37044/osf.io/9d3cz> ;
+    schema:url <https://raw.githubusercontent.com/rsgturkeygroup3/BioHackathon/master/paper.md> ;
+    bhx:Event <https://github.com/virtual-biohackathons/covid-19-bh20> ;
+    bhx:repository <https://github.com/biohackrxiv/> ;
+    dc:date "2020-05-14"^^xsd:date ;
+    a schema:CreativeWork .
+
+<https://biohackrxiv.org/9d3cz> dc:contributor [
+  a rdf:Seq;
+  rdf:_1 "Nazli Sila Kara" ;
+  rdf:_2 "Meltem Kutnu" ;
+  rdf:_3 "Yasemin Utkueri" ;
+  rdf:_4 "Funda Yilmaz" ;
+  rdf:_5 "Elif Bozlak" ;
+  rdf:_6 "Evrim Fer" ;
+  ].
+
+<https://biohackrxiv.org/9d3cz> bhx:Tag "COVID-19"@en .
+<https://biohackrxiv.org/9d3cz> bhx:Tag "galaxyproject"@en .
+<https://biohackrxiv.org/9d3cz> bhx:Tag "INSaFLU"@en .
+<https://biohackrxiv.org/9d3cz> bhx:Tag "SARS-CoV-2"@en .
+<https://biohackrxiv.org/9d3cz> bhx:Tag "variant calling"@en .
+<https://biohackrxiv.org/9d3cz> bhx:Tag "workflow"@en .
+<https://biohackrxiv.org/9d3cz> bhx:Tag "Covid-19 Virtual BioHackathon 2020"@en .
+<https://biohackrxiv.org/xt7gw> dc:title "Determining a novel feature-space for SARS-CoV-2 sequence data"@en ;
+    schema:sameAs <https://doi.org/10.37044/osf.io/xt7gw> ;
+    schema:url <https://raw.githubusercontent.com/covid19-bh-machine-learning/master/master/report/paper.md> ;
+    bhx:Event <https://github.com/virtual-biohackathons/covid-19-bh20> ;
+    bhx:repository <https://github.com/biohackrxiv/> ;
+    dc:date "2020-05-14"^^xsd:date ;
+    a schema:CreativeWork .
+
+<https://biohackrxiv.org/xt7gw> dc:contributor [
+  a rdf:Seq;
+  rdf:_1 "Francesco Ballesio" ;
+  rdf:_2 "Ali Haider Bangash" ;
+  rdf:_3 "Didier Barradas-Bautista" ;
+  rdf:_4 "Justin Barton" ;
+  rdf:_5 "Andrea Guarracino" ;
+  rdf:_6 "Lukas Heumos" ;
+  rdf:_7 "Aneesh Panoli" ;
+  rdf:_8 "Marco Pietrosanto" ;
+  rdf:_9 "Anastasios Togkousidis" ;
+  rdf:_10 "Phillip Davis" ;
+  rdf:_11 "Fotis Psomopoulos" ;
+  ].
+
+<https://biohackrxiv.org/xt7gw> bhx:Tag "Feature determination"@en .
+<https://biohackrxiv.org/xt7gw> bhx:Tag "k-mer modelling"@en .
+<https://biohackrxiv.org/xt7gw> bhx:Tag "word2vec"@en .
+<https://biohackrxiv.org/xt7gw> bhx:Tag "machine learning"@en .
+<https://biohackrxiv.org/xt7gw> bhx:Tag "epitope"@en .
+<https://biohackrxiv.org/xt7gw> bhx:Tag "CoVID-19"@en .
+<https://biohackrxiv.org/xt7gw> bhx:Tag "SARS-Co-V-2"@en .
+<https://biohackrxiv.org/b4zkp> dc:title "Global analysis of human SARS-CoV-2 infection and host-virus interaction"@en ;
+    schema:sameAs <https://doi.org/10.37044/osf.io/b4zkp> ;
+    schema:url <https://raw.githubusercontent.com/avantikalal/covid-gene-expression/master/report/paper.md> ;
+    bhx:Event <https://github.com/virtual-biohackathons/covid-19-bh20> ;
+    bhx:repository <https://github.com/biohackrxiv/> ;
+    dc:date "2020-05-14"^^xsd:date ;
+    a schema:CreativeWork .
+
+<https://biohackrxiv.org/b4zkp> dc:contributor [
+  a rdf:Seq;
+  rdf:_1 "Mariana G. Ferrarini" ;
+  rdf:_2 "Vanessa Aguiar-Pulido" ;
+  rdf:_3 "Eric T. Dawson" ;
+  rdf:_4 "Andrea Guarracino" ;
+  rdf:_5 "Andreas Gruber" ;
+  rdf:_6 "Lukas Heumos" ;
+  rdf:_7 "Alexander Kanitz" ;
+  rdf:_8 "Avantika Lal" ;
+  rdf:_9 "Brett E. Pickett" ;
+  rdf:_10 "Rita Rebollo" ;
+  rdf:_11 "Carlos Ruiz-Arenas" ;
+  rdf:_12 "Olaitan Awe" ;
+  rdf:_13 "Suhana Bedi" ;
+  rdf:_14 "Ben Busby" ;
+  rdf:_15 "Marielena Georgaki" ;
+  rdf:_16 "Chela James" ;
+  rdf:_17 "Itziar Martinez Gonzalez" ;
+  rdf:_18 "Birgit Meldal" ;
+  rdf:_19 "Scheila G. Mucha" ;
+  rdf:_20 "Noushin Nabavi" ;
+  rdf:_21 "Jakke Neiro" ;
+  rdf:_22 "Nuria Queralt Rosinach" ;
+  rdf:_23 "Philippe Rocca-Serra" ;
+  rdf:_24 "Daniel Siqueira de Oliveira" ;
+  rdf:_25 "Maria Tsagiopoulou" ;
+  ].
+
+<https://biohackrxiv.org/b4zkp> bhx:Tag "BioHackathon"@en .
+<https://biohackrxiv.org/b4zkp> bhx:Tag "Preprint"@en .
+<https://biohackrxiv.org/b4zkp> bhx:Tag "Gene expression"@en .
+<https://biohackrxiv.org/b4zkp> bhx:Tag "RNA-seq"@en .
+<https://biohackrxiv.org/b4zkp> bhx:Tag "RNA-binding proteins"@en .
+<https://biohackrxiv.org/b4zkp> bhx:Tag "Host-pathogen interactions"@en .
+<https://biohackrxiv.org/b4zkp> bhx:Tag "SARS-CoV-2"@en .
+<https://biohackrxiv.org/b4zkp> bhx:Tag "COVID-19"@en .
+<https://biohackrxiv.org/b4zkp> bhx:Tag "Transcriptomics"@en .
+<https://biohackrxiv.org/b4zkp> bhx:Tag "Reproducible workflows"@en .
+<https://biohackrxiv.org/b4zkp> bhx:Tag "FAIR data"@en .
+<https://biohackrxiv.org/km9ux> dc:title "Logic Programming for the Biomedical Sciences"@en ;
+    schema:sameAs <https://doi.org/10.37044/osf.io/km9ux> ;
+    schema:url <https://raw.githubusercontent.com/journal-of-research-objects/Example-BioHackrXiv-Paper/master/paper.md> ;
+    bhx:Event <http://2019.biohackathon.org/> ;
+    bhx:repository <https://github.com/biohackrxiv/> ;
+    dc:date "2020-04-10"^^xsd:date ;
+    a schema:CreativeWork .
+
+<https://biohackrxiv.org/km9ux> dc:contributor [
+  a rdf:Seq;
+  rdf:_1 "Chris Mungall" ;
+  rdf:_2 "Hirokazu Chiba" ;
+  rdf:_3 "Shuichi Kawashima" ;
+  rdf:_4 "Yasunori Yamamoto" ;
+  rdf:_5 "Pjotr Prins" ;
+  rdf:_6 "Nada Amin" ;
+  rdf:_7 "Deepak Unni" ;
+  rdf:_8 "<nobr>William&nbsp;E.&nbsp;Byrd</nobr>" ;
+  ].
+
+<https://biohackrxiv.org/km9ux> bhx:Tag "logic programming"@en .
+<https://biohackrxiv.org/8qdse> dc:title "Data validation and schema interoperability"@en ;
+    schema:sameAs <https://doi.org/10.37044/osf.io/8qdse> ;
+    schema:url <https://raw.githubusercontent.com/ljgarcia/Deleteme/master/paper.md> ;
+    bhx:Event <http://2019.biohackathon.org/> ;
+    bhx:repository <https://github.com/biohackrxiv/> ;
+    dc:date "2020-04-07"^^xsd:date ;
+    a schema:CreativeWork .
+
+<https://biohackrxiv.org/8qdse> dc:contributor [
+  a rdf:Seq;
+  rdf:_1 "Leyla Garcia" ;
+  rdf:_2 "Jerven Bolleman" ;
+  rdf:_3 "Michel Dumontier" ;
+  rdf:_4 "Simon Jupp" ;
+  rdf:_5 "Jose Emilio Labra Gayo" ;
+  rdf:_6 "Thomas Liener" ;
+  rdf:_7 "Tazro Ohta" ;
+  rdf:_8 "Núria Queralt-Rosinach" ;
+  rdf:_9 "Chunlei Wu" ;
+  ].
+
+<https://biohackrxiv.org/8qdse> bhx:Tag "schema"@en .
+<https://biohackrxiv.org/8qdse> bhx:Tag "data validation"@en .
+<https://biohackrxiv.org/8qdse> bhx:Tag "interoperability"@en .
+<https://biohackrxiv.org/8qdse> bhx:Tag "FAIR"@en .
