@@ -62,13 +62,15 @@ Templates are provided as an [example](https://github.com/biohackrxiv/publicatio
 As described in the Elixir 2020 Biohackathon paper (in preparation), metadata is crucial to publications, including acquiring a digital object identifier (DOI). DOIs are permanent URIs to PDFs, so publications can be cited by others. One interesting aspect is that DOIs support versioning - that means papers can be updated under the same DOI, this is not the case with content-addressable identifiers, such as the Interplanetary File System (IPFS).
 
 In the existing workflow we host BioHackrXiv.org as a --- so called --- preprint service with the Open Science Foundation (OSF.io). OSF manages the publication submission system and creates a DOI on acceptance. A DOI may look like \url{https://doi.org/10.37044/osf.io/km9ux} and should resolve to a hosted PDF.
+Another important identifier is ORCID for authors (cite?).
 
 For the authors, the current setup, demands writing a paper in a git repository using [pandoc flavoured markdown](https://garrettgman.github.io/rmarkdown/authoring_pandoc_markdown.html) that allows for embedded LaTeX. We wrote a preview webservice at \url{http://preview.biohackrxiv.org/} that generates a nice looking PDF from a pasted git URL, or alternatively a zipped up file containing paper.md and paper.bib. Next, the main author has to submit the paper through the OSF managed preprint system.
 After a cursory check, one of the editors of BioHackrXiv will accept or reject the paper -- mostly as a curation step against SPAM. After acceptance the paper appears online with a DOI and automatically gets included in the EU PMID or EuropePMID, followed by OpenCitations.
 
 Even though the system works as a `minimal viable product', and the PDF generation and submission works rather well, we identified a number of problems with the existing workflow:
 
-1. Authors have to submit some information twice - particularly author names - which is prone to mistakes (missing authors, misspellings)
+1. Authors have to submit some information twice because OSF does not parse the metadata header of th paper - particularly author name and institute - which is prone to mistakes (missing authors, misspellings).
+1. For the same reason ORCIDs are not propagated from the metadata headers in the paper submission
 1. The current submission page does not track the git repository where the publication is hosted. Often the editor has to ask for that separately
 1. In previous biohackathons we engineered a metadata graph that exports publications and their authors. Updating this graph includes some manual steps and that causes significant delays in updating the graph to show our aggregated output page at http://preview.biohackrxiv.org/list. That page should show a list of publications and their authors and it has a JSON version at http://preview.biohackrxiv.org/list.json
 1. When authors choose to submit a zip file we have to contact the authors for all relevant metadata
@@ -81,7 +83,7 @@ We identified these challenges and decided we need to automate more and work on 
 
 ## OSF API
 
-BioHackrXiv uses OSF as a web service to manage the workflow for PDF submission, editorial review, DOI generation, PDF view and basic search. There are a number of limitations and during this biohackathon we explored if we can use the OSF API to create our own submission system.
+BioHackrXiv uses OSF as a web service to manage the workflow for PDF submission, editorial review, DOI generation, PDF view and basic search. There are a number of limitations (see introduction) and during this biohackathon we explored if we can use the OSF API to create our own submission system.
 
 One of the cool aspects of OSF is that its web UI services use their own REST API to create the functionalities. This means that we, in theory, can use the REST API to roll our own.
 
@@ -131,10 +133,12 @@ Results in something like
 \normalsize
 
 All this information is derived from the OSF API, including misspellings of authors and missing authors on second time of entry. This reentering of author data should be taken out.
-Also the ORCIDs that are collected in the publication do not appear in this data.
+Also the ORCIDs that are collected in the publication do not appear in this data, perhaps because the submission page of OSF.io does not collect them. EuropePMC provides a separate tool/API to link authors with their publications
+[@citesAsAuthority:EuropePMC].
+
 So, the main issue is:
 
-1. Missing metadata and wrong metadata from europepmc
+1. Missing metadata and wrong metadata from europepmc even though the metadata in the paper header is correct.
 
 Interesting URLs we collected that the [EuropePMC REST API](https://europepmc.org/RestfulWebService) provides:
 
@@ -149,7 +153,7 @@ Interesting URLs we collected that the [EuropePMC REST API](https://europepmc.or
 * Data fetched from europmc.org
 * Includes DOI
 * Includes misspelled authors
-* ORCID?
+* Supports ORCID
 * Takes time to sync
 * Opencitations also provides a REST API
 
@@ -205,6 +209,8 @@ results in a list of
 ```
 
 \normalsize
+
+According to this [BLOG](https://opencitations.hypotheses.org/958) opencitations supports ORCID. In fact it looks it up for authors that miss such information. FIXME: test
 
 ## Zenodo API
 
