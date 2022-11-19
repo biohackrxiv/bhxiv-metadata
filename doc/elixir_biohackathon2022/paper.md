@@ -132,7 +132,7 @@ Results in something like
 
 \normalsize
 
-All this information is derived from the OSF API, including misspellings of authors and missing authors on second time of entry. This reentering of author data should be taken out.
+All this information is derived from the OSF API, including misspellings of authors (notice one author is not capitalised) and missing authors on second time of entry. This reentering of author data should be taken out of the existing submission workflow.
 Also the ORCIDs that are collected in the publication do not appear in this data, perhaps because the submission page of OSF.io does not collect them. EuropePMC provides a separate tool/API to link authors with their publications
 [@citesAsAuthority:EuropePMC].
 
@@ -180,10 +180,14 @@ WHERE {
 
 testing with curl
 
+\scriptsize
+
 ```sh
 curl -v --data-urlencode query@examplerq.rq \
   https://opencitations.net/index/sparql
 ```
+
+\normalsize
 
 results in a list of
 
