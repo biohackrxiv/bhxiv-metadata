@@ -17,6 +17,7 @@ affiliations:
     index: 2
 date: 15 November 2020
 bibliography: paper.bib
+git_url: https://github.com/biohackrxiv/bhxiv-gen-pdf
 event: Elixir2020
 group: BioHackrXiv Group
 authors_short: Pjotr Prins, Tazro Otha
@@ -33,6 +34,7 @@ markdown layout used in the Journal of Open Source Software
 [example](https://github.com/biohackrxiv/submission-templates). A
 minimal metadata header has the following layout
 
+\scriptsize
 
 ```js
 ---
@@ -56,6 +58,8 @@ date: 01 January 2020
 bibliography: paper.bib
 ---
 ```
+
+\normalsize
 
 BioHackrXiv publications are hosted at osf.io, an open source website
 that connects and supports the research workflow, enabling scientists
@@ -87,14 +91,17 @@ we maintain a [list](./etc/papers.yaml) in a git repository that needs
 to be updated with every publication. This file contains hard links we
 can not easily acquire in other ways. E.g.
 
+\scriptsize
+
 ```yaml
 papers:
 - id: https://biohackrxiv.org/km9ux/
   doi: https://doi.org/10.37044/osf.io/km9ux
-  markdown: https://raw.githubusercontent.com/journal-of-research-objects/Example-BioHackrXiv-Paper/master/paper.md
+  markdown: https://raw.githubusercontent.com/journal-of-research-objects/
+    Example-BioHackrXiv-Paper/master/paper.md
 ```
 
-FIXME: add IPFS link
+\normalsize
 
 The markdown link should be able to fetch the parsable markdown file and fetch
 the contained header metadata. Any conflicting metadata added by
@@ -117,14 +124,17 @@ means that validation happens in the source code. Some semantic
 enrichment includes URIs for the biohackathons themselves. An example
 for one paper:
 
-```rdf
+\scriptsize
+
+```xml
 <http://2019.biohackathon.org/> schema:description "NBDC/DBCLS BioHackathon, Fukuoka, Japan, 2019"@en ;
     schema:name "Japan2019" ;
     a schema:Event .
 
 <https://biohackrxiv.org/km9ux/> dc:title "Logic Programming Working Group"@en ;
     schema:sameAs <https://doi.org/10.37044/osf.io/km9ux> ;
-    schema:url <https://raw.githubusercontent.com/journal-of-research-objects/Example-BioHackrXiv-Paper/master/paper.md> ;
+    schema:url <https://raw.githubusercontent.com/journal-of-research-objects/
+      Example-BioHackrXiv-Paper/master/paper.md> ;
     bhx:Event <http://2019.biohackathon.org/> ;
     a schema:CreativeWork .
 
@@ -139,6 +149,8 @@ for one paper:
 
 
 ```
+
+\normalsize
 
 Where the embedded HTML should be filtered out.  The full current RDF
 can be viewed
@@ -157,6 +169,8 @@ Once the RDF is uploaded into a triple store, such as Virtuoso, it is
 possible to write SPARQL queries that return records in a JSON format
 that can be parsed inside a (biohackaton) website. For example, the
 following queries lists all biohackathons at time of writing:
+
+\scriptsize
 
 ```sql
 
@@ -180,8 +194,12 @@ WHERE   {
   Virtual BioHackathon Covid-2020
 ```
 
+\normalsize
+
 To list all papers for one Biohackathon (Virtual BioHackathon
 Covid-2020):
+
+\scriptsize
 
 ```sql
 SELECT  ?title ?url
@@ -202,7 +220,11 @@ Determining a novel feature-space for SARS-COV2 Sequence data
 	https://biohackrxiv.org/xt7gw/
 ```
 
+\normalsize
+
 After adding contributors to RDF we can count all contributors
+
+\scriptsize
 
 ```sql
 prefix bhx: <http://biohackerxiv.org/resource>
@@ -215,6 +237,8 @@ WHERE   {
 
 73 contributors
 ```
+
+\normalsize
 
 See the README file in the github repo for a recent SPARQL endpoint
 that supports these queries.
@@ -264,9 +288,9 @@ Even though OSF.io does not provide all the functionality we require
 for BioHackrXiv, we are able to work around limitations and our
 functionality may be merged or linked into the main
 https://biohackrxiv.org/ website in the future. For now, we will host
-a separate web server we operate ourselves and add IPFS permanent URLs
-that can be used instead of DOI to reference a document with a unique
-identifier.
+a separate web server we operate ourselves and possibly add IPFS permanent URLs
+that can be used in addition to DOI to reference a document with a unique
+identifier [@IPFS].
 
 ## Repositories
 

@@ -271,7 +271,7 @@ The itemised road map in a feasible order might be:
 
 Another aspect may be internationalisation of the front-ends.
 
-The justification for this work is that there may be hundreds of biohackathons in the coming years and, supposing we have a suitable setup, it may be manageable to get thousands of publications.
+The justification for this work is that there may be hundreds of biohackathons in the coming years and, supposing we have a suitable setup, it may be manageable to get thousands of publications. Furthermore, the code base and approach for this web service may lead to other initiatives for hosting similar reports/publications.
 
 ## Future work
 

@@ -1,6 +1,6 @@
 ---
-title: 'Metadata for BioHackrXiv markdown publications'
-title_short: 'Metadata for BioHackrXiv'
+title: 'CITO support for BioHackrXiv'
+title_short: 'CITO support for BioHackrXiv'
 tags:
   - metadata RDF pre-prints
 authors:
