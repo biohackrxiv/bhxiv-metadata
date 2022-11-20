@@ -234,7 +234,9 @@ During the week we added or improved:
 * Template support
 
 As such, a new template is provided with
-[examples](https://github.com/biohackrxiv/publication-template) of figures, tables and bibliography.
+[examples](https://github.com/biohackrxiv/publication-template) of figures, tables and bibliography. This template only contains guidance and a markdown
+template but excludes any code to compile a PDF; the user is expected to use the Preview Service. The repository is marked on GitHub as a "template repository"
+which adds a "Use this template" button, which is similar to forking a git repository.
 
 # Discussion
 
@@ -282,9 +284,9 @@ Another improvement may be adding optional support for an E-mail address so the 
 We also discussed support for papers submitted in other languages. We think that is a good idea and pandoc+tetex should support internationalisation (i8n). For a next biohackathon such a proof-of-concept appears to be in order.
 Another feature we would like to introduce is to support org-mode as an alternative for markdown. Pandoc can already transform one to the other.
 
-At this biohackathon we did not explore APIs of wikidata, Pubmed, Uniprot and others relevant to BioHackrXiv publications. In the near future, before implementing the full workflow, we will also need to look at [software heritage archive](https://www.softwareheritage.org/) because one of the goals is to store software output and data as part of a working groups outcome. The goal of the Software Heritage initiative is to collect all publicly available software in source code form together with its development history, replicate it massively to ensure its preservation, and share it with everyone who needs it. It provides an API and on upload exposes a permanent identifier. It is therefore not necessary to store software in Zenodo that is contributed to Software Heritage.
+At this biohackathon we did not explore APIs of wikidata, PubMed, UniProt and others relevant to BioHackrXiv publications. In the near future, before implementing the full workflow, we will also need to look at [software heritage archive](https://www.softwareheritage.org/) because one of the goals is to store software output and data as part of a working groups outcome. The goal of the Software Heritage initiative is to collect all publicly available software in source code form together with its development history, replicate it massively to ensure its preservation, and share it with everyone who needs it. It provides an API and on upload exposes a permanent identifier. It is therefore not necessary to store software in Zenodo that is contributed to Software Heritage.
 
-Of the mentioned services in this paper: Wikidata, Pubmed, Uniprot, Software Heritage Archive, EuropePMC and Zenodo appear to be long term initiatives that we can build on for BioHackrXiv. Building our own submission system will give us new options for presenting BioHackrXiv and for improving the workflow and experience for both submitters and readers of BioHackrXiv.
+Of the mentioned services in this paper: Wikidata, PubMed, UniProt, Software Heritage Archive, EuropePMC and Zenodo appear to be long term initiatives that we can build on for BioHackrXiv. Building our own submission system will give us new options for presenting BioHackrXiv and for improving the workflow and experience for both submitters and readers of BioHackrXiv.
 
 # Repositories
 
@@ -295,7 +297,7 @@ are hosted on https://github.com/biohackrxiv/.
 
 # Acknowledgements
 
-We thank the organisers of the Elixir BioHackathon 2022 for the event and hosting the BioHackrXiv working group.
+We thank the organisers of the ELIXIR BioHackathon 2022 for the event and hosting the BioHackrXiv working group.
 We also thank DBCLS for sponsoring the OSF.io hosting of BioHackrXiv and we thank the great initiatives, such as OSF, Zenodo, OpenCitations, EuropePMC and others that provide these great long lasting APIs.
 
 # Supplemental listing
