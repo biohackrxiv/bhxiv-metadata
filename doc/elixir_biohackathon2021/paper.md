@@ -33,12 +33,12 @@ authors_short: Pjotr Prins, Tazro Otha, Egon Willighagen
 
 # Introduction
 
-In this paper we present the work executed on BioHackrXiv during the international Elixir Biohackathon in Paris, France, 2021.
+In this paper we present the work executed on BioHackrXiv during the international ELIXIR BioHackathon in Barcelona, Spain, 2021.
 [BioHackrXiv](https://biohackrxiv.org/) is a scholarly publication service for
 biohackathons and codefests that target biology and the biomedical sciences in the spirit of pre-publishing platforms [@citesAsRecommendedReading:preprints].
 Over thirty papers have been published through this system and with the amount of biohackathons and codefests increasing every year, we expect this type of reporting and publishing to continue.
 The goal for this biohackathon was to add CiTO support and further improve deployment and take-up of the web service.
-CiTO is the Citation Typing Ontology that enables characterization of the nature or type of citations, both factually and rhetorically[@citesAsAuthority:CiTO] [@citesAsAuthority:Willighagen2020]. For examples see the [References] of this paper. A full list of characterizations can be found [here](https://sparontologies.github.io/cito/current/cito.html). These enriched references containing CiTO characterizations can become part of the wider metadata on publications.
+CiTO is the Citation Typing Ontology that enables characterization of the nature or type of citations, both factually and rhetorically [@citesAsAuthority:CiTO] [@citesAsAuthority:Willighagen2020]. For examples see the [References] of this paper. A full list of characterizations can be found [here](https://purl.org/spar/cito). These enriched references containing CiTO characterizations can become part of the wider metadata on publications.
 
 BioHackrXiv publications are generated from simple powerful markdown/LaTeX templates where the header is a YAML/JSON record that includes the title, authors, affiliations and tags[@citesAsAuthority:bhxiv20]. The idea originated from the [pandoc flavoured markdown](https://garrettgman.github.io/rmarkdown/authoring_pandoc_markdown.html) layout that is used in the Journal of Open Source Software (JOSS)[@citesAsAuthority:JOSS].
 Templates are provided as an [example](https://github.com/biohackrxiv/publication-template). Support in pandoc of CiTO annotations dates back to 2017 [@usesMethodIn:Krewinkel2017].
@@ -73,7 +73,7 @@ Achievements:
 
 ## Friday final report
 
-At the end of the biohackathon we achieved the following outcomes
+At the end of the biohackathon we achieved the following outcomes:
 
 1. CiTO support with recent CSL
 2. SVG support
@@ -85,7 +85,7 @@ At the end of the biohackathon we achieved the following outcomes
 
 ## Future work
 
-At this point we identify the following tasks that we can work on
+At this point we identify the following tasks that we can work on:
 
 1. Add the CiTO information to a public resource
 2. Add CiTO information to our own RDF store
@@ -99,9 +99,8 @@ See http://preview.biohackrxiv.org/
 
 # Discussion
 
-As part of the Elixir Biohackathon 2021 we added
-CiTO support
-for BioHackrXiv. CiTO is an extension that is supported by a LUA filter of pandoc and the modified filter is now available for other publications using [pandoc](https://pandoc.org/) too.
+As part of the ELIXIR BioHackathon 2021 we added CiTO support for BioHackrXiv.
+CiTO is an extension that is supported by a Lua filter of pandoc and the modified filter is now available for other publications using [pandoc](https://pandoc.org/) too.
 
 # Repositories
 
@@ -112,7 +111,7 @@ are hosted on https://github.com/biohackrxiv/bhxiv-gen-pdf.
 
 # Acknowledgements
 
-We thank the organizers of the Elixir BioHackathon 2020 for the event.
+We thank the organizers of the ELIXIR BioHackathon 2021 for the event.
 We also thank DBCLS for sponsoring the OSF.io hosting of BioHackrXiv.
 
 # References
