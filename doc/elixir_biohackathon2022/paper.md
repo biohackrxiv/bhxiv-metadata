@@ -229,7 +229,7 @@ BioHackrXiv uses RDF to track metadata on publications, parsed directly from the
 During the week we added or improved:
 
 * Unit tests
-* CITO (cite)
+* CiTO (cite)
 * LaTeX support
 * Template support
 
@@ -248,7 +248,7 @@ In this Elixir biohackathon 2022 over 200 people contributed to 40 working group
 
 We received many positive comments on the usefulness of BioHackrXiv and a commitment to include more biohackathons. Our workflow supports handing out accounts to biohackathon organisers, so they themselves can handle the 'editor' curation of papers coming in from their event.
 
-BioHackrXiv itself also participated as group 4 in the Elixir Biohackathon 2022 and this resulted in the work presented in this paper. Apart from fixing bugs and improving functionality, such as LaTeX table support and adding CITO terms, we explored the APIs of OpenCitations, EuropePMC, Zenodo and OSF.
+BioHackrXiv itself also participated as group 4 in the Elixir Biohackathon 2022 and this resulted in the work presented in this paper. Apart from fixing bugs and improving functionality, such as LaTeX table support and adding CiTO terms, we explored the APIs of OpenCitations, EuropePMC, Zenodo and OSF.
 
 OpenCitations present a RDF graph of papers that get cited by other papers. This is a very useful resource because it allows back tracing the graph to relevant papers. We will embed OpenCitations in a web UI for authors, working groups to explore publications that references their publication.
 
