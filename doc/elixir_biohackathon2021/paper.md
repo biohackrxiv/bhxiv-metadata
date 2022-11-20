@@ -41,7 +41,7 @@ The goal for this biohackathon was to add CiTO support and further improve deplo
 CiTO is the Citation Typing Ontology that enables characterization of the nature or type of citations, both factually and rhetorically[@citesAsAuthority:CiTO] [@citesAsAuthority:Willighagen2020]. For examples see the [References] of this paper. A full list of characterizations can be found [here](https://sparontologies.github.io/cito/current/cito.html). These enriched references containing CiTO characterizations can become part of the wider metadata on publications.
 
 BioHackrXiv publications are generated from simple powerful markdown/LaTeX templates where the header is a YAML/JSON record that includes the title, authors, affiliations and tags[@citesAsAuthority:bhxiv20]. The idea originated from the [pandoc flavoured markdown](https://garrettgman.github.io/rmarkdown/authoring_pandoc_markdown.html) layout that is used in the Journal of Open Source Software (JOSS)[@citesAsAuthority:JOSS].
-Templates are provided as an [example](https://github.com/biohackrxiv/publication-template).
+Templates are provided as an [example](https://github.com/biohackrxiv/publication-template). Support in pandoc of CiTO annotations dates back to 2017 [@usesMethodIn:Krewinkel2017].
 
 # Results
 
@@ -58,7 +58,7 @@ Journal of Cheminformatics, however, started in 2020 a pilot with using CiTO ann
 that would allow the citation typing to happen when the citation was made.
 
 The tool to convert BioHackrXiv Markdown to PDF has now been extended with an updated
-Lua filter to work with the APA Citation Styling Language (CSL), different from CSL
+Lua filter to work with the APA Citation Styling Language (CSL), different from the CSL
 used by the Journal of Cheminformatics.
 
 During the biohackathon we focused on adding CiTO support.
