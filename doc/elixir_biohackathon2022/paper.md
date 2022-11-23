@@ -276,6 +276,7 @@ The justification for this work is that there may be hundreds of biohackathons i
 ## Future work
 
 For future work, one feature request is to include support for converting graphs to images for PDF generation. This can be achieved with [mermaid](https://github.com/mwiget/pandoc-mermaid) in pandoc, for example. At this point we do not opt to include mermaid because it depends on a headless chromium browser --- that is not something we like to run in a web service environment.
+An alternative may [D2](https://github.com/terrastruct/d2), a modern diagram scripting language that turns text to diagrams. D2 recently got a free software license.
 
 Another improvement may be adding optional support for an E-mail address so the submitter can be contacted. Most biohackathon authors are easy to find on the internet, by virtue of their public contributions in the free software community. Even so, for a publication it may be useful to have a single contact.
 
