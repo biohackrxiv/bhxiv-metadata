@@ -21,7 +21,7 @@ affiliations:
     index: 1
   - name: Database Center for Life Science, Joint Support-Center for Data Science Research, Research Organization of Information and Systems, Japan
     index: 2
-  - name: Knowledge Management Group, at ZBMED Information Centre for Life Sciences
+  - name: Knowledge Management Group, at ZB MED Information Centre for Life Sciences, Cologne, Germany
     index: 3
 date: 15 November 2020
 bibliography: paper.bib
