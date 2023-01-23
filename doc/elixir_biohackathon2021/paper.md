@@ -20,9 +20,9 @@ affiliations:
     index: 2
   - name: Department of Bioinformatics - BiGCaT, Maastricht University, Maastricht, The Netherlands
     index: 3
-date: 15 November 2021
+date: 23 January 2023
 cito-bibliography: paper.bib
-event: Fukuoka2019
+event: BH21EU
 biohackathon_name: "BioHackathon Europe"
 biohackathon_url:   "https://biohackathon-europe.org/"
 biohackathon_location: "Barcalona, Spain, 2021"
