@@ -4,23 +4,28 @@ title_short: 'CiTO support for BioHackrXiv'
 tags:
   - metadata RDF pre-prints
 authors:
-  - name: Pjotr Prins
-    orcid: 0000-0002-8021-9162
+  - name: Egon Willighagen
+    orcid: 0000-0001-7542-0286
     affiliation: 1
   - name: Tazro Ohta
     orcid: 0000-0003-3777-5945
     affiliation: 2
-  - name: Egon Willighagen
-    orcid: 0000-0001-7542-0286
+  - name: Leyla Jael Castro
+    orcid: 0000-0003-3986-0510
     affiliation: 3
+  - name: Pjotr Prins
+    orcid: 0000-0002-8021-9162
+    affiliation: 4
 affiliations:
-  - name: Department of Genetics, Genomics and Informatics, The University of Tennessee Health Science Center, Memphis, TN, USA.
+  - name: Department of Bioinformatics - BiGCaT, Maastricht University, Maastricht, The Netherlands
     index: 1
   - name: Database Center for Life Science, Research Organization of Information and Systems, Japan
     index: 2
-  - name: Department of Bioinformatics - BiGCaT, Maastricht University, Maastricht, The Netherlands
+  - name: ZB MED Information Centre for Life Sciences, Germany
     index: 3
-date: 15 November 2021
+  - name: Department of Genetics, Genomics and Informatics, The University of Tennessee Health Science Center, Memphis, TN, USA.
+    index: 4
+date: 26 January 2023
 cito-bibliography: paper.bib
 event: BH21EU
 biohackathon_name: "BioHackathon Europe"
@@ -28,14 +33,14 @@ biohackathon_url:   "https://biohackathon-europe.org/"
 biohackathon_location: "Barcalona, Spain, 2021"
 group: Logic programming group
 git_url: https://github.com/biohackrxiv/bhxiv-gen-pdf
-authors_short: Pjotr Prins, Tazro Otha, Egon Willighagen
+authors_short: Egon Willighagen, Tazro Otha, Pjotr Prins
 ---
 
 # Introduction
 
 In this paper we present the work executed on BioHackrXiv during the international ELIXIR BioHackathon in Barcelona, Spain, 2021.
 [BioHackrXiv](https://biohackrxiv.org/) is a scholarly publication service for
-biohackathons and codefests that target biology and the biomedical sciences in the spirit of pre-publishing
+biohackathons and codefests that target biology, bioinformatincs and the biomedical sciences in the spirit of pre-publishing
 platforms&nbsp;[@citesAsRecommendedReading:preprints].
 Over thirty papers have been published through this system and with the amount of biohackathons and codefests increasing every year, we expect this type of reporting and publishing to continue.
 The goal for this biohackathon was to add CiTO support and further improve deployment and take-up of the web service.
@@ -61,32 +66,28 @@ you disagree with it.
 
 Despite the long history, it is not widely used yet. The Springer Nature
 _Journal of Cheminformatics_, however, started in 2020 a pilot with using CiTO
-annotation&nbsp;[@citesAsAuthority:Willighagen2020]. As part of this pilot, Lua scripts were developed
+annotation&nbsp;[@citesAsAuthority:Willighagen2020]. As part of this pilot, [Lua](https://www.lua.org/) scripts were developed
 that would allow the citation typing to happen when the citation was made.
 
 The tool to convert BioHackrXiv Markdown to PDF has now been extended with an updated
 Lua filter to work with the APA Citation Styling Language (CSL, see [https://citationstyles.org/](https://citationstyles.org/)),
 different from the CSL used by the _Journal of Cheminformatics_).
 
-## Wednesday (half way) progress report
+## Achievements
 
-Achievements:
+During the week, we implemented various new features and ended up with the following achievements
+at the end of the BioHackathon (including some non-CiTO-related outcomes):
 
 1. We updated the software that runs the BioHackrXiv PDF generation service
 2. We added CiTO support and now can annotate the bibliography in Markdown for PDF generation
-3. We added Scalable Vector Graphics (SVG) support (not CiTO related)
-
-## Friday final report
-
-At the end of the BioHackathon we achieved the following outcomes:
-
-1. CiTO support with recent CSL
-2. SVG support
-3. Added RDF
-4. Updated software stack
-6. Added tests
-3. Tested the new preview generator
-4. Support biohackathon groups with their publications
+3. We added Scalable Vector Graphics (SVG) support to allow people to add high-resolution figures
+4. CiTO support with recent CSL
+5. SVG support
+6. Added Resource Descriptino Framework (RDF) support
+7. Updated software stack
+8. Added tests
+9. Tested the new preview generator
+10. Support BioHackathon groups with their publications
 
 ## Future work
 
@@ -97,10 +98,10 @@ At this point we identify the following tasks that we can work on:
 2. Support other group papers
 3. Bring CiTO to the Journal of Open Source Software (JOSS)
 4. Improve RDF/Wikidata/OpenCitations with CiTO
-5. More info on OSF page
+5. More info on the Open Science Foundation (OSF) [preprints pages](https://osf.io/preprints/), i.e., the platform where BioHackrXiv preprints are hosted
 6. Support multiple papers in one repo by giving a full (git) path
 
-See http://preview.biohackrxiv.org/
+Future changes will be integrated into the PDF online generator tool for BioHackarxiv, see http://preview.biohackrxiv.org/, so the PDF generation becomes richer and easier for submitters.
 
 # Discussion
 
@@ -121,7 +122,7 @@ are hosted on https://github.com/biohackrxiv/bhxiv-gen-pdf.
 
 We thank the organizers of the ELIXIR BioHackathon 2021 and ELIXIR BioHackathon 2022 events
 and the early adopters at the ELIXIR BioHackathon 2022 who added CiTO annotations to their preprints.
-We also thank DBCLS for sponsoring the OSF.io hosting of BioHackrXiv.
+We also thank Database Center for Life Science (DBCLS) for sponsoring the OSF.io hosting of BioHackrXiv.
 
 
 # References
