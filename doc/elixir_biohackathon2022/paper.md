@@ -399,4 +399,8 @@ Guile Scheme script for accessing the Zenodo API and submitting a zip file, code
 ```
 
 
+Two resources that might be relevant are [OpenAlex](https://openalex.org/) and
+[Research Equals](https://www.researchequals.com).
+
+
 # References
