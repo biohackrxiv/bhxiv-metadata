@@ -29,7 +29,7 @@ authors:
 affiliations:
   - name: Turku Bioscience Centre, University of Turku, Turun yliopisto, Finland
     index: 1
-  - name: Department of Genetics, Genomics and Informatics, The University of Tennessee Health Science Center, Memphis, TN, USA.
+  - name: Department of Genetics, Genomics and Informatics, The University of Tennessee Health Science Center, Memphis, TN, USA
     index: 2
   - name: Database Center for Life Science, Research Organization of Information and Systems, Japan
     index: 3
