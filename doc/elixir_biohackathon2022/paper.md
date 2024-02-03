@@ -48,7 +48,7 @@ authors_short: Mats Perk, Arun Isaac et al.
 
 # Introduction
 
-In this paper we present the work executed on BioHackrXiv during the international Elixir Biohackathon in Paris, France, 2022.
+In this paper we present the work executed on BioHackrXiv during the international ELIXIR BioHackathon Europe in Paris, France, 2022.
 [BioHackrXiv](https://biohackrxiv.org/) is a scholarly publication service for
 biohackathons and codefests that target biology and the biomedical sciences in the spirit of pre-publishing platforms [@citesAsRecommendedReading:preprints].
 Over thirty papers have been published through this system and with the amount of biohackathons and codefests increasing every year, we expect this type of reporting and publishing to continue.
@@ -59,7 +59,7 @@ and [Zenodo](https://zenodo.org/) services.
 BioHackrXiv publications are generated from simple powerful markdown/LaTeX templates where the header is a YAML/JSON record that includes the title, authors, affiliations and tags. The idea originated from the [pandoc flavoured markdown](https://garrettgman.github.io/rmarkdown/authoring_pandoc_markdown.html) layout that is used in the Journal of Open Source Software (JOSS)[@citesAsAuthority:JOSS].
 Templates are provided as an [example](https://github.com/biohackrxiv/publication-template).
 
-As described in the BioHackrXiv Elixir 2020 Biohackathon paper (in preparation), metadata is crucial to publications, including acquiring a digital object identifier (DOI). DOIs are permanent URIs to PDFs, so publications can be cited by others. One interesting aspect is that DOIs support versioning - that means papers can be updated under the same DOI, this is not the case with content-addressable identifiers, such as the Interplanetary File System (IPFS).
+As described in the BioHackrXiv ELIXIR 2020 BioHackathon paper (in preparation), metadata is crucial to publications, including acquiring a digital object identifier (DOI). DOIs are permanent URIs to PDFs, so publications can be cited by others. One interesting aspect is that DOIs support versioning - that means papers can be updated under the same DOI, this is not the case with content-addressable identifiers, such as the Interplanetary File System (IPFS).
 
 In the existing workflow we host BioHackrXiv.org as a -- so called -- pre-print service with the Open Science Foundation (OSF.io). OSF manages the publication submission system and creates a DOI on acceptance. A DOI may look like \url{https://doi.org/10.37044/osf.io/km9ux} and should resolve to a hosted PDF.
 Another important identifier is ORCID for authors [@citesAsRecommendedReading:EuropePMC].
@@ -246,11 +246,11 @@ BioHackrXiv allow projects to publish their work as a citeable resource in the f
 1. Help authors gain a track record and citations as they automatically get included in EuropePMID and google citations [@citesAsRecommendedReading:preprints]. Support for PMID may come in the future as JOSS is working on that, see this [tracker](https://github.com/openjournals/joss/issues/153).
 1. Help organisers of biohackathons and codefests justify their work and budget
 
-In this Elixir biohackathon 2022 over 200 people contributed to 40 working groups and we expect to capture much of that effort in BioHackrXiv publications. Having no peer review for BioHackrXiv publications lowers the barrier to entry and, even though, papers may not be perfect in terms of language or grammar, we find the information content to be high and the quality to reflect the work people are executing in their projects. For a list of publications ordered by biohackathon, see [this](http://preview.biohackrxiv.org/list).
+In this ELIXIR BioHackathon Europe 2022 over 200 people contributed to 40 working groups and we expect to capture much of that effort in BioHackrXiv publications. Having no peer review for BioHackrXiv publications lowers the barrier to entry and, even though, papers may not be perfect in terms of language or grammar, we find the information content to be high and the quality to reflect the work people are executing in their projects. For a list of publications ordered by biohackathon, see [this](http://preview.biohackrxiv.org/list).
 
 We received many positive comments on the usefulness of BioHackrXiv and a commitment to include more biohackathons. Our workflow supports handing out accounts to biohackathon organisers, so they themselves can handle the 'editor' curation of papers coming in from their event.
 
-BioHackrXiv itself also participated as group 4 in the Elixir Biohackathon 2022 and this resulted in the work presented in this paper. Apart from fixing bugs and improving functionality, such as LaTeX table support and adding CiTO terms, we explored the APIs of OpenCitations, EuropePMC, Zenodo and OSF.
+BioHackrXiv itself also participated as group 4 in the ELIXIR BioHackathon Europe 2022 and this resulted in the work presented in this paper. Apart from fixing bugs and improving functionality, such as LaTeX table support and adding CiTO terms, we explored the APIs of OpenCitations, EuropePMC, Zenodo and OSF.
 
 OpenCitations present a RDF graph of papers that get cited by other papers. This is a very useful resource because it allows back tracing the graph to relevant papers. We will embed OpenCitations in a web UI for authors, working groups to explore publications that references their publication.
 
