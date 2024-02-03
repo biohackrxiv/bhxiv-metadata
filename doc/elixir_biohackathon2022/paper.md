@@ -5,33 +5,33 @@ tags:
   - metadata RDF pre-prints
 authors:
   - name: Mats Perk
-    affiliation: 4
+    affiliation: 1
   - name: Arun Isaac
     orcid: 0000-0002-6810-8195
-    affiliation: 1
+    affiliation: 2
   - name: Tazro Ohta
     orcid: 0000-0003-3777-5945
-    affiliation: 2
+    affiliation: 3
   - name: Egon Willighagen
     orcid: 0000-0001-7542-0286
-    affiliation: 3
+    affiliation: 4
   - name: Leyla Garcia Castro
     affiliation: 5
     orcid: 0000-0003-3986-0510
   - name: Toshiaki Katayama
     orcid: 0000-0003-2391-0384
-    affiliation: 2
+    affiliation: 3
   - name: Pjotr Prins
     orcid: 0000-0002-8021-9162
-    affiliation: 1
+    affiliation: 2
 affiliations:
-  - name: Department of Genetics, Genomics and Informatics, The University of Tennessee Health Science Center, Memphis, TN, USA.
-    index: 1
-  - name: Database Center for Life Science, Research Organization of Information and Systems, Japan
-    index: 2
-  - name: Department of Bioinformatics - BiGCaT, Maastricht University, Maastricht, The Netherlands
-    index: 3
   - name: Turku Bioscience Centre, University of Turku, Turun yliopisto, Finland
+    index: 1
+  - name: Department of Genetics, Genomics and Informatics, The University of Tennessee Health Science Center, Memphis, TN, USA.
+    index: 2
+  - name: Database Center for Life Science, Research Organization of Information and Systems, Japan
+    index: 3
+  - name: Department of Bioinformatics - BiGCaT, Maastricht University, Maastricht, The Netherlands
     index: 4
   - name: Knowledge Management Group, at ZBMED Information Centre for life sciences
     index: 5
