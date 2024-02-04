@@ -12,9 +12,6 @@ authors:
   - name: Tazro Ohta
     orcid: 0000-0003-3777-5945
     affiliation: 2
-  - name: Egon Willighagen
-    orcid: 0000-0001-7542-0286
-    affiliation: 3
   - name: Leyla Garcia Castro
     affiliation: 5
     orcid: 0000-0003-3986-0510
@@ -29,8 +26,6 @@ affiliations:
     index: 1
   - name: Database Center for Life Science, Research Organization of Information and Systems, Japan
     index: 2
-  - name: Department of Bioinformatics - BiGCaT, Maastricht University, Maastricht, The Netherlands
-    index: 3
   - name: University College London, London, The United Kingdom
     index: 4
   - name: Knowledge Management Group, at ZBMED Information Centre for life sciences
