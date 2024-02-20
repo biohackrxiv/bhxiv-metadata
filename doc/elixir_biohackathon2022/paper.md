@@ -217,7 +217,7 @@ According to this [blog post](https://opencitations.hypotheses.org/958), OpenCit
 
 ## Zenodo API
 
-We wrote a Guile program to test the Zenodo API (see supplement below). Zenodo has a special test infrastructure that you can test the API. Only problem was that they kicked us off after the first data upload! After contacting support it took a week to open up the sandbox testing environment for us, i.e., after the BioHackathon Europe.
+We wrote a Guile program to test the Zenodo API (see supplement below). Zenodo has a special test infrastructure that you can use to test the API. Only problem was that they kicked us off after the first data upload! After contacting support it took a week to open up the sandbox testing environment for us, i.e., after the BioHackathon Europe.
 
 ## Virtuoso as a system container
 
@@ -239,7 +239,7 @@ which adds a "Use this template" button, which is similar to forking a git repos
 
 # Discussion
 
-BioHackrXiv allow projects to publish their work as a citeable resource in the form of non-peer reviewed pre-published papers [@citesAsRecommendedReading:preprints]. A minority of these may end up as a peer reviewed paper. Even so, getting citeable resources is valuable and work done at BioHackathons does not get lost this way. These non-peer reviewed publications:
+BioHackrXiv allows projects to publish their work as a citeable resource in the form of non-peer reviewed pre-published papers [@citesAsRecommendedReading:preprints]. A minority of these may end up as a peer reviewed paper. Even so, getting citeable resources is valuable and work done at BioHackathons does not get lost this way. These non-peer reviewed publications:
 
 1. Help working groups capture and expose their work for future reference
 1. Help authors gain a track record and citations as they automatically get included in EuropePMID and Google citations [@citesAsRecommendedReading:preprints]. Support for PMID may come in the future as JOSS is working on that, see this [tracker](https://github.com/openjournals/joss/issues/153).
@@ -253,7 +253,7 @@ BioHackrXiv itself also participated as Group 4 in the ELIXIR BioHackathon Europ
 
 OpenCitations present a RDF graph of papers that get cited by other papers. This is a very useful resource because it allows back tracing the graph to relevant papers. We will embed OpenCitations in a web UI for authors, working groups to explore publications that references their publication.
 
-EuropePMC is the European version of Pubmed and allows referencing on non-peer reviewed publications, such as bioRxiv [@citesAsRecommendedReading:preprints] and BioHackrXiv.
+EuropePMC is the European version of PubMed and that also allows referencing on non-peer reviewed publications, such as bioRxiv [@citesAsRecommendedReading:preprints] and BioHackrXiv.
 Zenodo is a European initiative built on the CERN data warehousing facilities to create DOIs on resources, such as software and data. It allows up to 50Gb of storage per user for free.
 
 ## Road map
