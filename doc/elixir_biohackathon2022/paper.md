@@ -67,7 +67,7 @@ In the existing workflow we host BioHackrXiv.org as a -- so called -- pre-print 
 Another important identifier is ORCID for authors [@citesAsRecommendedReading:EuropePMC].
 
 For the authors, the current setup, demands writing a paper in a git repository using [pandoc flavoured markdown](https://garrettgman.github.io/rmarkdown/authoring_pandoc_markdown.html) that allows for embedded LaTeX. We wrote a preview web service at \url{http://preview.biohackrxiv.org/} that generates a nice looking PDF from a pasted git URL, or alternatively a zipped up file containing `paper.md` and `paper.bib`. Next, the main author has to submit the paper through the OSF-managed preprint system.
-After a cursory check, one of the editors of BioHackrXiv will accept or reject the paper -- mostly as a curation step against SPAM. After acceptance the paper appears online with a DOI and automatically gets included in the EU PMID or EuropePMID, followed by OpenCitations.
+After a cursory check, one of the editors of BioHackrXiv will accept or reject the paper -- mostly as a curation step against SPAM. After acceptance the paper appears online with a DOI and automatically gets included in Europe PMC, followed by OpenCitations.
 
 Even though the system works as a `minimal viable product', and the PDF generation and submission works rather well, we identified a number of problems with the existing workflow:
 
@@ -91,11 +91,11 @@ One of the cool aspects of OSF is that its web UI services use their own REST AP
 
 According to the documentation it is possible to create & upload PDFs via the API in `/v2/preprints`, as described in the [provided documentation](https://developer.osf.io/#operation/preprints_create). The detailed documentation can be found at [this link](https://github.com/CenterForOpenScience/developer.osf.io). For further details, check the relevant files `osf-docs/swagger-spec/preprints/list.yaml` and `osf-docs/swagger-spec/preprints/definition.yaml`. A well documented test-case can be found [here](https://raw.githubusercontent.com/CenterForOpenScience/osf-selenium-tests/develop/api/osf_api.py) which can start as a good launch-off point.
 
-## EuropePMC
+## Europe PMC
 
-EuropePMC gets its metadata from OSF and contains all papers published on BioHackrXiv, after a little delay.
+Europe PMC gets its metadata from OSF and contains all papers published on BioHackrXiv, after a little delay.
 
-Interestingly, EuropePMC exposes RDF from REST API, e.g. the query
+Interestingly, Europe PMC exposes RDF from REST API, e.g. the query
  https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=doi:10.37044/osf.io/8qdse&format=dc
 
 Results look something like this:
@@ -132,14 +132,14 @@ Results look something like this:
 \normalsize
 
 All this information is derived from the OSF API, including misspellings of authors (notice one author is not capitalised) and missing authors on second time of entry. This reentering of author data should be taken out of the existing submission workflow.
-Also the ORCIDs that are collected in the publication do not appear in this data, perhaps because the submission page of OSF.io does not collect them. EuropePMC provides a separate tool/API to link authors with their publications
+Also the ORCIDs that are collected in the publication do not appear in this data, perhaps because the submission page of OSF.io does not collect them. Europe PMC provides a separate tool/API to link authors with their publications
 [@citesAsAuthority:EuropePMC].
 
 So, the main issue is:
 
-1. Missing metadata and wrong metadata from EuropePMC even though the metadata in the paper header is correct.
+1. Missing metadata and wrong metadata from Europe PMC even though the metadata in the paper header is correct.
 
-Interesting URLs we collected that the [EuropePMC REST API](https://europepmc.org/RestfulWebService) provides:
+Interesting URLs we collected that the [Europe PMC REST API](https://europepmc.org/RestfulWebService) provides:
 
 * [XML output](https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=doi:10.37044/osf.io/8qdse&format=xml)
 * [JSON output](https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=doi:10.37044/osf.io/8qdse&format=json)
@@ -242,18 +242,18 @@ which adds a "Use this template" button, which is similar to forking a git repos
 BioHackrXiv allows projects to publish their work as a citeable resource in the form of non-peer reviewed pre-published papers [@citesAsRecommendedReading:preprints]. A minority of these may end up as a peer reviewed paper. Even so, getting citeable resources is valuable and work done at BioHackathons does not get lost this way. These non-peer reviewed publications:
 
 1. Help working groups capture and expose their work for future reference
-1. Help authors gain a track record and citations as they automatically get included in EuropePMID and Google citations [@citesAsRecommendedReading:preprints]. Support for PMID may come in the future as JOSS is working on that, see this [tracker](https://github.com/openjournals/joss/issues/153).
+1. Help authors gain a track record and citations as they automatically get included in Europe PMC and Google citations [@citesAsRecommendedReading:preprints]. Support for PMID may come in the future as JOSS is working on that, see this [tracker](https://github.com/openjournals/joss/issues/153).
 1. Help organisers of BioHackathons and codefests justify their work and budget
 
 In this ELIXIR BioHackathon Europe 2022 over 200 people contributed to 40 working groups and we expect to capture much of that effort in BioHackrXiv publications. Having no peer review for BioHackrXiv publications lowers the barrier to entry and, even though, papers may not be perfect in terms of language or grammar, we find the information content to be high and the quality to reflect the work people are executing in their projects. For a list of publications ordered by BioHackathon, see [this](http://preview.biohackrxiv.org/list).
 
 We received many positive comments on the usefulness of BioHackrXiv and a commitment to include more BioHackathons. Our workflow supports handing out accounts to BioHackathon organisers, so they themselves can handle the 'editor' curation of papers coming in from their event.
 
-BioHackrXiv itself also participated as Group 4 in the ELIXIR BioHackathon Europe 2022 and this resulted in the work presented in this paper. Apart from fixing bugs and improving functionality, such as LaTeX table support and adding CiTO terms, we explored the APIs of OpenCitations, EuropePMC, Zenodo and OSF.
+BioHackrXiv itself also participated as Group 4 in the ELIXIR BioHackathon Europe 2022 and this resulted in the work presented in this paper. Apart from fixing bugs and improving functionality, such as LaTeX table support and adding CiTO terms, we explored the APIs of OpenCitations, Europe PMC, Zenodo and OSF.
 
 OpenCitations present a RDF graph of papers that get cited by other papers. This is a very useful resource because it allows back tracing the graph to relevant papers. We will embed OpenCitations in a web UI for authors, working groups to explore publications that references their publication.
 
-EuropePMC is the European version of PubMed and that also allows referencing on non-peer reviewed publications, such as bioRxiv [@citesAsRecommendedReading:preprints] and BioHackrXiv.
+Europe PMC is the European version of PubMed and that also allows referencing on non-peer reviewed publications, such as bioRxiv [@citesAsRecommendedReading:preprints] and BioHackrXiv.
 Zenodo is a European initiative built on the CERN data warehousing facilities to create DOIs on resources, such as software and data. It allows up to 50Gb of storage per user for free.
 
 ## Road map
@@ -262,12 +262,12 @@ Based on above explorations of APIs we believe we can create our own workflow fo
 
 We have defined a road map which can greatly improve the user experience of BioHackrXiv.org. Creating our own front-end and workflow will free us to lower the barrier to entry even more for publishing group efforts in a citeable paper. In time we can provide the option of storing code+data with the PDF. Even later we may be able to explore running reproducible environments using that code and data using the type of continuous integration systems that are available through github, for example.
 
-EuropePMC gets its data from OSF and that leads to incomplete and wrong metadata. The solution is to write our own uploader that can push to OSF and/or Zenodo to get an API. Advantage: choice for DOI generation. No double input for author name and institute. Automatic inclusion of ORCIDs and other metadata.
+Europe PMC gets its data from OSF and that leads to incomplete and wrong metadata. The solution is to write our own uploader that can push to OSF and/or Zenodo to get an API. Advantage: choice for DOI generation. No double input for author name and institute. Automatic inclusion of ORCIDs and other metadata.
 
 The itemised road map in a feasible order might be:
 
 1. Replace BioHackrXiv front page with our own and use the OSF API to submit the PDF making the process easier and avoiding duplication of entering author names etc. We can keep using the OSF editorial workflow initially.
-1. Validate the metadata on EuropePMC and OpenCitations through comparison with our RDF back-end
+1. Validate the metadata on Europe PMC and OpenCitations through comparison with our RDF back-end
 1. Replace OSF editorial workflow so we can more easily support editorial delegation to BioHackathon organisers.
 
 Another aspect may be internationalisation of the front-ends.
@@ -286,7 +286,7 @@ Another feature we would like to introduce is to support org-mode as an alternat
 
 At this BioHackathon we did not explore APIs of wikidata, PubMed, UniProt and others relevant to BioHackrXiv publications. In the near future, before implementing the full workflow, we will also need to look at [software heritage archive](https://www.softwareheritage.org/) because one of the goals is to store software output and data as part of a working groups outcome. The goal of the Software Heritage initiative is to collect all publicly available software in source code form together with its development history, replicate it massively to ensure its preservation, and share it with everyone who needs it. It provides an API and on upload exposes a permanent identifier. It is therefore not necessary to store software in Zenodo that is contributed to Software Heritage.
 
-Of the mentioned services in this paper: Wikidata, PubMed, UniProt, Software Heritage Archive, EuropePMC and Zenodo appear to be long term initiatives that we can build on for BioHackrXiv. Building our own submission system will give us new options for presenting BioHackrXiv and for improving the workflow and experience for both submitters and readers of BioHackrXiv.
+Of the mentioned services in this paper: Wikidata, PubMed, UniProt, Software Heritage Archive, Europe PMC and Zenodo appear to be long term initiatives that we can build on for BioHackrXiv. Building our own submission system will give us new options for presenting BioHackrXiv and for improving the workflow and experience for both submitters and readers of BioHackrXiv.
 
 # Repositories
 
@@ -298,7 +298,7 @@ are hosted on https://github.com/biohackrxiv/.
 # Acknowledgements
 
 We thank the organisers of the ELIXIR BioHackathon 2022 for the event and hosting the BioHackrXiv working group.
-We also thank DBCLS for sponsoring the OSF.io hosting of BioHackrXiv and we thank the great initiatives, such as OSF, Zenodo, OpenCitations, EuropePMC and others that provide these great long lasting APIs.
+We also thank DBCLS for sponsoring the OSF.io hosting of BioHackrXiv and we thank the great initiatives, such as OSF, Zenodo, OpenCitations, Europe PMC and others that provide these great long lasting APIs.
 
 # Supplemental listing
 
