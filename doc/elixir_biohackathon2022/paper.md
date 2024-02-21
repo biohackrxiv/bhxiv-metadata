@@ -54,7 +54,7 @@ This paper presents the work executed on BioHackrXiv during the international EL
 [BioHackrXiv](https://biohackrxiv.org/) is a scholarly publication service for
 BioHackathons and codefests that target biology and the biomedical sciences in the spirit of pre-publishing platforms [@citesAsRecommendedReading:preprints].
 Over thirty papers have been published through this system and with the amount of BioHackathons and codefests increasing every year, we expect this type of reporting and publishing to continue.
-The goal was to further improve deployment and take-up of the web service and to set a road map for improving the workflow and explore integration of EuropePMC [@citesAsAuthority:EuropePMC], OpenCitation
+The goal was to further improve deployment and take-up of the web service and to set a road map for improving the workflow and explore integration of Europe PMC [@citesAsAuthority:EuropePMC], OpenCitation
 [@citesAsRecommendedReading:Shotton2018; @citesAsAuthority:Shotton2013]
 and [Zenodo](https://zenodo.org/) services.
 
