@@ -43,11 +43,11 @@ authors_short: Arun Isaac, Yuhao Wang et al.
 
 # Introduction
 
-In this paper, we present the work executed on BioHackrXiv during the international Elixir BioHackathon 2023 in Barcelona, Spain. [BioHackrXiv](https://biohackrxiv.org/) is a scholarly publication service for biohackathons and codefests that target biology and the biomedical sciences in the spirit of pre-publishing platforms [@citesAsRecommendedReading:preprints]. Over sixty papers have been published through this system and with the amount of biohackathons and codefests increasing every year, we expect this type of reporting and publishing to continue. The goal for this BioHackathon was to improve deployment, enable better collection of metadata, and improve long-term archiving of user repositories.
+In this paper, we present the work executed on BioHackrXiv during the international ELIXIR BioHackathon Europe 2023 in Barcelona, Spain. [BioHackrXiv](https://biohackrxiv.org/) is a scholarly publication service for biohackathons and codefests that target biology and the biomedical sciences in the spirit of pre-publishing platforms [@citesAsRecommendedReading:preprints]. Over sixty papers have been published through this system and with the amount of biohackathons and codefests increasing every year, we expect this type of reporting and publishing to continue. The goal for this BioHackathon was to improve deployment, enable better collection of metadata, and improve long-term archiving of user repositories.
 
 BioHackrXiv publications are generated from simple powerful markdown/LaTeX templates where the header is a YAML/JSON record that includes the title, authors, affiliations and tags. The idea originated from the [pandoc flavoured markdown](https://garrettgman.github.io/rmarkdown/authoring_pandoc_markdown.html) layout that is used in the Journal of Open Source Software (JOSS)[@citesAsAuthority:JOSS]. Templates are provided as an [example](https://github.com/biohackrxiv/publication-template).
 
-As described in the BioHackrXiv Elixir 2020 Biohackathon paper (in preparation), metadata is crucial to publications, including acquiring a digital object identifier (DOI). DOIs are permanent URIs to PDFs, so publications can be cited by others. One interesting aspect is that DOIs support versioning - that means papers can be updated under the same DOI, this is not the case with content-addressable identifiers, such as the Interplanetary File System (IPFS).
+As described in the BioHackrXiv ELIXIR 2020 and 2022 BioHackathon Europe paper [@citesForInformation:bhxiv20; @citesForInformation:bhxiv22], metadata is crucial to publications, including acquiring a digital object identifier (DOI). DOIs are permanent URIs to PDFs, so publications can be cited by others. One interesting aspect is that DOIs support versioning - that means papers can be updated under the same DOI, this is not the case with content-addressable identifiers, such as the Interplanetary File System (IPFS).
 
 In the existing workflow we host BioHackrXiv.org as *pre-print* service with the Open Science Foundation (OSF.io). OSF manages the publication submission system and creates a DOI on acceptance. A DOI may look like \url{https://doi.org/10.37044/osf.io/km9ux} and should resolve to a hosted PDF.
 
@@ -120,7 +120,7 @@ The web server repositories are hosted on https://github.com/biohackrxiv/. The p
 
 # Acknowledgements
 
-We thank the organisers of the ELIXIR BioHackathon 2023 for the event and hosting the BioHackrXiv working group. We also thank DBCLS for sponsoring the OSF.io hosting of BioHackrXiv and we thank initiatives, such as OSF, Zenodo and others that provide these great long lasting APIs.
+We thank the organisers of the ELIXIR BioHackathon Europe 2023 for the event and hosting the BioHackrXiv working group. We also thank DBCLS for sponsoring the OSF.io hosting of BioHackrXiv and we thank initiatives, such as OSF, Zenodo and others that provide these great long lasting APIs.
 
 # Supplemental listing
 
