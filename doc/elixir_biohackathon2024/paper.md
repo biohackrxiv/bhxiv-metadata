@@ -8,12 +8,14 @@ authors:
     orcid: 0000-0001-7542-0286
     affiliation: 1
   - name: Tazro Ohta
+    orcid: 0000-0003-3777-5945
     affiliation: 2
 affiliations:
   - name: Dept of Translational Genomics, NUTRIM, FHML, Maastricht University, Maastricht, NL
     ror: 02jz4aj89
     index: 1
-  - name: Database Center for Life Science, Joint Support-Center for Data Science Research, Research Organization of Information and Systems, Japan
+  - name: Database Center for Life Science, Research Organization of Information and Systems, Japan
+    ror: 018q2r417
     index: 2
 date: 4 March 2025
 cito-bibliography: paper.bib
@@ -58,6 +60,8 @@ out the changes needed to the LaTeX template used to convert the Markdown into
 a PDF. ORCIDs can be added to Markdown metadata as field to the author list,
 for example:
 
+\scriptsize
+
 ```yaml
 authors:
   - name: Egon Willighagen
@@ -66,6 +70,8 @@ authors:
   - name: Tazro Ohta
     affiliation: 2
 ```
+
+\normalsize
 
 The ORCID is displayed in the PDF with the ORCID logo and links to the profile
 of the author on the ORCID website, see Figure 1. This feature was implemented
@@ -80,17 +86,19 @@ Second, with the help from the commonity (see https://mastodon.social/@egonw/113
 we added support for the ROR identifier. The ROR identifier of an organization
 can be added to the affiliation metadata:
 
+\scriptsize
+
 ```yaml
 affiliations:
-  - name: Dept of Translational Genomics, NUTRIM, FHML, 
-      Maastricht University, Maastricht, NL
+  - name: Dept of Translational Genomics, NUTRIM, FHML, Maastricht University, Maastricht, NL
     ror: 02jz4aj89
     index: 1
-  - name: Database Center for Life Science, Joint Support-Center
-      for Data Science Research, Research Organization of Information
-      and Systems, Japan
+  - name: Database Center for Life Science, Research Organization of Information and Systems, Japan
+    ror: 018q2r417
     index: 2
 ```
+
+\normalsize
 
 The ROR is displayed in the PDF with the ROR icon and links to the profile
 of the organization on the ROR website, as shown in the above screenshot.
