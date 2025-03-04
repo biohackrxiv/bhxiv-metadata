@@ -106,12 +106,19 @@ This feature involved one pull request:
 
 * https://github.com/biohackrxiv/bhxiv-gen-pdf/pull/45
 
-The patches are all available from the BioHackrXib Preview service at
-[http://preview.biohackrxiv.org/](http://preview.biohackrxiv.org/).
+The patches are all available from the BioHackrXiv Preview service at
+[http://preview.biohackrxiv.org/](http://preview.biohackrxiv.org/). The template
+repository at [https://github.com/biohackrxiv/publication-template](https://github.com/biohackrxiv/publication-template)
+has also been updated.
 
 # Discussion
 
-...
+While the resulting PDF now include visual indicators and links to ORCID and
+ROR profiles of authors and affiliations, the full support is not complete and
+propagation of this additional metadata needs to be ensured. This was not
+completed during the Biohackathon. Nevertheless, we hope that the new PDFs
+encourage more people to use their ORCID and ROR identifiers in BioHackrXiv
+preprints.
 
 ## Acknowledgements
 
