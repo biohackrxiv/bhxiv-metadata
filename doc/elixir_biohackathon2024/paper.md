@@ -1,6 +1,6 @@
 ---
 title: 'BioHackEU24 report: ORCID and ROR identifiers in BioHackrXiv reports'
-title_short: 'BioHackEU24 #26: ORCID and ROR identifiers'
+title_short: 'BioHackEU24 #9: ORCID and ROR identifiers'
 tags:
   - BioHackrXiv
 authors:
@@ -25,7 +25,7 @@ biohackathon_url:   "https://biohackathon-europe.org/"
 biohackathon_location: "Barcelona, Spain, 2024"
 group: Project 9
 # URL to project git repo --- should contain the actual paper.md:
-git_url: https://github.com/biohackrxiv/bhxiv-metadata
+git_url: https://github.com/biohackrxiv/bhxiv-metadata/tree/main/doc/elixir_biohackathon2024
 # This is the short authors description that is used at the
 # bottom of the generated paper (typically the first two authors):
 authors_short: Egon Willighagen \emph{et al.}
