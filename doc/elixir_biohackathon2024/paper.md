@@ -40,7 +40,7 @@ published their 100th preprint. Machine-readable etadata added to the Markdown t
 added includes the title, keywords, the author names, their affiliations, and
 details about the Biohackathon event the preprint is related to. 
 The metadata in 2000 already supported listing the ORCID identifier of the authors,
-but this was not added to the author list in the generated PDF [@citesAsRecommendedReading:bhxiv20].
+but this was not added to the author list in the generated PDF [@citesAsRecommendedReading:extends:bhxiv20].
 
 Over the past four years, the platform continued to develop. For example,
 at the BioHackathon Europe 2021 Citation Typing Ontology support was added
