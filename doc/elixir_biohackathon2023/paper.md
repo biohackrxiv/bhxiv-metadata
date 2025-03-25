@@ -32,7 +32,7 @@ affiliations:
   - name: Database Center for Life Science, Research Organization of Information and Systems, Japan
     ror: 018q2r417
     index: 3
-  - name: Knowledge Management Group, at ZB MED Information Centre for Life Sciences
+  - name: ZB MED Information Centre for Life Sciences
     ror: 0259fwx54
     index: 4
   - name: Department of Genetics, Genomics and Informatics, The University of Tennessee Health Science Center, Memphis, TN, USA.
