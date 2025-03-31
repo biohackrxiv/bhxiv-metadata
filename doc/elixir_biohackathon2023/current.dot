@@ -1,7 +1,9 @@
 digraph {
+        rankdir="LR"
 	biohackrxiv [label="BioHackrXiv preview server"]
-	{rank=min; osf [label="OSF preprints server"]}
+        {rank=min; user}
+	osf [label="OSF preprints server"]
 	user -> biohackrxiv [label="git repository or ZIP archive"]
 	biohackrxiv -> user [label="PDF paper"]
-	user -> osf [label="PDF paper"]
+	user -> osf [xlabel="PDF paper"]
 }

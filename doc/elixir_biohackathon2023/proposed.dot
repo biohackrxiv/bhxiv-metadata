@@ -1,8 +1,11 @@
 digraph {
+        rankdir="LR"
 	biohackrxiv [label="BioHackrXiv"]
-	{rank=min; osf [label="OSF preprints server"]; zenodo [label="Zenodo"]}
-	user -> biohackrxiv [dir=backward, label="git repository or ZIP archive"]
-	biohackrxiv -> user [label="PDF paper"]
+	osf [label="OSF preprints server"]
+        zenodo [label="Zenodo"]
+        {rank=min; user}
+	user -> biohackrxiv:nw [dir=backward, label="git repository or ZIP archive"]
+	biohackrxiv -> user:se [xlabel="PDF paper"]
 	biohackrxiv -> osf [label="OSF API"]
         biohackrxiv -> zenodo [label="Zenodo API"]
 }
