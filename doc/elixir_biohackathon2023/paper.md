@@ -38,7 +38,7 @@ affiliations:
   - name: Department of Genetics, Genomics and Informatics, The University of Tennessee Health Science Center, Memphis, TN, USA.
     ror: 0011qv509
     index: 5
-date: 31 March 2025
+date: 1 April 2025
 cito-bibliography: paper.bib
 event: BH23EU
 biohackathon_name: "BioHackathon Europe"
