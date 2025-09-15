@@ -6,32 +6,32 @@ tags:
 authors:
   - name: Arun Isaac
     orcid: 0000-0002-6810-8195
-    affiliation: ?
+    affiliation: 1
   - name: Egon Willighagen
     orcid: 0000-0001-7542-0286
-    affiliation: 1
+    affiliation: 2
   - name: Tazro Ohta
     orcid: 0000-0003-3777-5945
-    affiliation: 2
+    affiliation: 3
   - name: Toshiaki Katayama
     orcid: 0000-0003-2391-0384
-    affiliation: 2
+    affiliation: 3
   - name: Pjotr Prins
     orcid: 0000-0002-8021-9162
-    affiliation: 3
+    affiliation: 4
 affiliations:
   - name: University College London, London, The United Kingdom
     ror: 02jx3x895
-    index: ?
+    index: 1
   - name: Dept of Translational Genomics, NUTRIM, FHML, Maastricht University, Maastricht, NL
     ror: 02jz4aj89
-    index: 1
+    index: 2
   - name: Database Center for Life Science, Research Organization of Information and Systems, Japan
     ror: 018q2r417
-    index: 2
+    index: 3
   - name: Department of Genetics, Genomics and Informatics, The University of Tennessee Health Science Center, Memphis, TN, USA
     ror: 0011qv509
-    index: 3
+    index: 4
 date: September 2025
 cito-bibliography: paper.bib
 event: BH24EU
