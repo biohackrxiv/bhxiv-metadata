@@ -43,7 +43,7 @@ group: BioHackrXiv
 git_url: https://github.com/biohackrxiv/bhxiv-metadata/tree/main/doc/japan_biohackathon2025
 # This is the short authors description that is used at the
 # bottom of the generated paper (typically the first two authors):
-authors_short: ? \emph{et al.}
+authors_short: First \emph{et al.}
 ---
 
 # Goals
