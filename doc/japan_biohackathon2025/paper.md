@@ -70,6 +70,20 @@ Discussion:
 - Can we push new submissions to the OSF API?
 - Can we use AI to parse the old publications and gather metadata?
 
+# Day 2
+
+- Claude AI will fetch metadata from PDF to JSON - probably possible through an API route
+- OSF can accept papers through API or users can create preprint?
+- Possible to become a DOI provider, but we may want to use Zenodo first to archive papers
+- OSJ is a very active project to create a journal. Over 50K journals! But no metadata support just yet. Requires PHP+mysql.
+- JOSS: brilliant markdown - but github dependency
+- Nanopublications - Java server, key signing, but no PDF support
+- We have API access to Zenodo
+- We can take an OSF PDF and push it to Zenodo with metadata for 2nd DOI
+- Later people can opt to skip OSF route and only push to Zenodo
+- PDFs+metadata can reside anywhere
+- We'll publish full RDF metadata once per year
+
 # Workflow
 
 We'll start with OSF and Zenodo
@@ -85,8 +99,26 @@ We'll start with OSF and Zenodo
 
 # Introduction
 
-The first BioHackrXiv preprint was published in 2020, using a platform based on the idea
-of using Markdown [@citesAsRecommendedReading:bhxiv20], and just weeks ago, BioHackrXiv
-published their 100th preprint. Machine-readable metadata added to the Markdown that is
-added includes the title, keywords, the author names, their affiliations, and
-details about the Biohackathon event the preprint is related to.
+The first BioHackrXiv preprint was published in 2020, using a platform based on the idea of using Markdown [@citesAsRecommendedReading:bhxiv20], and BioHackrXiv can be considered a preprint success with over 119 publications (per September 2025) with over 30 publication added per year. Machine-readable metadata is added to the Markdown that is added includes the title, keywords, the author names, their affiliations, and details about the Biohackathon event the preprint is related to.
+
+# Results
+
+## Getting metadata from existing publications
+
+We used Claude we were able to extract information from an existing PDF, including ROR information. See fig{extract}.
+
+![Example of Claude extracting metadata from a PDF in JSON format \label{extract}](./claude-extract.png)
+
+Even at a risk of some hallucination, it appears it is feasible to scan all publications this way to build up the metadata we require. This makes it less urgent to collect metadata at time of submission.
+
+## OJS
+
+Since 2010 OJS has 200+ contributers, where 5 large ones. Some 5K PRs - only 250 open. According to sloccount
+
+```
+Total Physical Source Lines of Code (SLOC)                = 46,473
+```
+
+Some 80% PHP code (unfortunately). The main dependency is a SQL database. No markdown support, however.
+
+## JOSS
