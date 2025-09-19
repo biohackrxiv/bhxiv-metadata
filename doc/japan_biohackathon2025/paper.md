@@ -62,6 +62,32 @@ Overall goals are to have improved metadata and allow independence from OSF - th
    - generate metadata and host that too
 
 
+# Workflow
+
+We'll start with OSF and Zenodo
+
+1. User creates github repo and writes paper - metadata in JSON header (github is just an option)
+1. User creates a release and submits to Zenodo (JOSS does this too)
+1. User submits paper using a zenodo URL to our system
+1. Editor approves/rejects submission
+1. On approval we push the paper to OSF
+1. We host the metadata somewhere and publish our own short URI - that points to the metadata, hosted copies and DOIs
+
+- We should ultimately not depend on OSF, Zenodo or Github. We will create a system that allows for preview, editorial review, and even posterior peer review, for articles published somewhere on the internet with multiple copies (a hash value should guarantee the specific content of the paper).
+
+Discussion:
+
+- What is a good document hosting provider right now that will last the next 20 years? JOSS uses Zenodo for source code hosting - that may be a next step to tie project code/data to a publication
+- Is it OK to have two DOIs? If it is Zenodo people have to create a private account, maybe tied to github/ORCID?
+  - a DOI is just a reference and we can point it into our RDF store with links to publications:
+    + self hosted
+    + zenodo
+    + github
+    + OSF
+    + internet archive
+- Can we push new submissions to the OSF API?
+- Can we use AI to parse the old publications and gather metadata?
+
 The following existing initiatives and services can help our goal of creating a publishing platform overnight that will last a thousand years!
 
 # Methods
@@ -114,7 +140,14 @@ When we asked for the abstract:
 {"type":"text","text":"I don't see a traditional abstract section in this document. This appears to be a BioHackrXiv paper titled \"Metadata for BioHackrXiv Markdown publications\" that follows a format where the introduction serves as the opening section without a separate abstract.\n\nThe paper begins directly with an **Introduction** section that explains:\n\nBioHackrXiv (https://biohackrxiv.org/) is a scholarly publication service for BioHackathons and Codefests where papers are generated from Markdown templates with YAML/JSON metadata headers. The publications are hosted on the Open Science Framework (OSF), but the current setup lacks proper metadata facilities for findability and accessibility according to FAIR principles. \n\nThe main issues identified are:\n- Difficulty listing publications related to specific BioHackathons\n- No clear links between publications and the projects they refer to\n- Limited search and discovery capabilities\n\nTo address these limitations, the authors developed an additional service providing a SPARQL endpoint for queries and HTML output that can be embedded in BioHackathon websites, improving the findable (F) and accessible (A) aspects of FAIR data principles.\n\nSo while there's no formal abstract, the introduction effectively summarizes the paper's purpose and approach."}
 ```
 
-We may be able to fetch that from OSF/DOI records.
+We may be able to fetch that from OSF/DOI records. So Claude works for PDF analysis - at least for information stored in the document we don't get hallucination.
+
+- Got Claude API to work to prepare for PDF analysis.
+  - claude-opus-4-1-20250805 hallucinated 2 out of 4 RORs - the RORs need to get agent fetched
+  - sonnet-3.7 got ORCIDs - they are correct as they are in the PDF
+- ror.org
+  - getting ROR is possible through their search API
+    + curl "https://api.ror.org/v2/organizations?query=The%20University%20Tennessee%20Health%20Science%20Center"
 
 ## OJS
 
@@ -128,7 +161,17 @@ Some 80% PHP code (unfortunately). The main dependency is a SQL database. No mar
 
 => https://github.com/pkp/ojs
 
+OJS has cloud solutions, e.g. OJSCLoud, which allow for setting up a journal overnight. Generating DOIs is a plugin that has to come from a service provider.
+
 ## JOSS
+
+The Journal of Open Source Software [@cite:JOSS] was the original inspiration for BioHackrXiv. PP was an editor with JOSS for some time and took some of their interesting ideas, including PDF generation from markdown+metadata using pandoc. This is the backbone of the preview server we have today. The JOSS publishing system was generalised and can be used by other journals. The [theoj.org list](https://www.theoj.org/) is short, however. One possible reason is that the system is tightly integrated with github and github actions. Github is owned by a single company.
+
+## OSF
+
+The Open Science Framework (OSF) is an open source software project that facilitates open collaboration in science research. It is owned by a single non-profit "The Center for Open Science" based in Charlottesville, Virginia with a mission to "increase the openness, integrity, and reproducibility of scientific research. We support the general ideas of OSF and, so far, it has allowed us to bootstrap BioHackrXiv. There are issues though which we list in the discussion.
+
+During the biohackathon AI has tried to push a PDF through the OSF API. We filed a ticket because the API is not working.
 
 ## Nanopublications
 
@@ -150,6 +193,34 @@ Question: do we need to sign the publications? E.g.
 
 can sign on the command line using a letsencrypt certificate (e.g. for biohackrxiv.org). We could allow users to upload their own certificate. Signing and locking a PDF prevents anyone from changing the published PDF. We can still resubmit updated PDFs, and remove the old one from the index, but that is at the discretion of the publication.
 
+## Generating DOIs
+
+## Oauth2
+
+OSF can provide Outh2 authentication to use their API, or just to affiliate users. It is badly documented, to we studied the github oauth2 interface instead:
+
+The github oauth2 app allows you to act for a github user. First register an oauth app with 2 URLs. Here is a pretty good example:
+
+=> https://github.com/github/OAuth-Ruby-Quickstart
+
+I.e. register application in github (developer settings), provide a home URL and a callback URL and enable device flow to allow for CLI tokens.
+
+
+Using those parameters you can refer login to github which will call back with a code in the session block:
+
+```
+session_code = request.env['rack.request.query_hash']['code']
+```
+
+Next, using that code as a parameter, we request an access token
+
+```
+https://github.com/login/oauth/access_token
+```
+
+Finally we can invoke a github API call for that user using that token.
+
+The OSF API should work in a similar fashion to access functionality for a logged in user. We should be able to push a PDF into OSF using API+oauth2. Co-author AI worked on a proof-of-concept (WIP).
 
 ## Index server
 
@@ -186,53 +257,15 @@ Road map:
 
 # Discussion
 
+At this point innovation is hampered by the OSF setup we have as a hosted solution. We have a number things we want to improve on:
 
+1. Improve submission workflow
+   + avoid double entry of authors and affiliations
+   + avoid forcing people to sign up with provider
+1. Improve editorial workflow
+   + simple links in E-mail should work
+   + create editorial hierarchy
+1. Improve metadata handling
+   + Currently we lose track of metadata - also the markdown link may disappear
 
-# Workflow
-
-We'll start with OSF and Zenodo
-
-1. User creates github repo and writes paper - metadata in JSON header (github is just an option)
-1. User creates a release and submits to Zenodo (JOSS does this too)
-1. User submits paper using a zenodo URL to our system
-1. Editor approves/rejects submission
-1. On approval we push the paper to OSF
-1. We host the metadata somewhere and publish our own short URI - that points to the metadata, hosted copies and DOIs
-
-- We should ultimately not depend on OSF, Zenodo or Github. We will create a system that allows for preview, editorial review, and even posterior peer review, for articles published somewhere on the internet with multiple copies (a hash value should guarantee the specific content of the paper).
-
-Discussion:
-
-- What is a good document hosting provider right now that will last the next 20 years? JOSS uses Zenodo for source code hosting - that may be a next step to tie project code/data to a publication
-- Is it OK to have two DOIs? If it is Zenodo people have to create a private account, maybe tied to github/ORCID?
-  - a DOI is just a reference and we can point it into our RDF store with links to publications:
-    + self hosted
-    + zenodo
-    + github
-    + OSF
-    + internet archive
-- Can we push new submissions to the OSF API?
-- Can we use AI to parse the old publications and gather metadata?
-
-# Day 2
-
-- Claude AI will fetch metadata from PDF to JSON - probably possible through an API route
-- OSF can accept papers through API or users can create preprint?
-- Possible to become a DOI provider, but we may want to use Zenodo first to archive papers
-- OSJ is a very active project to create a journal. Over 50K journals! But no metadata support just yet. Requires PHP+mysql.
-- JOSS: brilliant markdown - but github dependency
-- Nanopublications - Java server, key signing, but no PDF support
-- We have API access to Zenodo
-- We can take an OSF PDF and push it to Zenodo with metadata for 2nd DOI
-- Later people can opt to skip OSF route and only push to Zenodo
-- PDFs+metadata can reside anywhere
-- We'll publish full RDF metadata once per year
-
-# Day 3
-
-- Got Claude API to work to prepare for PDF analysis.
-  - claude-opus-4-1-20250805 hallucinated 2 out of 4 RORs - the RORs need to get agent fetched
-  - sonnet-3.7 got ORCIDs - they are correct as they are in the PDF
-- ror.org
-  - getting ROR is possible through their search API
-    + curl "https://api.ror.org/v2/organizations?query=The%20University%20Tennessee%20Health%20Science%20Center"
+Also, to provide publications that will last 1000 years we can not depend on a single provider. We, therefore, want to have alternatives, such as pushing publications into Zenodo or onto public webservers.
