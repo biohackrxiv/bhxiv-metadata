@@ -46,7 +46,11 @@ git_url: https://github.com/biohackrxiv/bhxiv-metadata/tree/main/doc/japan_bioha
 authors_short: First \emph{et al.}
 ---
 
-# Goals
+# Introduction
+
+The first BioHackrXiv preprint was published in 2020, using a platform based on the idea of using Markdown [@citesAsRecommendedReading:bhxiv20], and BioHackrXiv can be considered a preprint success with over 119 publications (per September 2025) with over 30 publication added per year. Machine-readable metadata is added to the Markdown that is added includes the title, keywords, the author names, their affiliations, and details about the Biohackathon event the preprint is related to.
+
+This Japanese BioHackathon was attended remotely by AI, EW and PP. We discussed the philosophy and created a road map for the arxiv for the next years, based on work done in this and previous biohackathons.
 
 Overall goals are to have improved metadata and allow independence from OSF - though we can operate in parallel. Ideally BioHackrXiv would be a template for a federated solution for scientific publications. This is going to be a multi-hackathon job.
 
@@ -57,90 +61,10 @@ Overall goals are to have improved metadata and allow independence from OSF - th
    - submit a PDF somewhere on the internet and create DOI
    - generate metadata and host that too
 
-Discussion:
 
-- What is a good document hosting provider right now that will last the next 20 years? JOSS uses Zenodo for source code hosting - that may be a next step to tie project code/data to a publication
-- Is it OK to have two DOIs? If it is Zenodo people have to create a private account, maybe tied to github/ORCID?
-  - a DOI is just a reference and we can point it into our RDF store with links to publications:
-    + self hosted
-    + zenodo
-    + github
-    + OSF
-    + internet archive
-- Can we push new submissions to the OSF API?
-- Can we use AI to parse the old publications and gather metadata?
+The following existing initiatives and services can help our goal of creating a publishing platform overnight that will last a thousand years!
 
-# Day 2
-
-- Claude AI will fetch metadata from PDF to JSON - probably possible through an API route
-- OSF can accept papers through API or users can create preprint?
-- Possible to become a DOI provider, but we may want to use Zenodo first to archive papers
-- OSJ is a very active project to create a journal. Over 50K journals! But no metadata support just yet. Requires PHP+mysql.
-- JOSS: brilliant markdown - but github dependency
-- Nanopublications - Java server, key signing, but no PDF support
-- We have API access to Zenodo
-- We can take an OSF PDF and push it to Zenodo with metadata for 2nd DOI
-- Later people can opt to skip OSF route and only push to Zenodo
-- PDFs+metadata can reside anywhere
-- We'll publish full RDF metadata once per year
-
-# Day 3
-
-- Got Claude API to work to prepare for PDF analysis.
-  - claude-opus-4-1-20250805 hallucinated 2 out of 4 RORs - the RORs need to get agent fetched
-  - sonnet-3.7 got ORCIDs - they are correct as they are in the PDF
-- ror.org
-  - getting ROR is possible through their search API
-    + curl "https://api.ror.org/v2/organizations?query=The%20University%20Tennessee%20Health%20Science%20Center"
-
-A publishing platform is simply an index of publications. The publications may live forever (as long as people maintain their hosting). All BioHackrXiv publications can be copied as a single directory of PDFs and their accompanying metadata. Whenever someone announces a copy we can add it to the metadata for each publication. A true index of publications.
-
-Road map:
-
-1. Push PDF to OSF using API
-2. Oauth2 workflow permission to push as a user to OSF using API - and make it a 'plugin'
-3. Create submission web UI that can handle:
-   - User can generate or upload PDF
-   - Validate PDF - perhaps using AI as a plugin
-   - Generate metadata and embed URI in PDF
-   - Generate checksum for PDF and add to metadata
-   - User approves/rejects PDF
-   - E-mail editors on approval
-   - Editor can view/approve/reject with message based on E-mail links (no login required)
-   - Push and publish PDF using (1) or (2) to OSF
-4. Add Zenodo support as a 'plugin'
-   - Push PDF + embedded metadata to Zenodo
-   - Add DOI to metadata
-5. Serve metadata as a link per publication - JSON-LD, RDF, table - possibly as a SPARQL endpoint
-6. Add nanopublication 'plugin'
-   - Push metdata RDF to nanopublication (somewhere)
-7. Add mastodon 'plugin'
-8. Add support for user/editor retraction of publication - this will not impact hosting in Zenodo and other places, just removes from the index.
-
-Question: do we need to sign the publications? E.g.
-
-=> https://www.openpdfsign.org/
-
-can sign on the command line using a letsencrypt certificate (e.g. for biohackrxiv.org). We could allow users to upload their own certificate. Signing and locking a PDF prevents anyone from changing the published PDF. We can still resubmit updated PDFs, and remove the old one from the index, but that is at the discretion of the publication.
-
-# Workflow
-
-We'll start with OSF and Zenodo
-
-1. User creates github repo and writes paper - metadata in JSON header (github is just an option)
-1. User creates a release and submits to Zenodo (JOSS does this too)
-1. User submits paper using a zenodo URL to our system
-1. Editor approves/rejects submission
-1. On approval we push the paper to OSF
-1. We host the metadata somewhere and publish our own short URI - that points to the metadata, hosted copies and DOIs
-
-- We should ultimately not depend on OSF, Zenodo or Github. We will create a system that allows for preview, editorial review, and even posterior peer review, for articles published somewhere on the internet with multiple copies (a hash value should guarantee the specific content of the paper).
-
-# Introduction
-
-The first BioHackrXiv preprint was published in 2020, using a platform based on the idea of using Markdown [@citesAsRecommendedReading:bhxiv20], and BioHackrXiv can be considered a preprint success with over 119 publications (per September 2025) with over 30 publication added per year. Machine-readable metadata is added to the Markdown that is added includes the title, keywords, the author names, their affiliations, and details about the Biohackathon event the preprint is related to.
-
-The following existing initiatives and services can help our goal of creating a publishing platform overnight that will last a thousand years:
+# Methods
 
 ## Getting metadata from existing publications
 
@@ -217,3 +141,98 @@ Nanopublications are a formalized and machine-readable way of communicating the 
 - Single server setup, but can act in a federated context
 
 For our purposes nanopublications are not good enough because they don't host PDFs.
+
+## Signing PDFs
+
+Question: do we need to sign the publications? E.g.
+
+=> https://www.openpdfsign.org/
+
+can sign on the command line using a letsencrypt certificate (e.g. for biohackrxiv.org). We could allow users to upload their own certificate. Signing and locking a PDF prevents anyone from changing the published PDF. We can still resubmit updated PDFs, and remove the old one from the index, but that is at the discretion of the publication.
+
+
+## Index server
+
+This year co-author EW created an index for BioHackrXiv as a pilot: http://index.biohackrxiv.org/
+
+
+# Results
+
+## Road map
+
+A publishing platform is simply an index of publications. The publications may live forever (as long as people maintain their hosting). All BioHackrXiv publications can be copied as a single directory of PDFs and their accompanying metadata. Whenever someone announces a copy we can add it to the metadata for each publication. A true index of publications.
+
+Road map:
+
+1. Push PDF to OSF using API
+2. Oauth2 workflow permission to push as a user to OSF using API - and make it a 'plugin'
+3. Create submission web UI that can handle:
+   - User can generate or upload PDF
+   - Validate PDF - perhaps using AI as a plugin
+   - Generate metadata and embed URI in PDF
+   - Generate checksum for PDF and add to metadata
+   - User approves/rejects PDF
+   - E-mail editors on approval
+   - Editor can view/approve/reject with message based on E-mail links (no login required)
+   - Push and publish PDF using (1) or (2) to OSF
+4. Add Zenodo support as a 'plugin'
+   - Push PDF + embedded metadata to Zenodo
+   - Add DOI to metadata
+5. Serve metadata as a link per publication - JSON-LD, RDF, table - possibly as a SPARQL endpoint
+6. Add nanopublication 'plugin'
+   - Push metdata RDF to nanopublication (somewhere)
+7. Add mastodon 'plugin'
+8. Add support for user/editor retraction of publication - this will not impact hosting in Zenodo and other places, just removes from the index.
+
+# Discussion
+
+
+
+# Workflow
+
+We'll start with OSF and Zenodo
+
+1. User creates github repo and writes paper - metadata in JSON header (github is just an option)
+1. User creates a release and submits to Zenodo (JOSS does this too)
+1. User submits paper using a zenodo URL to our system
+1. Editor approves/rejects submission
+1. On approval we push the paper to OSF
+1. We host the metadata somewhere and publish our own short URI - that points to the metadata, hosted copies and DOIs
+
+- We should ultimately not depend on OSF, Zenodo or Github. We will create a system that allows for preview, editorial review, and even posterior peer review, for articles published somewhere on the internet with multiple copies (a hash value should guarantee the specific content of the paper).
+
+Discussion:
+
+- What is a good document hosting provider right now that will last the next 20 years? JOSS uses Zenodo for source code hosting - that may be a next step to tie project code/data to a publication
+- Is it OK to have two DOIs? If it is Zenodo people have to create a private account, maybe tied to github/ORCID?
+  - a DOI is just a reference and we can point it into our RDF store with links to publications:
+    + self hosted
+    + zenodo
+    + github
+    + OSF
+    + internet archive
+- Can we push new submissions to the OSF API?
+- Can we use AI to parse the old publications and gather metadata?
+
+# Day 2
+
+- Claude AI will fetch metadata from PDF to JSON - probably possible through an API route
+- OSF can accept papers through API or users can create preprint?
+- Possible to become a DOI provider, but we may want to use Zenodo first to archive papers
+- OSJ is a very active project to create a journal. Over 50K journals! But no metadata support just yet. Requires PHP+mysql.
+- JOSS: brilliant markdown - but github dependency
+- Nanopublications - Java server, key signing, but no PDF support
+- We have API access to Zenodo
+- We can take an OSF PDF and push it to Zenodo with metadata for 2nd DOI
+- Later people can opt to skip OSF route and only push to Zenodo
+- PDFs+metadata can reside anywhere
+- We'll publish full RDF metadata once per year
+
+# Day 3
+
+- Got Claude API to work to prepare for PDF analysis.
+  - claude-opus-4-1-20250805 hallucinated 2 out of 4 RORs - the RORs need to get agent fetched
+  - sonnet-3.7 got ORCIDs - they are correct as they are in the PDF
+- ror.org
+  - getting ROR is possible through their search API
+    + curl "https://api.ror.org/v2/organizations?query=The%20University%20Tennessee%20Health%20Science%20Center"
