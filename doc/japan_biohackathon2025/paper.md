@@ -226,6 +226,9 @@ The OSF API should work in a similar fashion to access functionality for a logge
 
 This year co-author EW created an index for BioHackrXiv as a pilot: http://index.biohackrxiv.org/
 
+## SPAM filtering
+
+Half the submissions for BioHackrXiv were SPAM (until 2025). We need to be able to deal with SPAM by flagging these submissions, and a quick way that editors can reject or delete them.
 
 # Results
 
@@ -265,6 +268,7 @@ At this point innovation is hampered by the OSF setup we have as a hosted soluti
 1. Improve editorial workflow
    + simple links in E-mail should work
    + create editorial hierarchy
+   + Flag SPAM submissions
 1. Improve metadata handling
    + Currently we lose track of metadata - also the markdown link may disappear
 
