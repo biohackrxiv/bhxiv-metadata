@@ -1,0 +1,49 @@
+name: BioHackathon Proposal Registration Form
+description: Provide metadata to propose a new BioHackathon for the BioHackrXiv preprint server.
+title: "[BioHackathon]: "
+labels: ["bh_proposal"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to provide metadata of an upcoming biohackathon!
+  - type: input
+    id: website
+    attributes:
+      label: Biohackathon website
+      description: What is the URL of the main webpage describing you biohackathon?
+      placeholder: ex. 2025.mybiohackathon.org
+    validations:
+      required: true
+  - type: input
+    id: start_date
+    attributes:
+      label: Biohackathon start date
+      description: What is the start date of the biohackathon (in YYYY-MM-DD ISO format)?
+      placeholder: ex. 2025-12-02
+    validations:
+      required: true
+  - type: input
+    id: end_date
+    attributes:
+      label: Biohackathon end date
+      description: What is the end date of the biohackathon (in YYYY-MM-DD ISO format)?
+      placeholder: ex. 2025-12-06
+    validations:
+      required: true
+  - type: input
+    id: location
+    attributes:
+      label: Biohackathon city and country
+      description: Where is the biohackathon held?
+      placeholder: ex. Mei, Japan
+    validations:
+      required: true
+  - type: input
+    id: location
+    attributes:
+      label: Meeting hashcode
+      description: What is the hashcode for the event? If none is give, the BioHackrxiv will make one up.
+      placeholder: ex. BH25EU or CMUDNA25
+    validations:
+      required: false
