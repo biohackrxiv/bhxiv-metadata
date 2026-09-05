@@ -66,7 +66,7 @@ Overall goals are to have improved metadata and allow independence from OSF - th
 
 We'll start with OSF and Zenodo
 
-1. User creates github repo and writes paper - metadata in JSON header (github is just an option)
+1. User creates GitHub repo and writes paper - metadata in JSON header (GitHub is just an option)
 1. User creates a release and submits to Zenodo (JOSS does this too)
 1. User submits paper using a zenodo URL to our system
 1. Editor approves/rejects submission
@@ -78,13 +78,13 @@ We'll start with OSF and Zenodo
 Discussion:
 
 - What is a good document hosting provider right now that will last the next 20 years? JOSS uses Zenodo for source code hosting - that may be a next step to tie project code/data to a publication
-- Is it OK to have two DOIs? If it is Zenodo people have to create a private account, maybe tied to github/ORCID?
+- Is it OK to have two DOIs? If it is Zenodo people have to create a private account, maybe tied to GitHub/ORCID?
   - a DOI is just a reference and we can point it into our RDF store with links to publications:
     + self hosted
-    + zenodo
-    + github
+    + Zenodo
+    + GitHub
     + OSF
-    + internet archive
+    + Internet Archive
 - Can we push new submissions to the OSF API?
 - Can we use AI to parse the old publications and gather metadata?
 
@@ -94,7 +94,7 @@ The following existing initiatives and services can help our goal of creating a 
 
 ## Getting metadata from existing publications
 
-We used Claude we were able to extract information from an existing PDF, including ROR information. See fig{extract}.
+We used Claude we were able to extract information from an existing PDF, including ROR information. See Figure \ref{extract}.
 
 ![Example of Claude extracting metadata from a PDF in JSON format \label{extract}](./claude-extract.png)
 
@@ -129,7 +129,7 @@ curl -X POST https://api.anthropic.com/v1/messages \
         ]
       }
     ]
-  }' {"id":"msg_01BtABqbkLTo1yrqu5g5Xstd","type":"message","role":"assistant","model":"claude-sonnet-4-20250514","content":[{"type":"text","text":"```json\n{\n  \"title\": \"Metadata for BioHackrXiv Markdown publications\",\n  \"authors\": [\n    {\n      \"name\": \"Pjotr Prins\",\n      \"affiliation\": \"Department of Genetics, Genomics and Informatics, The University of Tennessee Health Science Center, Memphis, TN, USA\",\n      \"orcid\": \"0000-0002-8021-9162\",\n      \"affiliation_ror\": null\n    },\n    {\n      \"name\": \"Tazro Ohta\", \n      \"affiliation\": \"Database Center for Life Science, Joint Support-Center for Data Science Research, Research Organization of Information and Systems, Japan\",\n      \"orcid\": \"0000-0003-3777-5945\",\n      \"affiliation_ror\": null\n    },\n    {\n      \"name\": \"Leyla Garcia Castro\",\n      \"affiliation\": \"Knowledge Management Group, at ZB MED Information Centre for Life Sciences, Cologne, Germany\",\n      \"orcid\": \"0000-0003-3986-0510\",\n      \"affiliation_ror\": null\n    },\n    {\n      \"name\": \"Toshiaki Katayama\",\n      \"affiliation\": \"Database Center for Life Science, Joint Support-Center for Data Science Research, Research Organization of Information and Systems, Japan\",\n      \"orcid\": \"0000-0003-2391-0384\",\n      \"affiliation_ror\": null\n    }\n  ],\n  \"publication_date\": \"29 Nov 2022\",\n  \"submitted_date\": \"15 November 2020\",\n  \"github_repository\": \"https://github.com/biohackrxiv/bhxiv-gen-pdf\",\n  \"additional_repository\": \"https://github.com/biohackrxiv/bhxiv-metadata\"\n}\n```\n\nNote: The ROR (Research Organization Registry) identifiers are not provided in the document, so I've marked them as null. The document shows a submitted date of \"29 Nov 2022\" and an internal date of \"15 November 2020\". There are two GitHub repositories mentioned - the main one from the metadata header and an additional one mentioned in the repositories section."}],"stop_reason":"end_turn","stop_sequence":null,"usage":{"input_tokens":11770,"cache_creation_input_tokens":0,"cache_read_input_tokens":0,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":0},"output_tokens":530,"service_tier":"standard"}}
+  }' {"id":"msg_01BtABqbkLTo1yrqu5g5Xstd","type":"message","role":"assistant","model":"claude-sonnet-4-20250514","content":[{"type":"text","text":"```json\n{\n  \"title\": \"Metadata for BioHackrXiv Markdown publications\",\n  \"authors\": [\n    {\n      \"name\": \"Pjotr Prins\",\n      \"affiliation\": \"Department of Genetics, Genomics and Informatics, The University of Tennessee Health Science Center, Memphis, TN, USA\",\n      \"orcid\": \"0000-0002-8021-9162\",\n      \"affiliation_ror\": null\n    },\n    {\n      \"name\": \"Tazro Ohta\", \n      \"affiliation\": \"Database Center for Life Science, Joint Support-Center for Data Science Research, Research Organization of Information and Systems, Japan\",\n      \"orcid\": \"0000-0003-3777-5945\",\n      \"affiliation_ror\": null\n    },\n    {\n      \"name\": \"Leyla Garcia Castro\",\n      \"affiliation\": \"Knowledge Management Group, at ZB MED Information Centre for Life Sciences, Cologne, Germany\",\n      \"orcid\": \"0000-0003-3986-0510\",\n      \"affiliation_ror\": null\n    },\n    {\n      \"name\": \"Toshiaki Katayama\",\n      \"affiliation\": \"Database Center for Life Science, Joint Support-Center for Data Science Research, Research Organization of Information and Systems, Japan\",\n      \"orcid\": \"0000-0003-2391-0384\",\n      \"affiliation_ror\": null\n    }\n  ],\n  \"publication_date\": \"29 Nov 2022\",\n  \"submitted_date\": \"15 November 2020\",\n  \"GitHub_repository\": \"https://github.com/biohackrxiv/bhxiv-gen-pdf\",\n  \"additional_repository\": \"https://github.com/biohackrxiv/bhxiv-metadata\"\n}\n```\n\nNote: The ROR (Research Organization Registry) identifiers are not provided in the document, so I've marked them as null. The document shows a submitted date of \"29 Nov 2022\" and an internal date of \"15 November 2020\". There are two GitHub repositories mentioned - the main one from the metadata header and an additional one mentioned in the repositories section."}],"stop_reason":"end_turn","stop_sequence":null,"usage":{"input_tokens":11770,"cache_creation_input_tokens":0,"cache_read_input_tokens":0,"cache_creation":{"ephemeral_5m_input_tokens":0,"ephemeral_1h_input_tokens":0},"output_tokens":530,"service_tier":"standard"}}
 ```
 
 It fetches correctly what is in the document - e.g. authors, ORCIDs and affiliations. The ROR, however, it misses or hallucinates.
@@ -165,7 +165,7 @@ OJS has cloud solutions, e.g. OJSCLoud, which allow for setting up a journal ove
 
 ## JOSS
 
-The Journal of Open Source Software [@cite:JOSS] was the original inspiration for BioHackrXiv. PP was an editor with JOSS for some time and took some of their interesting ideas, including PDF generation from markdown+metadata using pandoc. This is the backbone of the preview server we have today. The JOSS publishing system was generalised and can be used by other journals. The [theoj.org list](https://www.theoj.org/) is short, however. One possible reason is that the system is tightly integrated with github and github actions. Github is owned by a single company.
+The Journal of Open Source Software [@JOSS] was the original inspiration for BioHackrXiv. PP was an editor with JOSS for some time and took some of their interesting ideas, including PDF generation from markdown+metadata using pandoc. This is the backbone of the preview server we have today. The JOSS publishing system was generalised and can be used by other journals. The [theoj.org list](https://www.theoj.org/) is short, however. One possible reason is that the system is tightly integrated with GitHub and GitHub actions. Github is owned by a single company.
 
 ## OSF
 
@@ -175,7 +175,7 @@ During the biohackathon AI has tried to push a PDF through the OSF API. We filed
 
 ## Nanopublications
 
-Nanopublications are a formalized and machine-readable way of communicating the smallest possible units of publishable information[@citesAsRecommendedReading:https://arxiv.org/pdf/1809.06532]. This could be, for example, the outcome of a scientific study or a claim made by a particular scientist . Nanopublications have some great ideas:
+Nanopublications are a formalized and machine-readable way of communicating the smallest possible units of publishable information [@citesAsRecommendedReading:Kuhn2018Nanopublications]. This could be, for example, the outcome of a scientific study or a claim made by a particular scientist . Nanopublications have some great ideas:
 
 - Easy small publications
 - RDF-based
@@ -197,16 +197,16 @@ can sign on the command line using a letsencrypt certificate (e.g. for biohackrx
 
 ## Oauth2
 
-OSF can provide Outh2 authentication to use their API, or just to affiliate users. It is badly documented, to we studied the github oauth2 interface instead:
+OSF can provide Outh2 authentication to use their API, or just to affiliate users. It is badly documented, to we studied the GitHub oauth2 interface instead:
 
-The github oauth2 app allows you to act for a github user. First register an oauth app with 2 URLs. Here is a pretty good example:
+The GitHub oauth2 app allows you to act for a GitHub user. First register an oauth app with 2 URLs. Here is a pretty good example:
 
-=> https://github.com/github/OAuth-Ruby-Quickstart
+=> https://github.com/GitHub/OAuth-Ruby-Quickstart
 
-I.e. register application in github (developer settings), provide a home URL and a callback URL and enable device flow to allow for CLI tokens.
+I.e. register application in GitHub (developer settings), provide a home URL and a callback URL and enable device flow to allow for CLI tokens.
 
 
-Using those parameters you can refer login to github which will call back with a code in the session block:
+Using those parameters you can refer login to GitHub which will call back with a code in the session block:
 
 ```
 session_code = request.env['rack.request.query_hash']['code']
@@ -218,13 +218,14 @@ Next, using that code as a parameter, we request an access token
 https://github.com/login/oauth/access_token
 ```
 
-Finally we can invoke a github API call for that user using that token.
+Finally we can invoke a GitHub API call for that user using that token.
 
 The OSF API should work in a similar fashion to access functionality for a logged in user. We should be able to push a PDF into OSF using API+oauth2. Co-author AI worked on a proof-of-concept (WIP).
 
 ## Index server
 
-This year co-author EW created an index for BioHackrXiv as a pilot: http://index.biohackrxiv.org/
+This year co-author EW created an index for BioHackrXiv as a pilot: [https://index.biohackrxiv.org/](https://index.biohackrxiv.org/).
+The [meeting page](https://index.biohackrxiv.org/tag/BH25JP) for the biohackathon this year looks like shown in Figure \ref{index}.
 
 ## SPAM filtering
 
@@ -235,6 +236,8 @@ Half the submissions for BioHackrXiv were SPAM (until 2025). We need to be able 
 ## Road map
 
 A publishing platform is simply an index of publications. The publications may live forever (as long as people maintain their hosting). All BioHackrXiv publications can be copied as a single directory of PDFs and their accompanying metadata. Whenever someone announces a copy we can add it to the metadata for each publication. A true index of publications.
+
+![Screenshot of the DBCLS BioHackathon 2025 index page.\label{index}](bh25jp_index.png)
 
 Road map:
 
@@ -273,3 +276,5 @@ At this point innovation is hampered by the OSF setup we have as a hosted soluti
    + Currently we lose track of metadata - also the markdown link may disappear
 
 Also, to provide publications that will last 1000 years we can not depend on a single provider. We, therefore, want to have alternatives, such as pushing publications into Zenodo or onto public webservers.
+
+# References
