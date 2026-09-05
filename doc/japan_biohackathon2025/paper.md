@@ -1,6 +1,6 @@
 ---
 title: 'BioHackrXiv: Creating a federated publishing platform'
-title_short: ''
+title_short: 'BioHackrXiv publishing platform'
 tags:
   - BioHackrXiv
 authors:
@@ -36,14 +36,14 @@ date: September 2025
 cito-bibliography: paper.bib
 event: BH24EU
 biohackathon_name: "BioHackathon Japan 2025"
-biohackathon_url:   ""
-biohackathon_location: ""
+biohackathon_url:   "https://2025.biohackathon.org/"
+biohackathon_location: "Mie, Japan"
 group: BioHackrXiv
 # URL to project git repo --- should contain the actual paper.md:
 git_url: https://github.com/biohackrxiv/bhxiv-metadata/tree/main/doc/japan_biohackathon2025
 # This is the short authors description that is used at the
 # bottom of the generated paper (typically the first two authors):
-authors_short: First \emph{et al.}
+authors_short: Isaac \emph{et al.}
 ---
 
 # Introduction
