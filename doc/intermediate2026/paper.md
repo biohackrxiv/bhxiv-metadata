@@ -42,7 +42,7 @@ authors_short: Willighagen \emph{et al.}
 
 # Introduction
 
-BioHackrXiv continues to host project reports from biohackathon events [@bhxiv20].
+BioHackrXiv continues to host project reports from biohackathon events [@citesForInformation:bhxiv20].
 It has published more than 150 preprints and are
 [indexed by Europe PMC](https://europepmc.org/search?query=PUBLISHER%3A%22BioHackrXiv%22)
 and notable preprints are
