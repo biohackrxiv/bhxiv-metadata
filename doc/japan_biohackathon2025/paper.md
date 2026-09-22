@@ -165,7 +165,7 @@ OJS has cloud solutions, e.g. OJSCLoud, which allow for setting up a journal ove
 
 ## JOSS
 
-The Journal of Open Source Software [@JOSS] was the original inspiration for BioHackrXiv. PP was an editor with JOSS for some time and took some of their interesting ideas, including PDF generation from markdown+metadata using pandoc. This is the backbone of the preview server we have today. The JOSS publishing system was generalised and can be used by other journals. The [theoj.org list](https://www.theoj.org/) is short, however. One possible reason is that the system is tightly integrated with GitHub and GitHub actions. Github is owned by a single company.
+The Journal of Open Source Software [@citesAsPotentialSolution:JOSS] was the original inspiration for BioHackrXiv. PP was an editor with JOSS for some time and took some of their interesting ideas, including PDF generation from markdown+metadata using pandoc. This is the backbone of the preview server we have today. The JOSS publishing system was generalised and can be used by other journals. The [theoj.org list](https://www.theoj.org/) is short, however. One possible reason is that the system is tightly integrated with GitHub and GitHub actions. Github is owned by a single company.
 
 ## OSF
 
