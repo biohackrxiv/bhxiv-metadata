@@ -119,12 +119,11 @@ by the regular Markdown content after that first block. After all appendix mater
 a second LaTeX block is given with merely `}`. A full example is given in the
 [publication template](http://github.com/biohackrxiv/publication-template/).
 
-## (Soon) Mermaid support
+## Mermaid support
 
-Not ready yet, but a first draft pull request has been developed for support
-of [Mermaid](https://mermaid.js.org/) which can be embedded in Markdown. This is
-not a core Markdown feature, but supported in Markdown by, for example, GitHub.
-The new pull request updates the PDF build system to extract instructions
+[Mermaid](https://mermaid.js.org/) which can be embedded in Markdown. This is
+not a core Markdown feature, but supported in Markdown by, for example, GitHub,
+and now by BioHackrXiv too. The new feature updates the PDF build system to extract instructions
 from mermaid code blocks, create SVG, and embed this in the resulting PDF.
 
 That allows us to include diagrams like this:
