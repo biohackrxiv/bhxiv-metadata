@@ -68,7 +68,9 @@ have been that the new CRediT attribution was only listed after the *References*
 while appendices were impossible to put after the *References*.
 
 Besides the updates to the [preview.biohackrxiv.org](https://preview.biohackrxiv.org/)
-website [@citesForInformation:bhxiv26], updates to the
+and [index.biohackrxiv.org](https://index.biohackrxiv.org/)
+websites [@citesForInformation:bhxiv26], the new [fediwall.biohackrxiv.org](https://fediwall.biohackrxiv.org/)
+website, updates to the
 [publication template](http://github.com/biohackrxiv/publication-template/),
 also updates have been made for the preprint template. This we describe in this
 preprint.
