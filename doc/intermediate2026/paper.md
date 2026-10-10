@@ -48,7 +48,7 @@ It has published more than 150 preprints and are
 and notable preprints are
 [indexed by Wikidata](https://qlever.scholia.wiki/venue/Q115450084) too. It has
 supported multiple biohackathons, including the DBCLS BioHackathon and
-BioHackathon Europe series. A full overview of supported meetings is available
+BioHackathon Europe series [@citesForInformation:Garcia2020Ten]. A full overview of supported meetings is available
 from the [index.biohackrxiv.org](https://index.biohackrxiv.org/meetings/) website.
 The original Markdown setup with metadata in YAML headers [@citesForInformation:bhxiv22] has been
 extended since 2020 with support for citation intent annotations with the
@@ -59,7 +59,7 @@ and support for the Contributor Role Taxonomy (CRediT) annotation of author role
 These things have been developed with the help of the same communities BioHackrXiv
 supports.
 
-Authors have adopted many of these new features. For example, 48 BioHackrXiv reports
+Authors have adopted many of these new features. For example, more than 50 BioHackrXiv reports
 have used CiTO citation intent annotations. They have also repeated indicated a number
 of shortcomings in the system. For example, when many authors have contributed to
 a preprint, then the "BioHackathon series" infobox no longer has a controlled
@@ -68,7 +68,8 @@ have been that the new CRediT attribution was only listed after the *References*
 while appendices were impossible to put after the *References*.
 
 Besides the updates to the [preview.biohackrxiv.org](https://preview.biohackrxiv.org/)
-website, updates to the [publication template](http://github.com/biohackrxiv/publication-template/),
+website [@citesForInformation:bhxiv26], updates to the
+[publication template](http://github.com/biohackrxiv/publication-template/),
 also updates have been made for the preprint template. This we describe in this
 preprint.
 
