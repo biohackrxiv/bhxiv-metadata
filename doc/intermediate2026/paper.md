@@ -108,7 +108,7 @@ which came up with suggestions. The build system is quite complex but modern
 LLMs are nowadays able to make small, clean patches. One suggestion if came
 up with, is the trick that authors can use to ensure that an appendix they
 wish to add can be after the References list. First, a Markdown code block can
-be annotated to be interpreted as LaTeX with <code>&grave;&grave;&grave;{=latex}</code>.
+be annotated to be interpreted as LaTeX with <code>\textasciigrave\textasciigrave\textasciigrave\{=latex\}</code>.
 This way, the
 source in these code blocks is passed verbatim into the LaTeX intermediate created
 by Pandoc, giving access to the richer LaTeX formatting language.
