@@ -34,7 +34,7 @@ biohackathon_url:   "https://biohackrxiv.org/"
 biohackathon_location: "Online"
 group: BioHackrXiv
 # URL to project git repo --- should contain the actual paper.md:
-git_url: https://github.com/biohackrxiv/bhxiv-metadata/tree/main/doc/intermediate2025
+git_url: https://github.com/biohackrxiv/bhxiv-metadata/tree/main/doc/intermediate2026
 # This is the short authors description that is used at the
 # bottom of the generated paper (typically the first two authors):
 authors_short: Willighagen \emph{et al.}
